@@ -41,7 +41,13 @@ const menuGroups = [
     ],
   },
   { label: "Laser Hair Removal", href: "/primelase" },
-  { label: "Longevity", href: "#" },
+  {
+    label: "Longevity",
+    href: "#",
+    children: [
+      { label: "NAD+ Therapy", href: "/longevity/nad-therapy" },
+    ],
+  },
   { label: "Before / After", href: "/before-after" },
   { label: "Blog", href: "/journal" },
   { label: "Reviews", href: "/reviews" },
