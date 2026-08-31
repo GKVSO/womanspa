@@ -122,7 +122,7 @@ export default function IvTherapyBenefitsGrid({ cms, editing }: { cms?: Record<s
       >
         <Image
           src={cmsImage || "/nad-bag.png"}
-          alt={t("NAD+ IV BOOSTER")}
+          alt={t("IV Therapy BOOSTER")}
           width={1600}
           height={941}
           className="h-full w-full"
