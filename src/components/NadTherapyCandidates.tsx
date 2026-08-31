@@ -7,13 +7,13 @@ import { FadeIn } from "./Animations";
 import BookButton from "./BookButton";
 
 const bullets = [
-  "Energy",
-  "Focus",
-  "Recovery support",
-  "Busy lifestyles",
-  "Travel recovery",
-  "Wellness maintenance",
-  "Overall Wellness",
+  "low daily energy",
+  "chronic fatigue",
+  "brain fog",
+  "slower recovery",
+  "high stress lifestyles",
+  "reduced mental focus",
+  "healthy aging concerns",
 ];
 
 export default function NadTherapyCandidates() {

@@ -7,28 +7,24 @@ import { useT } from "@/i18n/LanguageProvider";
 
 const faqs = [
   {
-    question: "Does NAD+ hurt?",
-    answer: "NAD+ IV therapy is generally well-tolerated. Some clients may experience mild discomfort at the injection site or a slight flushing sensation, which is normal and subsides quickly.",
+    question: "01. What is NAD+ Therapy?",
+    answer: "NAD+ (Nicotinamide Adenine Dinucleotide) is a naturally occurring coenzyme found in all living cells. It plays a key role in energy production, DNA repair, and cellular function. NAD+ Therapy involves delivering this essential coenzyme directly into the bloodstream for optimal absorption.",
   },
   {
-    question: "What are the benefits of NAD+?",
-    answer: "NAD+ offers numerous benefits including enhanced cellular energy, improved mental clarity, DNA repair support, anti-aging effects, and faster recovery from physical exertion.",
+    question: "02. What are the potential benefits?",
+    answer: "While individual experiences vary, many clients report feeling increased daily energy, improved mental clarity, and faster recovery after intense schedules or workouts. NAD+ is designed to support the body’s natural metabolic and cellular repair processes.",
   },
   {
-    question: "How soon will I see NAD+ results?",
-    answer: "Many clients report feeling an immediate boost in energy and mental clarity during or shortly after the treatment, with cumulative benefits developing over a series of sessions.",
+    question: "03. How long does a session take?",
+    answer: "A typical NAD+ IV drip takes between 2 to 4 hours, depending on the dosage and individual tolerance. During the session, clients relax in our comfortable wellness space.",
   },
   {
-    question: "Is long term NAD+ therapy safe?",
-    answer: "Yes, NAD+ therapy is considered safe for long-term use when administered by qualified medical professionals. It naturally replenishes a coenzyme your body already produces.",
+    question: "04. Will I feel results immediately?",
+    answer: "Some clients notice a boost in energy and mental clarity shortly after their first session, while others may feel the effects more gradually over the following days. Results often compound with multiple sessions.",
   },
   {
-    question: "Which areas can be treated with NAD+?",
-    answer: "Since NAD+ is administered intravenously, it provides systemic benefits throughout the entire body rather than targeting a specific local area.",
-  },
-  {
-    question: "Is downtime required after NAD+?",
-    answer: "No downtime is required. You can typically resume your normal daily activities immediately after your IV therapy session.",
+    question: "05. Who is a good candidate for NAD+?",
+    answer: "NAD+ Therapy is often chosen by individuals experiencing chronic fatigue, brain fog, high stress, or those looking to support their overall wellness and healthy aging. However, it is not for everyone. Our medical team conducts a thorough assessment before any treatment to ensure it is appropriate for you.",
   },
 ];
 
