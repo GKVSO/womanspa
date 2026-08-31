@@ -1,67 +1,66 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FadeIn, btnHover } from "./Animations";
-import BookButton from "./BookButton";
+import { btnHover } from "./Animations";
 import { useT } from "@/i18n/LanguageProvider";
 
 const signsList = [
-  "Persistent fatigue",
-  "Brain fog",
-  "Muscle weakness/soreness",
-  "Unexplained weight gain",
-  "Trouble recovering after workouts",
-  "Slower metabolism and aging",
-  "Poor focus or memory",
-  "Decreased athletic ability",
+  "persistent fatigue",
+  "brain fog",
+  "low energy",
+  "slower workout recovery",
+  "reduced mental clarity",
+  "signs of accelerated aging",
+  "increased daily stress",
+  "decreased overall vitality",
 ];
+
+function DotList({ items }: { items: string[] }) {
+  const t = useT();
+  return (
+    <ul className="space-y-2.5">
+      {items.map((item) => (
+        <li key={item} className="flex items-start gap-3 text-[#1F1D1B] font-medium text-[14px] min-[768px]:text-[18px]">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#1F1D1B] flex-shrink-0 mt-[9px]" />
+          {t(item)}
+        </li>
+      ))}
+    </ul>
+  );
+}
 
 export default function NadTherapyInfoBlocks() {
   const t = useT();
 
   return (
-    <section className="px-5 sm:px-10 py-16 sm:py-24 max-w-4xl mx-auto">
-      <FadeIn as="div" y={30}>
-        <h2 className="text-center text-[#313242] text-[28px] sm:text-[36px] lg:text-[44px] leading-tight font-berlingske font-normal mb-10">
-          {t("Low Energy, Mental Fatigue")}
-          <br />
-          {t("& Slower Recovery Can Affect Everyday Life")}
-        </h2>
-      </FadeIn>
+    <section className="relative overflow-hidden bg-white rounded-b-[60px] px-5 sm:px-10 pt-16 sm:pt-24 pb-20 sm:pb-40">
+      <h2 className="text-black text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske text-center mb-10 sm:mb-20">
+        {t("Low Energy, Mental Fatigue")}
+        <br />
+        {t("& Slower Recovery Can Affect Everyday Life")}
+      </h2>
 
-      <div className="flex flex-col gap-6">
-        <FadeIn as="div" y={20} className="bg-[#F8F6F3] rounded-[30px] p-8 sm:p-12">
-          <h3 className="text-[#313242] font-semibold text-[18px] sm:text-[20px] mb-6">
-            {t("Signs you have energy issues:")}
-          </h3>
-          <ul className="space-y-3">
-            {signsList.map((item, i) => (
-              <motion.li
-                key={item}
-                className="flex items-start gap-3 text-[#313242] text-[15px] sm:text-[16px]"
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: i * 0.05, ease: [0.25, 0.1, 0.25, 1] }}
-              >
-                <span className="w-1.5 h-1.5 rounded-full flex-shrink-0 mt-2 bg-[#313242]" />
-                {t(item)}
-              </motion.li>
-            ))}
-          </ul>
-        </FadeIn>
-
-        <FadeIn as="div" y={20} className="bg-[#F8F6F3] rounded-[30px] p-8 sm:p-12">
-          <p className="text-[#313242] text-[16px] sm:text-[18px] leading-relaxed font-semibold">
-            {t("NAD+ therapy is the proactive solution... always produced naturally by our body to replenish energy resources that decline with age. Now you can restore your body's essential vitality with a direct source that works instantly for real, lasting wellness.")}
+      <div className="flex flex-col lg:flex-row items-stretch lg:items-start gap-10 lg:gap-16">
+        <div className="flex-1 bg-[#F4F1E7] rounded-[40px] sm:rounded-[60px] p-8 sm:p-14">
+          <p className="text-[#1F1D1B] text-[18px] min-[768px]:text-[24px] min-[1200px]:text-[24px] min-[1600px]:text-[32px] font-berlingske mb-8">
+            {t("Many clients experience:")}
           </p>
-          <div className="mt-8 flex justify-start">
-            <BookButton 
-              className="w-full sm:w-auto border border-[#E5E5E5]"
-              label={t("Book NAD+ Therapy")}
-            />
+          <DotList items={signsList} />
+        </div>
+
+        <div className="flex-1 bg-[#F4F1E7] rounded-[40px] sm:rounded-[60px] mt-0 lg:mt-32 p-6 sm:p-10">
+          <p className="text-[#1F1D1B] text-[18px] min-[768px]:text-[24px] min-[1200px]:text-[24px] min-[1600px]:text-[32px] font-berlingske leading-snug max-w-[680px]">
+            {t("NAD+ therapy is designed to help restore cellular energy production by supporting essential metabolic processes that naturally decline with age. Personalized treatment plans may help improve energy, cognitive function, recovery, and overall wellness")}
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 items-start sm:items-center mt-8 sm:mt-10">
+            <div className="flex-1">
+              <motion.button {...btnHover} className="bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer w-full min-[768px]:w-auto">
+                {t("Schedule Consultation")}
+              </motion.button>
+            </div>
           </div>
-        </FadeIn>
+        </div>
       </div>
     </section>
   );
