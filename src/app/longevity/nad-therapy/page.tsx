@@ -5,7 +5,7 @@ import NadTherapyInfoBlocks from "@/components/NadTherapyInfoBlocks";
 import NadTherapyBenefitsGrid from "@/components/NadTherapyBenefitsGrid";
 import NadTherapyProcess from "@/components/NadTherapyProcess";
 import NadTherapyCandidates from "@/components/NadTherapyCandidates";
-import ReviewsSlider from "@/components/ReviewsSlider";
+import NadTherapyReviewsSlider from "@/components/NadTherapyReviewsSlider";
 import NadTherapyFAQ from "@/components/NadTherapyFAQ";
 
 export default function NadTherapyPage() {
@@ -18,7 +18,7 @@ export default function NadTherapyPage() {
         <NadTherapyBenefitsGrid />
         <NadTherapyProcess />
         <NadTherapyCandidates />
-        <ReviewsSlider />
+        <NadTherapyReviewsSlider />
         <NadTherapyFAQ />
       </main>
       <HomeFooter />
