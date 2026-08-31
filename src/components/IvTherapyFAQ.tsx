@@ -7,24 +7,24 @@ import { useT } from "@/i18n/LanguageProvider";
 
 const faqs = [
   {
-    question: "01. What is NAD+ Therapy?",
-    answer: "NAD+ (Nicotinamide Adenine Dinucleotide) is a naturally occurring coenzyme found in all living cells. It plays a key role in energy production, DNA repair, and cellular function. NAD+ Therapy involves delivering this essential coenzyme directly into the bloodstream for optimal absorption.",
+    question: "01. How long do IV Therapy sessions take?",
+    answer: "Most IV therapy sessions take around 30-60 minutes, depending on the type of infusion and how quickly it is administered. Your provider can give you a more precise estimate before treatment.",
   },
   {
-    question: "02. What are the potential benefits?",
-    answer: "While individual experiences vary, many clients report feeling increased daily energy, improved mental clarity, and faster recovery after intense schedules or workouts. NAD+ is designed to support the body’s natural metabolic and cellular repair processes.",
+    question: "02. Is IV Therapy painful?",
+    answer: "IV therapy usually involves only a brief pinch when the IV is inserted. Once the IV is in place, the treatment itself should not be painful, although some people may experience mild discomfort at the insertion site.",
   },
   {
-    question: "03. How long does a session take?",
-    answer: "A typical NAD+ IV drip takes between 2 to 4 hours, depending on the dosage and individual tolerance. During the session, clients relax in our comfortable wellness space.",
+    question: "03. How often should I get IV Therapy?",
+    answer: "There is no single schedule that works for everyone. The appropriate frequency depends on your health goals, the type of IV treatment and your individual needs. A healthcare professional should determine whether repeat sessions are appropriate.",
   },
   {
-    question: "04. Will I feel results immediately?",
-    answer: "Some clients notice a boost in energy and mental clarity shortly after their first session, while others may feel the effects more gradually over the following days. Results often compound with multiple sessions.",
+    question: "04. Can IV Therapy support energy and recovery?",
+    answer: "IV therapy can quickly deliver fluids and nutrients into the bloodstream. This may be useful when hydration or specific nutrient replacement is needed. However, evidence for IV vitamin therapy as a general wellness or energy treatment remains limited, so benefits depend on the individual and the treatment provided.",
   },
   {
-    question: "05. Who is a good candidate for NAD+?",
-    answer: "NAD+ Therapy is often chosen by individuals experiencing chronic fatigue, brain fog, high stress, or those looking to support their overall wellness and healthy aging. However, it is not for everyone. Our medical team conducts a thorough assessment before any treatment to ensure it is appropriate for you.",
+    question: "05. Is there downtime?",
+    answer: "IV therapy generally does not require a recovery period. Most people can return to their normal activities after the infusion, depending on how they feel and what was administered. Your provider may recommend specific precautions based on your treatment.",
   },
 ];
 
@@ -36,7 +36,7 @@ export default function IvTherapyFAQ() {
     <section className="relative overflow-hidden bg-white px-5 sm:px-10 py-16 sm:py-20">
       <FadeIn as="div" y={30}>
         <h2 className="text-[#313242] text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske font-normal text-center">
-          {t("NAD+ Therapy Questions Clients Often Ask")}
+          {t("IV Therapy Questions Clients Often Ask")}
         </h2>
       </FadeIn>
 
