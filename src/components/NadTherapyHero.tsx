@@ -1,10 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { StaggerContainer, StaggerItem, btnHover } from "./Animations";
+import { useLanguage, useT } from "@/i18n/LanguageProvider";
+import { ml, sv, toLang } from "@/lib/i18n-helpers";
+import { StaggerContainer, StaggerItem } from "./Animations";
 import BookButton from "./BookButton";
-import { useT, useLanguage } from "@/i18n/LanguageProvider";
-import { ml, toLang, sv } from "@/lib/i18n-helpers";
 
 export default function NadTherapyHero({ cms, editing }: { cms?: Record<string, unknown>; editing?: boolean }) {
   const t = useT();
@@ -21,10 +20,10 @@ export default function NadTherapyHero({ cms, editing }: { cms?: Record<string, 
   return (
     <section
       {...e("section","hero")}
-      className={`bg-cover bg-center bg-no-repeat rounded-b-[60px] px-5 sm:px-10 pt-20 sm:pt-24 pb-10 sm:pb-16 min-h-[100vh] flex flex-col overflow-hidden bg-[#CBA07D] ${editing ? "cursor-pointer hover:ring-2 hover:ring-white" : ""}`}
+      className={`bg-cover bg-center bg-no-repeat rounded-b-[60px] px-5 sm:px-10 pt-20 sm:pt-24 pb-10 sm:pb-16 min-h-[100vh] flex flex-col overflow-hidden ${!cmsBg ? "bg-[url(/nad-bg.png)]" : ""} ${editing ? "cursor-pointer hover:ring-2 hover:ring-white" : ""}`}
       style={cmsBg ? { backgroundImage: `url(${cmsBg})` } : {}}
     >
-      <StaggerContainer staggerDelay={0.15} className="w-full flex-1 flex flex-col justify-center">
+      <StaggerContainer staggerDelay={0.15} className="w-full flex-1 flex flex-col">
         <StaggerItem>
           <div className="group flex flex-col items-start gap-2 mb-4 sm:mb-6 sm:flex-row sm:items-center sm:flex-wrap">
             <div className="flex items-center gap-2">
@@ -50,13 +49,13 @@ export default function NadTherapyHero({ cms, editing }: { cms?: Record<string, 
 
         <StaggerItem>
           <p {...e("text","hero_subtitle")} className={`${subtitleFont || ""} text-white text-[16px] font-semibold leading-relaxed mt-6 max-w-[680px] ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`} style={{ ...(cms ? { color: sv(cms.subtitleColor) || undefined, fontSize: cms.subtitleSize ? `${cms.subtitleSize}px` : undefined } : {}) }}>
-            {cmsSubtitle ? t(cmsSubtitle) : t("Experience the powerful anti-aging and energy-boosting benefits of NAD+ Therapy. Replenish your body's cellular energy, improve cognitive function, and enhance overall vitality.")}
+            {cmsSubtitle ? t(cmsSubtitle) : t("Support your body's natural energy production, cognitive performance, recovery, and healthy aging with personalized NAD+ therapy administered under medical supervision.")}
           </p>
         </StaggerItem>
 
         <StaggerItem className="mt-8 sm:mt-10">
           <div {...e("button","hero_buttons")} className={`flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`}>
-            <BookButton style={{ backgroundColor: "#fff", color: "#000" }} className="w-full sm:w-auto" label={cmsPrimaryBtn ? t(cmsPrimaryBtn) : t("Book NAD+ Therapy")} />
+            <BookButton style={{ backgroundColor: "#fff", color: "#000" }} className="w-full sm:w-auto px-6 py-3 rounded-[10px] font-bold text-[14px]" label={cmsPrimaryBtn ? t(cmsPrimaryBtn) : t("Book Consultation")} />
           </div>
         </StaggerItem>
       </StaggerContainer>
