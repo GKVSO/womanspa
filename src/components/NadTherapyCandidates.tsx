@@ -7,13 +7,13 @@ import { FadeIn } from "./Animations";
 import BookButton from "./BookButton";
 
 const bullets = [
-  "low daily energy",
-  "chronic fatigue",
-  "brain fog",
-  "slower recovery",
-  "high stress lifestyles",
-  "reduced mental focus",
-  "healthy aging concerns",
+  "Energy",
+  "Focus",
+  "Recovery support",
+  "Busy lifestyles",
+  "Travel recovery",
+  "Wellness maintenance",
+  "Overall Wellness",
 ];
 
 export default function NadTherapyCandidates() {
@@ -38,32 +38,32 @@ export default function NadTherapyCandidates() {
       <div className="relative z-10 mt-8 lg:-mt-[150px] w-full">
         <div className="absolute top-1/2 left-1/2 -translate-x-[110%] -translate-y-[15%] z-20">
           <FadeIn as="div" y={30}>
-            <div className="bg-white/80 rounded-[30px] p-6 sm:p-10 w-full sm:w-[620px] backdrop-blur-sm">
-              <div className="flex flex-col lg:flex-row justify-between items-stretch lg:items-end gap-6 lg:gap-10">
+            <div className="bg-white/80 rounded-[30px] p-6 sm:p-8 xl:p-10 w-[85vw] sm:w-[350px] md:w-[450px] xl:w-[620px] backdrop-blur-sm">
+              <div className="flex flex-col xl:flex-row justify-between items-stretch xl:items-end gap-6 xl:gap-10">
                 <div>
-                  <h3 className="text-[#313242] font-bold text-[20px] min-[768px]:text-[32px] mb-6">
+                  <h3 className="text-[#313242] font-bold text-[20px] md:text-[24px] xl:text-[32px] mb-4 xl:mb-6">
                     {t("Especially Ideal For:")}
                   </h3>
-                  <p className="text-[#313242] font-semibold text-[14px] min-[768px]:text-[16px] mb-4">
+                  <p className="text-[#313242] font-semibold text-[14px] xl:text-[16px] mb-3 xl:mb-4">
                     {t("NAD+ Therapy may be ideal for individuals experiencing:")}
                   </p>
-                  <ul className="space-y-2">
+                  <ul className="space-y-1.5 xl:space-y-2">
                     {bullets.map((item, i) => (
                       <motion.li
                         key={item}
-                        className="flex items-start gap-3 text-[#313242] font-semibold text-[14px] min-[768px]:text-[16px]"
+                        className="flex items-start gap-2.5 xl:gap-3 text-[#313242] font-semibold text-[13px] md:text-[14px] xl:text-[16px]"
                         initial={{ opacity: 0, x: -15 }}
                         whileInView={{ opacity: 1, x: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.4, delay: i * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
                       >
-                        <span className="w-2 h-2 rounded-full flex-shrink-0 mt-1.5" style={{ backgroundColor: "#9A6D44" }} />
+                        <span className="w-1.5 h-1.5 xl:w-2 xl:h-2 rounded-full flex-shrink-0 mt-1.5" style={{ backgroundColor: "#9A6D44" }} />
                         {t(item)}
                       </motion.li>
                     ))}
                   </ul>
                 </div>
-                <BookButton className="mt-6" style={{ backgroundColor: "#B07E3F" }}>
+                <BookButton className="mt-5 xl:mt-6" style={{ backgroundColor: "#B07E3F" }}>
                   {t("Book Consultation")}
                 </BookButton>
               </div>
