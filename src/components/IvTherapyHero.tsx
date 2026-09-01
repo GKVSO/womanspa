@@ -20,7 +20,7 @@ export default function IvTherapyHero({ cms, editing }: { cms?: Record<string, u
   return (
     <section
       {...e("section","hero")}
-      className={`bg-cover bg-no-repeat bg-right lg:bg-center rounded-b-[60px] px-5 sm:px-10 pt-20 sm:pt-24 pb-10 sm:pb-16 min-h-[100vh] flex flex-col overflow-hidden ${!cmsBg ? "bg-[url(/nad-bg.png)]" : ""} ${editing ? "cursor-pointer hover:ring-2 hover:ring-white" : ""}`}
+      className={`bg-cover bg-no-repeat bg-right lg:bg-center rounded-b-[60px] px-5 sm:px-10 pt-20 sm:pt-24 pb-10 sm:pb-16 min-h-[100vh] flex flex-col overflow-hidden ${!cmsBg ? "bg-[url(/iv-bg.png)]" : ""} ${editing ? "cursor-pointer hover:ring-2 hover:ring-white" : ""}`}
       style={cmsBg ? { backgroundImage: `url(${cmsBg})` } : {}}
     >
       <StaggerContainer staggerDelay={0.15} className="w-full flex-1 flex flex-col">
