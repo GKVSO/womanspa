@@ -148,8 +148,17 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [bookingOpen, setBookingOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
   const isMobile = useIsMobile();
   const t = useT();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const slideHidden = isMobile ? { y: "-100%" } : { x: "-100%" };
   const slideShown = isMobile ? { y: 0 } : { x: 0 };
@@ -157,7 +166,7 @@ export default function Header() {
   return (
     <>
       <motion.header
-        className="flex items-center justify-between px-4 sm:px-10 py-4 w-full absolute top-0 left-0 right-0 z-[130]"
+        className={`flex items-center justify-between px-4 sm:px-10 py-4 w-full fixed top-0 left-0 right-0 z-[130] transition-colors duration-300 ${scrolled ? "bg-[#CBA07D] shadow-md" : "bg-transparent"}`}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
