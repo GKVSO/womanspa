@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { FadeIn, StaggerContainer, StaggerItem } from "./Animations";
 import { useT } from "@/i18n/LanguageProvider";
+import { useDraggableScroll } from "./useDraggableScroll";
 
 const filters = ["All Reviews", "Body Contouring", "Skin Rejuvenation", "Laser Hair Removal", "Wellness"];
 
@@ -78,6 +79,7 @@ export default function FemTouchReviewsSlider() {
   const t = useT();
   const [activeFilter, setActiveFilter] = useState("All Reviews");
   const trackRef = useRef<HTMLDivElement>(null);
+  useDraggableScroll(trackRef);
   const [scrollPos, setScrollPos] = useState(0);
   const [maxScroll, setMaxScroll] = useState(0);
 
@@ -267,3 +269,4 @@ function ReviewCard({ review }: { review: Review }) {
     </div>
   );
 }
+
