@@ -129,7 +129,7 @@ export default function NadTherapyBenefitsGrid({ cms, editing }: { cms?: Record<
         />
       </motion.div>
 
-      <div ref={cardsRef} className="relative z-20 -mt-15 min-[768px]:-mt-[210px] w-full">
+      <div ref={cardsRef} className="relative z-20 -mt-15 md:-mt-[90px] lg:-mt-[210px] w-full">
         <div
           className="absolute w-1/3 aspect-square top-0 right-1/2 translate-x-1/2 -translate-y-1/2 rounded-full blur-[35px] opacity-70 bg-[#CBA07D]"
         />
