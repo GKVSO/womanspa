@@ -1,10 +1,10 @@
 "use client";
 
-import { useRef } from "react";
+import { useLanguage, useT } from "@/i18n/LanguageProvider";
+import { ml, sv, toLang } from "@/lib/i18n-helpers";
 import { motion, useScroll, useSpring, useTransform, type MotionValue } from "framer-motion";
 import Image from "next/image";
-import { useT, useLanguage } from "@/i18n/LanguageProvider";
-import { ml, toLang, sv } from "@/lib/i18n-helpers";
+import { useRef } from "react";
 
 const cards = [
   {
@@ -131,8 +131,7 @@ export default function NadTherapyBenefitsGrid({ cms, editing }: { cms?: Record<
 
       <div ref={cardsRef} className="relative z-20 -mt-8 min-[768px]:-mt-[100px] w-full">
         <div
-          className="absolute -inset-8 rounded-[60px]"
-          style={{ backgroundColor: "#CBA07D", filter: "blur(10px)", opacity: 0.9 }}
+          className="absolute size-1/3 top-0 right-1/2 translate-x-1/2 -translate-y-1/2 rounded-full blur-[10px] opacity-90 bg-[#CBA07D]"
         />
         <div className="relative rounded-[40px]" style={{ backgroundColor: "#CBA07D" }}>
           <div {...e("card","benefits_items")} className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8 ${editing ? "cursor-pointer hover:ring-2 hover:ring-white" : ""}`}>
