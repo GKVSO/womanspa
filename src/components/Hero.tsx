@@ -11,6 +11,7 @@ interface HeroProps {
   description?: string;
   primaryBtn?: string;
   secondaryBtn?: string;
+  secondaryBtnHref?: string;
   showButtons?: boolean;
   children?: React.ReactNode;
 }
@@ -22,6 +23,7 @@ export default function Hero({
   description,
   primaryBtn = "Book Consultation",
   secondaryBtn = "View Before / After",
+  secondaryBtnHref = "#before-after",
   showButtons = true,
   children,
 }: HeroProps) {
@@ -74,9 +76,9 @@ export default function Hero({
               <motion.button {...btnHover} className="w-full sm:w-auto bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
                 {t(primaryBtn)}
               </motion.button>
-              <motion.button {...btnHover} className="w-full sm:w-auto text-white font-bold text-[14px] border border-white rounded-[10px] px-8 py-4 bg-transparent hover:bg-white/10 transition-colors cursor-pointer">
+              <motion.a href={secondaryBtnHref} {...btnHover} className="flex items-center justify-center w-full sm:w-auto text-white font-bold text-[14px] border border-white rounded-[10px] px-8 py-4 bg-transparent hover:bg-white/10 transition-colors cursor-pointer text-center">
                 {t(secondaryBtn)}
-              </motion.button>
+              </motion.a>
             </div>
           </StaggerItem>
         )}
