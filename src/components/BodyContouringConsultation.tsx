@@ -11,7 +11,7 @@ export default function BodyContouringConsultation() {
   const t = useT();
 
   return (
-    <section className="hidden min-[1600px]:block bg-cover bg-center bg-no-repeat rounded-t-[60px] px-5 sm:px-10 py-16 sm:py-20 "
+    <section id="treatments" className="hidden min-[1600px]:block bg-cover bg-center bg-no-repeat rounded-t-[60px] px-5 sm:px-10 py-16 sm:py-20 "
       >
       <FadeIn as="div" className="flex flex-col lg:flex-row gap-10 lg:gap-12 max-w-[1440px] mx-auto" y={30}>
         <div className="flex-1">

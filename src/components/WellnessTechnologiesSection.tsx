@@ -35,7 +35,7 @@ const technologies = [
 export default function WellnessTechnologiesSection() {
   const t = useT();
   return (
-    <FadeIn as="section" className="flex justify-center py-20">
+    <FadeIn id="treatments" as="section" className="flex justify-center py-20">
       <div className="w-[92%] sm:w-[90%]">
         <StaggerContainer staggerDelay={0.1}>
           <StaggerItem className="w-full flex flex-col items-center justify-center">

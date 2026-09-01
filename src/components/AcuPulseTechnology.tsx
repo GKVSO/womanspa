@@ -45,7 +45,7 @@ function Divider() {
 export default function AcuPulseTechnology() {
   const t = useT();
   return (
-    <section className="relative overflow-hidden px-5 sm:px-10 pt-14 sm:pt-32 pb-16 sm:pb-40 bg-[#EFEEF1] min-[1200px]:bg-[url(/acupulse-tech-bg.webp)] min-[1200px]:bg-cover min-[1200px]:bg-center min-[1200px]:bg-no-repeat">
+    <section id="treatments" className="relative overflow-hidden px-5 sm:px-10 pt-14 sm:pt-32 pb-16 sm:pb-40 bg-[#EFEEF1] min-[1200px]:bg-[url(/acupulse-tech-bg.webp)] min-[1200px]:bg-cover min-[1200px]:bg-center min-[1200px]:bg-no-repeat">
       <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 items-start lg:justify-between">
         <StaggerContainer staggerDelay={0.12} className="max-w-[760px] min-[1200px]:max-w-[350px] min-[1600px]:max-w-[760px]">
           <StaggerItem>

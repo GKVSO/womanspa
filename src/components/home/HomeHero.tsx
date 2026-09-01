@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { smoothScrollToTarget } from "@/lib/scroll";
 import { StaggerContainer, StaggerItem, btnHover } from "../Animations";
 import { useT } from "@/i18n/LanguageProvider";
 
@@ -48,7 +49,7 @@ export default function HomeHero() {
             <motion.button {...btnHover} className="w-full sm:w-auto bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
               {t("Book Consultation")}
             </motion.button>
-            <motion.button {...btnHover} className="w-full sm:w-auto text-white font-bold text-[14px] border border-white rounded-[10px] px-8 py-4 bg-transparent hover:bg-white/10 transition-colors cursor-pointer">
+            <motion.button onClick={() => smoothScrollToTarget('treatments')} {...btnHover} className="w-full sm:w-auto text-white font-bold text-[14px] border border-white rounded-[10px] px-8 py-4 bg-transparent hover:bg-white/10 transition-colors cursor-pointer">
               {t("Explore Treatments")}
             </motion.button>
           </div>

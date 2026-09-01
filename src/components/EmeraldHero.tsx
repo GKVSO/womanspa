@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { smoothScrollToTarget } from "@/lib/scroll";
 import { StaggerContainer, StaggerItem, btnHover } from "./Animations";
 import BookButton from "./BookButton";
 import { useT, useLanguage } from "@/i18n/LanguageProvider";
@@ -57,7 +58,7 @@ export default function EmeraldHero({ cms, editing }: { cms?: Record<string, unk
         <StaggerItem className="mt-auto sm:mt-0">
           <div {...e("button","hero_buttons")} className={`flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mt-8 sm:mt-10 ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`}>
             <BookButton className="w-full sm:w-auto bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 cursor-pointer" label={cmsPrimaryBtn ? t(cmsPrimaryBtn) : t("Book Free Consultation")} />
-            <motion.button {...btnHover} className="w-full sm:w-auto bg-transparent text-white font-bold text-[14px] rounded-[10px] px-8 py-4 border border-white hover:bg-white/10 transition-colors cursor-pointer">
+            <motion.button onClick={() => smoothScrollToTarget('treatments')} {...btnHover} className="w-full sm:w-auto bg-transparent text-white font-bold text-[14px] rounded-[10px] px-8 py-4 border border-white hover:bg-white/10 transition-colors cursor-pointer">
               {cmsSecondaryBtn ? t(cmsSecondaryBtn) : t("Our Treatments")}</motion.button>
           </div>
         </StaggerItem>

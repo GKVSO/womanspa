@@ -31,7 +31,7 @@ function Divider() {
 export default function PrimelaseTechnology() {
   const t = useT();
   return (
-    <section className="relative overflow-hidden px-5 sm:px-10 pt-14 sm:pt-20 pb-16 sm:pb-24 bg-[#ECEDEE] min-[1200px]:bg-[url(/primelase-tech-bg.webp)] min-[1200px]:bg-cover min-[1200px]:bg-no-repeat min-[1200px]:bg-[position:center]">
+    <section id="treatments" className="relative overflow-hidden px-5 sm:px-10 pt-14 sm:pt-20 pb-16 sm:pb-24 bg-[#ECEDEE] min-[1200px]:bg-[url(/primelase-tech-bg.webp)] min-[1200px]:bg-cover min-[1200px]:bg-no-repeat min-[1200px]:bg-[position:center]">
       <div className="flex flex-col">
         <StaggerContainer staggerDelay={0.12} className="max-w-[760px]">
           <StaggerItem>
