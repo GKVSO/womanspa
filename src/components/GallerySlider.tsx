@@ -76,7 +76,7 @@ export default function GallerySlider() {
   const isLast = scrollPos >= maxScroll - 1;
 
   return (
-    <FadeIn as="section" className="flex justify-center py-20">
+    <FadeIn id="before-after" as="section" className="flex justify-center py-20">
       <div className="w-[90%]">
         <StaggerContainer staggerDelay={0.12}>
           <StaggerItem>

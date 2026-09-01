@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { smoothScrollToTarget } from "@/lib/scroll";
 import { StaggerContainer, StaggerItem, btnHover } from "./Animations";
 import { useT, useLanguage } from "@/i18n/LanguageProvider";
 import { ml, toLang, sv, nv } from "@/lib/i18n-helpers";
@@ -153,7 +154,7 @@ export default function XerfHero({ cms, editing }: { cms?: Record<string, unknow
             >
               {cmsPrimaryBtn ? t(cmsPrimaryBtn) : t("Claim 100$ Consultation")}
             </motion.button>
-            <motion.button {...btnHover} className="w-full sm:w-auto text-white font-bold text-[14px] border border-white rounded-[10px] px-8 py-4 bg-transparent hover:bg-white/10 transition-colors cursor-pointer">
+            <motion.button onClick={() => smoothScrollToTarget('before-after')} {...btnHover} className="w-full sm:w-auto text-white font-bold text-[14px] border border-white rounded-[10px] px-8 py-4 bg-transparent hover:bg-white/10 transition-colors cursor-pointer">
               {cmsSecondaryBtn ? t(cmsSecondaryBtn) : t("Before&amp;After")}
             </motion.button>
           </div>

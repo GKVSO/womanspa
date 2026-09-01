@@ -70,7 +70,7 @@ const groups = [
 export default function HomeTreatments() {
   const t = useT();
   return (
-    <section className="bg-[#F1F2F4] px-5 sm:px-10 py-16 sm:py-24">
+    <section id="treatments" className="bg-[#F1F2F4] px-5 sm:px-10 py-16 sm:py-24">
       <StaggerContainer staggerDelay={0.1}>
         <StaggerItem className="w-full">
           <h2 className="text-black text-[24px] min-[768px]:text-[36px] font-berlingske leading-tight text-left">

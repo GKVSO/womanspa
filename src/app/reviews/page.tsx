@@ -12,7 +12,8 @@ export default function ReviewsPage() {
           titleFirst="Client Reviews at"
           titleSecond="WO/MAN Luxe MedSpa"
           primaryBtn="Book Consultation"
-          secondaryBtn="View Before / After"
+          secondaryBtn="Read Reviews"
+          secondaryBtnHref="#reviews"
         />
         <ReviewsSlider />
         <Consultation />

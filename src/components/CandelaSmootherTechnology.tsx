@@ -40,7 +40,7 @@ function Divider() {
 export default function CandelaSmootherTechnology() {
   const t = useT();
   return (
-    <section className="relative overflow-hidden px-5 sm:px-10 pt-14 sm:pt-20 pb-0 bg-[#F2F1F3] lg: lg:bg-contain lg:bg-no-repeat lg:bg-center bg-[url(/candela-smoother-tech-bg.webp)]"
+    <section id="treatments" className="relative overflow-hidden px-5 sm:px-10 pt-14 sm:pt-20 pb-0 bg-[#F2F1F3] lg: lg:bg-contain lg:bg-no-repeat lg:bg-center bg-[url(/candela-smoother-tech-bg.webp)]"
       >
       <div className="flex flex-col">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 flex-1 items-stretch lg:justify-between">

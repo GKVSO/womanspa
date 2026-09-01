@@ -134,7 +134,7 @@ export default function ReviewsSlider() {
   const isLast = scrollPos >= maxScroll - 1;
 
   return (
-    <FadeIn as="section" className="flex justify-center py-20">
+    <FadeIn id="reviews" as="section" className="flex justify-center py-20">
       <div className="w-[90%]">
         <StaggerContainer staggerDelay={0.12}>
           <StaggerItem>

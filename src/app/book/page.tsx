@@ -29,6 +29,7 @@ export default async function BookPage() {
             description="Schedule your consultation or treatment online. Fast, secure, and confirmed instantly."
             primaryBtn="Book Consultation"
             secondaryBtn="View Before / After"
+            secondaryBtnHref="/before-after"
           />
 
           <section className="px-5 sm:px-10 py-10 sm:py-16" style={{ backgroundColor: "#F1F2F4" }}>

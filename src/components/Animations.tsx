@@ -8,12 +8,14 @@ interface FadeInProps {
   y?: number;
   className?: string;
   as?: "div" | "section";
+  id?: string;
 }
 
-export function FadeIn({ children, delay = 0, y = 30, className, as = "div" }: FadeInProps) {
+export function FadeIn({ children, delay = 0, y = 30, className, as = "div", id }: FadeInProps) {
   const Component = as === "section" ? motion.section : motion.div;
   return (
     <Component
+      id={id}
       className={className}
       initial={{ opacity: 0, y }}
       whileInView={{ opacity: 1, y: 0 }}
