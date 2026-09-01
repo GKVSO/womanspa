@@ -131,7 +131,7 @@ export default function IvTherapyBenefitsGrid({ cms, editing }: { cms?: Record<s
 
       <div ref={cardsRef} className="relative z-20 -mt-15 md:-mt-[90px] lg:-mt-[210px] w-full">
         <div
-          className="absolute w-1/3 aspect-square top-0 right-1/2 translate-x-1/2 -translate-y-1/2 rounded-full blur-[35px] opacity-70 bg-[#CBA07D]"
+          className="absolute w-1/3 aspect-square top-0 right-1/2 translate-x-1/2 -translate-y-[30%] rounded-full blur-[45px] opacity-90 bg-[#CBA07D]"
         />
         <div className="relative rounded-[40px]" style={{ backgroundColor: "#CBA07D" }}>
           <div {...e("card","benefits_items")} className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8 ${editing ? "cursor-pointer hover:ring-2 hover:ring-white" : ""}`}>
