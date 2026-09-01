@@ -109,3 +109,50 @@ export function smoothScrollToTarget(
 
   requestAnimationFrame(animation);
 }
+
+export function setupAnchorInterceptor() {
+  // 1. Check if there's a hash on initial load and scroll to it smoothly
+  if (typeof window !== 'undefined' && window.location.hash) {
+    const targetId = window.location.hash.substring(1);
+    // Give the page a tiny bit of time to render the DOM elements
+    setTimeout(() => {
+      const element = document.getElementById(targetId);
+      if (element) {
+        smoothScrollToTarget(targetId);
+      }
+    }, 100);
+  }
+
+  // 2. Intercept clicks on anchor links
+  const handleClick = (e: MouseEvent) => {
+    const target = (e.target as HTMLElement).closest('a');
+    if (!target) return;
+
+    const href = target.getAttribute('href');
+    if (!href) return;
+
+    // Check if it targets an anchor on the current page
+    const pathname = window.location.pathname;
+    let targetId = '';
+    
+    if (href.startsWith('#')) {
+      targetId = href.substring(1);
+    } else if (href.startsWith(pathname + '#')) {
+      targetId = href.substring(pathname.length + 1);
+    } else if (pathname === '/' && href.startsWith('/#')) {
+      targetId = href.substring(2);
+    }
+
+    if (targetId) {
+      const element = document.getElementById(targetId);
+      if (element) {
+        e.preventDefault();
+        window.history.pushState(null, '', '#' + targetId);
+        smoothScrollToTarget(targetId);
+      }
+    }
+  };
+
+  document.addEventListener('click', handleClick);
+  return () => document.removeEventListener('click', handleClick);
+}

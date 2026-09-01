@@ -7,6 +7,7 @@ import Link from "next/link";
 import { btnHover } from "./Animations";
 import BookingModal from "./BookingModal";
 import { useLanguage, useT, LANGUAGES, type Lang } from "@/i18n/LanguageProvider";
+import { setupAnchorInterceptor } from "@/lib/scroll";
 
 const menuGroups = [
   {
@@ -157,7 +158,13 @@ export default function Header() {
       setScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    
+    const cleanupAnchor = setupAnchorInterceptor();
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      cleanupAnchor();
+    };
   }, []);
 
   const slideHidden = isMobile ? { y: "-100%" } : { x: "-100%" };
@@ -189,7 +196,7 @@ export default function Header() {
             </motion.button>
             <nav className={`flex items-center gap-6 ${open ? "hidden" : ""}`}>
               {[
-                { label: "Treatments", href: "/" },
+                { label: "Treatments", href: "/#treatments" },
                 { label: "About Us", href: "/reviews" },
                 { label: "Blog", href: "/journal" },
               ].map((item) => (
