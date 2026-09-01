@@ -53,7 +53,7 @@ export default function NadTherapyHero({ cms, editing }: { cms?: Record<string, 
           </p>
         </StaggerItem>
 
-        <StaggerItem className="mt-8 sm:mt-10">
+        <StaggerItem className="mt-auto sm:mt-10">
           <div {...e("button","hero_buttons")} className={`flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`}>
             <BookButton style={{ backgroundColor: "#fff", color: "#000" }} className="w-full sm:w-auto px-6 py-3 rounded-[10px] font-bold text-[14px]" label={cmsPrimaryBtn ? t(cmsPrimaryBtn) : t("Book Consultation")} />
           </div>
