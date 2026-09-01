@@ -221,23 +221,29 @@ export default function Header() {
             <LanguageSwitcher light />
           </div>
 
-          <motion.div
+          <motion.a
+            href="https://api.whatsapp.com/send/?phone=13053369373&text=Hi%21+I%E2%80%99m+interested+in+booking+at+WO%2FMAN+Luxe+MedSpa.+Can+you+help+me+with+available+dates+and+next+steps%3F&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
             className="lg:hidden flex border border-white rounded-[15px] p-2 items-center justify-center"
             whileHover={{ scale: 1.08, backgroundColor: "rgba(255,255,255,0.1)" }}
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.3 }}
           >
             <Image src="/whatsapp-icon.svg" alt={t("WhatsApp")} width={20} height={20} />
-          </motion.div>
+          </motion.a>
 
-          <motion.div
+          <motion.a
+            href="https://api.whatsapp.com/send/?phone=13053369373&text=Hi%21+I%E2%80%99m+interested+in+booking+at+WO%2FMAN+Luxe+MedSpa.+Can+you+help+me+with+available+dates+and+next+steps%3F&type=phone_number&app_absent=0"
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden lg:flex border border-white rounded-[15px] p-2 items-center justify-center"
             whileHover={{ scale: 1.08, backgroundColor: "rgba(255,255,255,0.1)" }}
             whileTap={{ scale: 0.95 }}
             transition={{ duration: 0.3 }}
           >
             <Image src="/whatsapp-icon.svg" alt={t("WhatsApp")} width={20} height={20} />
-          </motion.div>
+          </motion.a>
 
           <motion.button
             {...btnHover}
