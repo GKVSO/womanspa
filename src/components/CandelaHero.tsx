@@ -1,10 +1,11 @@
 "use client";
 
+import { useLanguage, useT } from "@/i18n/LanguageProvider";
+import { ml, sv, toLang } from "@/lib/i18n-helpers";
+import { smoothScrollToTarget } from "@/lib/scroll";
 import { motion } from "framer-motion";
 import { StaggerContainer, StaggerItem, btnHover } from "./Animations";
 import BookButton from "./BookButton";
-import { useT, useLanguage } from "@/i18n/LanguageProvider";
-import { ml, toLang, sv, px, nv } from "@/lib/i18n-helpers";
 
 const cards = [
   {
@@ -77,7 +78,7 @@ export default function CandelaHero({ cms, editing }: { cms?: Record<string, unk
         <StaggerItem className="mt-auto sm:mt-0">
           <div {...e("button","hero_buttons")} className={`flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mt-8 sm:mt-10 ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`}>
             <BookButton className="w-full sm:w-auto bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer" label={cmsPrimaryBtn ? t(cmsPrimaryBtn) : t("Book Skin Consultation")} />
-            <motion.button {...btnHover} className="w-full sm:w-auto text-white font-bold text-[14px] border border-white rounded-[10px] px-8 py-4 bg-transparent hover:bg-white/10 transition-colors cursor-pointer">
+            <motion.button onClick={() => smoothScrollToTarget('before-after')} {...btnHover} className="w-full sm:w-auto text-white font-bold text-[14px] border border-white rounded-[10px] px-8 py-4 bg-transparent hover:bg-white/10 transition-colors cursor-pointer">
               {cmsSecondaryBtn ? t(cmsSecondaryBtn) : t("View Before &amp; After")}</motion.button>
           </div>
         </StaggerItem>
