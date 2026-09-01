@@ -19,33 +19,26 @@ const bullets = [
 export default function IvTherapyCandidates() {
   const t = useT();
   return (
-    <section className="relative overflow-hidden rounded-b-[60px] px-5 sm:px-10 pt-16 sm:pt-24"
-      style={{
-        backgroundColor: "#CFD2D8",
-        backgroundSize: "contain",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-      }}
-    >
+    <section className="relative overflow-hidden rounded-[60px] px-5 sm:px-10 pt-16 sm:pt-24 bg-[#cfd2d8] bg-contain bg-no-repeat bg-center">
       <FadeIn as="div" y={30}>
-        <h2 className="text-center text-white text-[32px] min-[768px]:text-[48px] min-[1200px]:text-[70px] min-[1600px]:text-[100px] leading-tight font-berlingske font-normal">
-          {t("Who NAD+")}
+        <h2 className="relative z-[100] text-center text-white text-[32px] min-[768px]:text-[48px] min-[1200px]:text-[70px] min-[1600px]:text-[100px] leading-tight font-berlingske font-normal">
+          {t("Who IV")}
           <br />
           {t("Therapy Is Best Suited For")}
         </h2>
       </FadeIn>
 
-      <div className="relative z-10 mt-8 lg:-mt-[150px] w-full">
-        <div className="absolute top-1/2 left-1/2 -translate-x-[110%] -translate-y-[15%] z-20">
+      <div className="relative z-10 mt-[30px] md:mt-8 mt-54 lg:-mt-[30px] xl:-mt-[150px] w-full">
+        <div className="md:absolute top-0 lg:top-1/2 left-1/2 md:-translate-x-[80%] lg:-translate-x-[110%] lg:-translate-y-[40%] xl:-translate-x-[100%] xl:-translate-y-[15%] z-20">
           <FadeIn as="div" y={30}>
-            <div className="bg-white/80 rounded-[30px] p-6 sm:p-8 xl:p-10 w-[85vw] sm:w-[350px] md:w-[450px] xl:w-[620px] backdrop-blur-sm">
+            <div className="bg-white/80 rounded-[30px] p-6 sm:p-8 xl:p-10 w-full md:w-[85vw] sm:w-[350px] md:w-[450px] xl:w-[620px] backdrop-blur-sm">
               <div className="flex flex-col xl:flex-row justify-between items-stretch xl:items-end gap-6 xl:gap-10">
                 <div>
                   <h3 className="text-[#313242] font-bold text-[20px] md:text-[24px] xl:text-[32px] mb-4 xl:mb-6">
                     {t("Especially Ideal For:")}
                   </h3>
                   <p className="text-[#313242] font-semibold text-[14px] xl:text-[16px] mb-3 xl:mb-4">
-                    {t("NAD+ Therapy may be ideal for individuals experiencing:")}
+                    {t("IV Therapy may be ideal for individuals experiencing:")}
                   </p>
                   <ul className="space-y-1.5 xl:space-y-2">
                     {bullets.map((item, i) => (
@@ -74,10 +67,10 @@ export default function IvTherapyCandidates() {
         <FadeIn as="div" y={30}>
           <Image
             src="/nad-candidate.png"
-            alt={t("NAD+ ideal candidate")}
+            alt={t("IV ideal candidate")}
             width={2400}
             height={1350}
-            className="w-full h-auto rounded-[30px]"
+            className="w-full h-auto rounded-[30px] translate-x-[60px] lg:translate-x-0"
           />
         </FadeIn>
       </div>
