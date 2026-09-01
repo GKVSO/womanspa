@@ -28,8 +28,8 @@ export default function NadTherapyCandidates() {
         </h2>
       </FadeIn>
 
-      <div className="relative z-10 mt-8 lg:-mt-[150px] w-full">
-        <div className="absolute top-1/2 left-1/2 -translate-x-[110%] -translate-y-[15%] z-20">
+      <div className="relative z-10 mt-8 md:-mt-[30px] xl:-mt-[150px] w-full">
+        <div className="absolute top-1/2 left-1/2 -translate-x-[110%] -translate-y-[45%] xl:-translate-y-[15%] z-20">
           <FadeIn as="div" y={30}>
             <div className="bg-white/80 rounded-[30px] p-6 sm:p-8 xl:p-10 w-[85vw] sm:w-[350px] md:w-[450px] xl:w-[620px] backdrop-blur-sm">
               <div className="flex flex-col xl:flex-row justify-between items-stretch xl:items-end gap-6 xl:gap-10">
