@@ -40,7 +40,7 @@ function Divider() {
 export default function IvTherapyProcess() {
   const t = useT();
   return (
-    <section className="relative overflow-hidden px-5 sm:px-10 pt-16 sm:pt-20 pb-16 sm:pb-24 my-15 my:mt-25 lg:my-30 bg-[#eae8eb] rounded-[60px] bg-cover bg-[70%] lg:bg-[50%] min-[1200px]:bg-center bg-[url(/iv-process-bg.png)] bg-no-repeat">
+    <section className="relative overflow-hidden px-5 sm:px-10 pt-16 sm:pt-20 pb-16 sm:pb-24 my-15 my:mt-25 lg:my-30 bg-[#edecee] rounded-[60px] bg-position-[right_-400px_bottom] min-[1200px]:bg-bottom-center bg-[url(/iv-process-bg.png)] bg-no-repeat">
       <div className="flex flex-col">
         <StaggerContainer staggerDelay={0.12} className="max-w-[760px]">
           <StaggerItem>
