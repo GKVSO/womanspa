@@ -1,10 +1,9 @@
 "use client";
 
+import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import { StaggerContainer, StaggerItem, btnHover } from "../Animations";
-import { useT } from "@/i18n/LanguageProvider";
 
 const groups = [
   {
@@ -82,27 +81,29 @@ export default function HomeTreatments() {
         </StaggerItem>
 
         <StaggerItem>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12 auto-rows-[minmax(297px,auto)]">
             {groups.map((group) => (
               <motion.article
                 key={group.title}
-                className="group relative bg-cover bg-center rounded-[20px] overflow-hidden aspect-[151/100] flex flex-col justify-between"
+                className="group relative bg-cover bg-center rounded-[20px] overflow-hidden flex flex-col justify-between"
                 style={{ backgroundImage: `url(${group.image})` }}
                 whileHover={{ y: -6 }}
                 transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
               >
                 <div className="absolute inset-0 bg-black/30" />
-                <div className="relative z-10 flex flex-col h-full p-8">
-                  <h3 className="text-white font-berlingske text-[18px] min-[768px]:text-[24px] leading-tight max-w-md">
-                    {t(group.title)}
-                  </h3>
-                  <ul className="space-y-1.5 mt-5">
-                    {group.items.map((item) => (
-                      <li key={item} className="text-white text-[14px] min-[768px]:text-[16px] min-[1200px]:text-[14px] min-[1600px]:text-[16px] font-medium leading-snug">
-                        {t(item)}
-                      </li>
-                    ))}
-                  </ul>
+                <div className="relative z-10 flex flex-col justify-between gap-4 h-full p-8">
+                  <div>
+                    <h3 className="text-white font-berlingske text-[18px] min-[768px]:text-[24px] leading-tight max-w-md">
+                      {t(group.title)}
+                    </h3>
+                    <ul className="space-y-1.5 mt-5">
+                      {group.items.map((item) => (
+                        <li key={item} className="text-white text-[14px] min-[768px]:text-[16px] min-[1200px]:text-[14px] min-[1600px]:text-[16px] font-medium leading-snug">
+                          {t(item)}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                   <Link href={group.href} className="self-start mt-auto">
                     <motion.button
                       {...btnHover}
