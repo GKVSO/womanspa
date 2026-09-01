@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import BeforeAfterSlider from "../BeforeAfterSlider";
 import { FadeIn, StaggerContainer, StaggerItem, btnHover } from "../Animations";
 import { useT } from "@/i18n/LanguageProvider";
+import { useDraggableScroll } from "../useDraggableScroll";
 
 const filters = ["All Results", "Body", "Face"];
 
@@ -20,6 +21,7 @@ export default function HomeGallery() {
   const t = useT();
   const [activeFilter, setActiveFilter] = useState("All Results");
   const trackRef = useRef<HTMLDivElement>(null);
+  useDraggableScroll(trackRef);
   const [scrollPos, setScrollPos] = useState(0);
   const [maxScroll, setMaxScroll] = useState(0);
 
@@ -184,3 +186,4 @@ export default function HomeGallery() {
     </FadeIn>
   );
 }
+

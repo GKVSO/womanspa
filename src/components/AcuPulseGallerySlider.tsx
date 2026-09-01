@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import BeforeAfterSlider from "./BeforeAfterSlider";
 import { FadeIn, StaggerContainer, StaggerItem } from "./Animations";
 import { useT } from "@/i18n/LanguageProvider";
+import { useDraggableScroll } from "./useDraggableScroll";
 
 const slides = [
   { id: 1, before: "/before-image.webp", after: "/after-image.webp" },
@@ -17,6 +18,7 @@ const slides = [
 export default function AcuPulseGallerySlider() {
   const t = useT();
   const trackRef = useRef<HTMLDivElement>(null);
+  useDraggableScroll(trackRef);
   const [scrollPos, setScrollPos] = useState(0);
   const [maxScroll, setMaxScroll] = useState(0);
 

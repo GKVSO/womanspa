@@ -4,6 +4,7 @@ import { useState, useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
 import { FadeIn, StaggerContainer, StaggerItem } from "./Animations";
 import { useT } from "@/i18n/LanguageProvider";
+import { useDraggableScroll } from "./useDraggableScroll";
 
 interface Review {
   id: number;
@@ -75,6 +76,7 @@ const reviews: Review[] = [
 export default function ExionReviewsSlider() {
   const t = useT();
   const trackRef = useRef<HTMLDivElement>(null);
+  useDraggableScroll(trackRef);
   const [scrollPos, setScrollPos] = useState(0);
   const [maxScroll, setMaxScroll] = useState(0);
 
@@ -237,3 +239,4 @@ function ReviewCard({ review }: { review: Review }) {
     </div>
   );
 }
+
