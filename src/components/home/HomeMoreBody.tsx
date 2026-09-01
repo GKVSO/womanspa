@@ -1,9 +1,9 @@
 "use client";
 
-import { useRef } from "react";
+import { useT } from "@/i18n/LanguageProvider";
 import { motion, useScroll, useSpring, useTransform, type MotionValue } from "framer-motion";
 import Image from "next/image";
-import { useT } from "@/i18n/LanguageProvider";
+import { useRef } from "react";
 
 const cards = [
   {
@@ -108,14 +108,13 @@ export default function HomeMoreBody() {
           alt={t("Elevated experience")}
           width={1928}
           height={1085}
-          className="h-auto w-[70%]"
+          className="h-auto w-[90%] lg:w-[70%]"
         />
       </motion.div>
 
       <div ref={cardsRef} className="relative z-20 -mt-8 min-[768px]:-mt-[100px] w-full">
         <div
-          className="absolute -inset-8 rounded-[60px]"
-          style={{ backgroundColor: "#CBA07D", filter: "blur(10px)", opacity: 0.9 }}
+          className="absolute -inset-12 blur-[15px] bg-[#CBA07D] rounded-[60px]"
         />
         <div className="relative rounded-[40px]" style={{ backgroundColor: "#CBA07D" }}>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
