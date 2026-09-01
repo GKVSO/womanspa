@@ -28,10 +28,10 @@ export default function NadTherapyCandidates() {
         </h2>
       </FadeIn>
 
-      <div className="relative z-10 mt-8 md:-mt-[30px] xl:-mt-[150px] w-full">
-        <div className="absolute top-1/2 left-1/2 -translate-x-[110%] -translate-y-[45%] xl:-translate-y-[15%] z-20">
+      <div className="relative z-10 mt-[30px] md:mt-8 mt-54 lg:-mt-[30px] xl:-mt-[150px] w-full">
+        <div className="md:absolute top-0 lg:top-1/2 left-1/2 md-translate-x-[80%] lg:-translate-x-[110%] md-translate-y-[45%] xl:-translate-y-[15%] z-20">
           <FadeIn as="div" y={30}>
-            <div className="bg-white/80 rounded-[30px] p-6 sm:p-8 xl:p-10 w-[85vw] sm:w-[350px] md:w-[450px] xl:w-[620px] backdrop-blur-sm">
+            <div className="bg-white/80 rounded-[30px] p-6 sm:p-8 xl:p-10 w-full md:w-[85vw] sm:w-[350px] md:w-[450px] xl:w-[620px] backdrop-blur-sm">
               <div className="flex flex-col xl:flex-row justify-between items-stretch xl:items-end gap-6 xl:gap-10">
                 <div>
                   <h3 className="text-[#313242] font-bold text-[20px] md:text-[24px] xl:text-[32px] mb-4 xl:mb-6">
@@ -70,7 +70,7 @@ export default function NadTherapyCandidates() {
             alt={t("NAD+ ideal candidate")}
             width={2400}
             height={1350}
-            className="w-full h-auto rounded-[30px]"
+            className="w-full h-auto rounded-[30px] translate-x-[60px] lg:translate-x-0"
           />
         </FadeIn>
       </div>
