@@ -1,10 +1,10 @@
 "use client";
 
+import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FadeIn, btnHover } from "./Animations";
+import { FadeIn } from "./Animations";
 import BookButton from "./BookButton";
-import { useT } from "@/i18n/LanguageProvider";
 
 const bullets = [
   "Have mild to moderate skin laxity",
@@ -42,7 +42,7 @@ export default function XerfCandidate() {
           className="w-full sm:w-[50%] h-auto rounded-[30px] mx-auto"
         />
 
-        <div className="lg:absolute lg:right-0 lg:bottom-[25px] lg:z-20 relative w-full lg:w-auto mb-6 lg:mb-0">
+        <div className="lg:absolute lg:right-0 lg:bottom-[25px] lg:z-20 lg:mt-0 -mt-10 relative w-full lg:w-auto mb-6 lg:mb-0">
           <FadeIn as="div" y={30}>
             <div className="bg-white/80 rounded-[30px] p-6 sm:p-10 w-full sm:w-[620px] lg:w-[520px] backdrop-blur-sm">
               <div>
