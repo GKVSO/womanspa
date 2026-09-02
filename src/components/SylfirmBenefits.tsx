@@ -1,10 +1,10 @@
 "use client";
 
-import { useRef } from "react";
+import { useLanguage, useT } from "@/i18n/LanguageProvider";
+import { ml, sv, toLang } from "@/lib/i18n-helpers";
 import { motion, useScroll, useSpring, useTransform, type MotionValue } from "framer-motion";
 import Image from "next/image";
-import { useT, useLanguage } from "@/i18n/LanguageProvider";
-import { ml, toLang, sv } from "@/lib/i18n-helpers";
+import { useRef } from "react";
 
 const cards = [
   {
@@ -134,8 +134,7 @@ export default function SylfirmBenefits({ cms, editing }: { cms?: Record<string,
         className="relative z-20 -mt-12 min-[768px]:-mt-24 min-[1200px]:-mt-[120px] min-[1600px]:-mt-[140px] w-full "
       >
         <div
-          className="absolute -inset-8 rounded-[60px]"
-          style={{ backgroundColor: "#CBA07D", filter: "blur(10px)", opacity: 0.9 }}
+          className="absolute -inset-20 blur-[30px] bg-[#CBA07D] rounded-[60px]"
         />
         <div className="relative rounded-[40px]" style={{ backgroundColor: "#CBA07D" }}>
           <div {...e("card","benefits_items")} className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8 ${editing ? "cursor-pointer hover:ring-2 hover:ring-white" : ""}`}>
