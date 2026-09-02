@@ -33,7 +33,7 @@ export default function EmeraldCandidate() {
         </h2>
       </FadeIn>
 
-      <div className="relative z-20 mt-12 sm:mt-48 ml-auto w-full sm:w-fit">
+      <div className="relative z-20 mt-12 lg:mt-48 mx-auto lg:mr-[unset] w-full sm:w-fit">
         <FadeIn as="div" y={30}>
           <div className="bg-white/80 rounded-[30px] p-6 sm:p-10 w-full sm:w-[620px] backdrop-blur-sm">
             <div className="flex flex-col lg:flex-row justify-between items-stretch lg:items-end gap-6 lg:gap-10">
