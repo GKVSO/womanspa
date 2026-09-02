@@ -15,6 +15,8 @@ export const metadata: Metadata = {
   description: "Woman Med Spa",
 };
 
+import EnvLogger from "@/components/EnvLogger";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -26,6 +28,7 @@ export default function RootLayout({
       className={`${manrope.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-manrope">
+        <EnvLogger />
         <LanguageProvider>
           <BookingModalProvider>{children}</BookingModalProvider>
         </LanguageProvider>
