@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { FadeIn, StaggerContainer, StaggerItem, btnHover } from "./Animations";
 import { useT } from "@/i18n/LanguageProvider";
+import BookButton from "./BookButton";
 
 interface HeroProps {
   titleFirst?: string;
@@ -10,6 +11,7 @@ interface HeroProps {
   singleLineTitle?: string;
   description?: string;
   primaryBtn?: string;
+  primaryBtnHref?: string;
   secondaryBtn?: string;
   secondaryBtnHref?: string;
   showButtons?: boolean;
@@ -22,6 +24,7 @@ export default function Hero({
   singleLineTitle,
   description,
   primaryBtn = "Book Consultation",
+  primaryBtnHref = "/book",
   secondaryBtn = "View Before / After",
   secondaryBtnHref = "#before-after",
   showButtons = true,
@@ -73,9 +76,7 @@ export default function Hero({
         {showButtons && (
           <StaggerItem>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mt-8 sm:mt-10">
-              <motion.button {...btnHover} className="w-full sm:w-auto bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
-                {t(primaryBtn)}
-              </motion.button>
+              <BookButton label={t(primaryBtn)} className="w-full sm:w-auto" />
               <motion.a href={secondaryBtnHref} {...btnHover} className="flex items-center justify-center w-full sm:w-auto text-white font-bold text-[14px] border border-white rounded-[10px] px-8 py-4 bg-transparent hover:bg-white/10 transition-colors cursor-pointer text-center">
                 {t(secondaryBtn)}
               </motion.a>

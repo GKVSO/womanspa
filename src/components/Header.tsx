@@ -8,6 +8,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { btnHover } from "./Animations";
 import BookingModal from "./BookingModal";
+import { useBookingModal } from "./BookingModalProvider";
 
 const menuGroups = [
   {
@@ -148,7 +149,7 @@ function LanguageSwitcher({ light }: { light?: boolean }) {
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  const [bookingOpen, setBookingOpen] = useState(false);
+  const { openModal } = useBookingModal();
   const [expanded, setExpanded] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const isMobile = useIsMobile();
@@ -264,7 +265,7 @@ export default function Header() {
 
           <motion.button
             {...btnHover}
-            onClick={() => setBookingOpen(true)}
+            onClick={openModal}
             className="hidden lg:inline-flex text-white font-bold text-[12px] border border-white rounded-[15px] px-5 py-2 bg-transparent hover:bg-white/10 transition-colors"
           >
             {t("Book an appointment")}
@@ -370,7 +371,7 @@ export default function Header() {
                     {...btnHover}
                     onClick={() => {
                       setOpen(false);
-                      setBookingOpen(true);
+                      openModal();
                     }}
                     className="bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 w-full lg:w-auto cursor-pointer"
                   >
@@ -383,7 +384,6 @@ export default function Header() {
         )}
       </AnimatePresence>
 
-      <BookingModal open={bookingOpen} onClose={() => setBookingOpen(false)} />
     </>
   );
 }

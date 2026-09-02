@@ -28,11 +28,12 @@ export default async function BookPage() {
             singleLineTitle="Book an Appointment"
             description="Schedule your consultation or treatment online. Fast, secure, and confirmed instantly."
             primaryBtn="Book Consultation"
+            primaryBtnHref="#booking-widget"
             secondaryBtn="View Before / After"
             secondaryBtnHref="/before-after"
           />
 
-          <section className="px-5 sm:px-10 py-10 sm:py-16" style={{ backgroundColor: "#F1F2F4" }}>
+          <section id="booking-widget" className="px-5 sm:px-10 py-10 sm:py-16" style={{ backgroundColor: "#F1F2F4" }}>
             <div className="mx-auto max-w-[1100px]">
               {!bookingUrl && !bookingEmbed ? (
                 <div className="text-center py-16 rounded-[30px]" style={{ backgroundColor: "#fff" }}>

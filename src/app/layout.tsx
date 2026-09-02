@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Manrope } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
+import { BookingModalProvider } from "@/components/BookingModalProvider";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -25,7 +26,9 @@ export default function RootLayout({
       className={`${manrope.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-manrope">
-        <LanguageProvider>{children}</LanguageProvider>
+        <LanguageProvider>
+          <BookingModalProvider>{children}</BookingModalProvider>
+        </LanguageProvider>
       </body>
     </html>
   );

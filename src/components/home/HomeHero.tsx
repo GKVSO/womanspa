@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { smoothScrollToTarget } from "@/lib/scroll";
 import { StaggerContainer, StaggerItem, btnHover } from "../Animations";
 import { useT } from "@/i18n/LanguageProvider";
+import BookButton from "../BookButton";
 
 export default function HomeHero() {
   const t = useT();
@@ -46,9 +47,7 @@ export default function HomeHero() {
 
         <StaggerItem className="mt-auto sm:mt-0 pt-10 sm:pt-0">
           <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mt-8 sm:mt-10">
-            <motion.button {...btnHover} className="w-full sm:w-auto bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer">
-              {t("Book Consultation")}
-            </motion.button>
+            <BookButton label={t("Book Consultation")} className="w-full sm:w-auto" />
             <motion.button onClick={() => smoothScrollToTarget('treatments')} {...btnHover} className="w-full sm:w-auto text-white font-bold text-[14px] border border-white rounded-[10px] px-8 py-4 bg-transparent hover:bg-white/10 transition-colors cursor-pointer">
               {t("Explore Treatments")}
             </motion.button>

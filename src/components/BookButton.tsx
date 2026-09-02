@@ -2,14 +2,9 @@
 
 import { motion } from "framer-motion";
 import { btnHover } from "./Animations";
-import { useBookingLink } from "./useBookingLink";
 import { useT } from "@/i18n/LanguageProvider";
+import { useBookingModal } from "./BookingModalProvider";
 
-/**
- * Universal "Book" button that sends the user to Vagaro
- * (booking link from admin settings, or /book page with the widget).
- * Visual style matches hero primary buttons across the site.
- */
 export default function BookButton({
   label,
   children,
@@ -23,11 +18,10 @@ export default function BookButton({
   style?: React.CSSProperties;
   dark?: boolean;
 }) {
-  const { linkProps } = useBookingLink();
   const t = useT();
+  const { openModal } = useBookingModal();
   const text = label ?? children ?? t("Book Consultation");
 
-  // If caller passes custom backgroundColor, render as colored button with white text
   const hasCustomBg = !!style && style.backgroundColor != null;
   const cls = hasCustomBg
     ? "w-full sm:w-auto inline-block text-center text-white font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
@@ -36,13 +30,13 @@ export default function BookButton({
     : "w-full sm:w-auto inline-block text-center bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer";
 
   return (
-    <motion.a
+    <motion.button
       {...btnHover}
-      {...linkProps}
+      onClick={openModal}
       className={`${cls} ${className}`}
       style={style}
     >
       {text}
-    </motion.a>
+    </motion.button>
   );
 }
