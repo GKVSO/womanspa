@@ -1,10 +1,10 @@
 "use client";
 
+import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FadeIn, btnHover } from "./Animations";
+import { FadeIn } from "./Animations";
 import BookButton from "./BookButton";
-import { useT } from "@/i18n/LanguageProvider";
 
 const bullets = [
   "localized stubborn fat",
@@ -60,9 +60,9 @@ export default function EmeraldCandidate() {
                   ))}
                 </ul>
               </div>
-              <BookButton className="mt-6" style={{ backgroundColor: "#B07E3F" }}>
+              <BookButton className="mt-6 whitespace-nowrap" style={{ backgroundColor: "#B07E3F" }}>
                 {t("Book Consultation")}
-                </BookButton>
+              </BookButton>
             </div>
           </div>
         </FadeIn>
