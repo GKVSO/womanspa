@@ -39,7 +39,7 @@ export default function XerfCandidate() {
           alt={t("Xerf ideal candidate")}
           width={2400}
           height={1350}
-          className="w-full sm:w-[50%] h-auto rounded-[30px] mx-auto"
+          className="w-full sm:w-[50%] h-auto rounded-[30px] lg:-mb-5 mx-auto"
         />
 
         <div className="lg:absolute lg:right-0 lg:bottom-[25px] lg:z-20 lg:mt-0 -mt-10 relative w-full lg:w-auto mb-6 lg:mb-0">
