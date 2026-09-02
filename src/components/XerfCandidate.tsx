@@ -39,12 +39,12 @@ export default function XerfCandidate() {
           alt={t("Xerf ideal candidate")}
           width={2400}
           height={1350}
-          className="w-full sm:w-[50%] h-auto rounded-[30px] lg:-mb-5 mx-auto"
+          className="w-full sm:w-[50%] h-auto rounded-[30px] lg:-mb-5 mx-auto ml-7 xl:ml-[auto]"
         />
 
         <div className="lg:absolute lg:right-0 lg:bottom-[25px] lg:z-20 lg:mt-0 -mt-10 relative w-full lg:w-auto mb-6 lg:mb-0">
           <FadeIn as="div" y={30}>
-            <div className="bg-white/80 rounded-[30px] p-6 sm:p-10 w-full sm:w-[620px] lg:w-[520px] backdrop-blur-sm">
+            <div className="bg-white/80 rounded-[30px] p-6 sm:p-10 w-full lg:w-[520px] backdrop-blur-sm">
               <div>
                 <h3 className="text-[#313242] font-bold text-[20px] min-[768px]:text-[32px] mb-6">
                   {t("Ideal Candidate List")}
