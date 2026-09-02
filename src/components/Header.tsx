@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { LANGUAGES, useLanguage, useT, type Lang } from "@/i18n/LanguageProvider";
+import { setupAnchorInterceptor } from "@/lib/scroll";
+import { AnimatePresence, motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { btnHover } from "./Animations";
 import BookingModal from "./BookingModal";
-import { useLanguage, useT, LANGUAGES, type Lang } from "@/i18n/LanguageProvider";
-import { setupAnchorInterceptor } from "@/lib/scroll";
 
 const menuGroups = [
   {
@@ -174,7 +174,7 @@ export default function Header() {
   return (
     <>
       <motion.header
-        className={`flex items-center justify-between px-4 sm:px-10 py-4 w-full fixed top-0 left-0 right-0 z-[130] transition-colors duration-300 ${scrolled ? "bg-[#CBA07D] shadow-md" : "bg-transparent"}`}
+        className={`flex items-center justify-between px-4 sm:px-10 py-4 w-full fixed top-0 left-0 right-0 z-[130] transition-all duration-300 ${scrolled ? "bg-[#CBA07D] shadow-md rounded-b-[15px] sm:rounded-b-[30px]" : "bg-transparent"}`}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
