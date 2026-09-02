@@ -1,10 +1,10 @@
 "use client";
 
-import { Fragment } from "react";
+import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { Fragment } from "react";
 import { StaggerContainer, StaggerItem, btnHover } from "./Animations";
-import { useT } from "@/i18n/LanguageProvider";
 
 const items = [
   {
@@ -41,7 +41,7 @@ function Divider() {
 export default function IcooneTechnology() {
   const t = useT();
   return (
-    <section className="relative overflow-hidden px-5 sm:px-10 pt-14 sm:pt-20 pb-16 sm:pb-24 bg-[#ECEDEE]  min-[1200px]:bg-cover min-[1200px]:bg-center min-[1200px]:bg-[url(/icoone-tech-bg.webp)] min-[1200px]:bg-cover min-[1200px]:bg-center min-[1200px]:bg-no-repeat"
+    <section className="relative overflow-hidden px-5 sm:px-10 pt-14 sm:pt-20 pb-16 sm:pb-24 bg-[#ECEDEE] min-[1200px]:bg-[url(/icoone-tech-bg.webp)] min-[1200px]:bg-bottom-right min-[1200px]:bg-no-repeat"
       >
       <div className="flex flex-col">
         <StaggerContainer staggerDelay={0.12} className="max-w-[760px]">
