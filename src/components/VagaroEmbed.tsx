@@ -10,14 +10,46 @@ import { useEffect, useRef, useState } from "react";
 export default function VagaroEmbed({ code }: { code: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const container = ref.current;
     if (!container || !code) return;
     container.innerHTML = "";
+    setLoading(true);
+
+    const observer = new MutationObserver(() => {
+      const iframe = container.querySelector("iframe");
+      if (iframe) {
+        // Iframe is found. Don't hide loader immediately on load because 
+        // Vagaro loads a shell first, then expands.
+      }
+    });
+
+    observer.observe(container, { childList: true, subtree: true });
+
+    // Vagaro widget resizes its iframe once the React app inside boots up.
+    // We poll the iframe's height. When it grows beyond a default shell height, we consider it ready.
+    const checkInterval = setInterval(() => {
+      const iframe = container.querySelector("iframe");
+      if (iframe) {
+        const heightVal = parseInt(iframe.style.height || "0", 10);
+        // Vagaro calendar is typically > 500px. If it's smaller, it might just be its own internal loader.
+        // Waiting for > 450px ensures we only show it when the actual booking UI is rendered.
+        if (iframe.offsetHeight > 450 || heightVal > 450) {
+          setLoading(false);
+          clearInterval(checkInterval);
+        }
+      }
+    }, 250);
+
+    // Hard fallback to 6 seconds so we don't load infinitely if the widget happens to be short
+    const timeoutId = setTimeout(() => {
+      setLoading(false);
+      clearInterval(checkInterval);
+    }, 6000);
 
     try {
-      // 1. Inject all non-script HTML first (title, .vagaro div, powered-by links)
       const html = code.replace(/<script[\s\S]*?<\/script>/gi, "").trim();
       if (html) {
         const wrapper = document.createElement("div");
@@ -25,9 +57,6 @@ export default function VagaroEmbed({ code }: { code: string }) {
         while (wrapper.firstChild) container.appendChild(wrapper.firstChild);
       }
 
-      // 2. Extract script src and RE-INSERT a <script> INSIDE the .vagaro div,
-      //    because Vagaro's loader scans for ".vagaro script" (querySelectorAll).
-      //    document.createElement is safe here — the src comes from the admin-saved Vagaro code.
       const srcMatch = code.match(/<script[^>]*\ssrc=["']([^"']+)["'][^>]*><\/script>/i);
       if (srcMatch) {
         const vagaroDiv = container.querySelector(".vagaro");
@@ -36,18 +65,27 @@ export default function VagaroEmbed({ code }: { code: string }) {
         script.type = "text/javascript";
         script.src = srcMatch[1];
         script.async = true;
-        script.onerror = () => setError(true);
+        script.onerror = () => {
+          setError(true);
+          setLoading(false);
+        };
         host.appendChild(script);
       } else {
-        // No script tag — maybe it's an iframe or plain link code
         const rawHtml = code.trim();
         if (rawHtml && !html) container.innerHTML = rawHtml;
+        if (!rawHtml.includes("<iframe")) {
+          setLoading(false);
+        }
       }
     } catch {
       setError(true);
+      setLoading(false);
     }
 
     return () => {
+      observer.disconnect();
+      clearTimeout(timeoutId);
+      clearInterval(checkInterval);
       container.innerHTML = "";
     };
   }, [code]);
@@ -65,5 +103,20 @@ export default function VagaroEmbed({ code }: { code: string }) {
     );
   }
 
-  return <div ref={ref} className="vagaro-embed rounded-[30px] overflow-hidden" style={{ backgroundColor: "#fff", minHeight: "600px" }} />;
+  return (
+    <div className="relative w-full transition-all duration-500 ease-in-out" style={{ minHeight: loading ? "300px" : "400px" }}>
+      {/* Loader */}
+      {loading && (
+        <div className="absolute inset-0 z-10 flex flex-col items-center justify-center bg-white rounded-[30px] transition-opacity duration-300">
+          <div className="w-10 h-10 border-4 border-[#CBA07D]/30 border-t-[#CBA07D] rounded-full animate-spin mb-4"></div>
+        </div>
+      )}
+
+      {/* Widget Container */}
+      <div
+        ref={ref}
+        className={`vagaro-embed w-full transition-opacity duration-500 ${loading ? "opacity-0 absolute top-0 left-0 pointer-events-none" : "opacity-100 relative"}`}
+      />
+    </div>
+  );
 }
