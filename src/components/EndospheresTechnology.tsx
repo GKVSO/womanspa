@@ -1,9 +1,9 @@
 "use client";
 
-import { Fragment } from "react";
-import { motion } from "framer-motion";
-import { StaggerContainer, StaggerItem, btnHover } from "./Animations";
 import { useT } from "@/i18n/LanguageProvider";
+import { motion } from "framer-motion";
+import { Fragment } from "react";
+import { StaggerContainer, StaggerItem, btnHover } from "./Animations";
 
 const items = [
   {
@@ -42,7 +42,7 @@ export default function EndospheresTechnology() {
   return (
     <section className="relative overflow-hidden px-5 sm:px-10 pt-14 sm:pt-20 pb-16 sm:pb-24 bg-[#ECEDEE]">
       <div
-        className="hidden min-[1200px]:block absolute inset-0 bg-no-repeat bg-right bg-contain pointer-events-none bg-[url(/endo-device-alt.webp)]"
+        className="hidden min-[1200px]:block absolute inset-0 bg-no-repeat bg-right pointer-events-none bg-[url(/endo-device-alt.webp)]"
         
       />
       <div className="relative">
