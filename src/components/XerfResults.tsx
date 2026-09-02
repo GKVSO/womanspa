@@ -1,9 +1,9 @@
 "use client";
 
+import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FadeIn, StaggerContainer, StaggerItem } from "./Animations";
-import { useT } from "@/i18n/LanguageProvider";
 
 const cards = [
   {
@@ -14,7 +14,7 @@ const cards = [
   {
     title: "Fine lines and texture improvement",
     text: "Collagen and elastin stimulation can help the skin look smoother, firmer, and more refined over time",
-    position: "self-start mt-0 sm:mt-[340px]",
+    position: "self-start mt-0 lg:mt-[340px]",
   },
   {
     title: "Results gradually become clearer",
@@ -36,7 +36,7 @@ export default function XerfResults() {
       </FadeIn>
 
       <StaggerContainer staggerDelay={0.12} className="relative max-w-[1200px] mx-auto">
-        <div className="relative grid grid-cols-1 sm:grid-cols-3 gap-8 items-start">
+        <div className="relative grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
           {cards.map((card, i) => (
             <StaggerItem key={card.title}>
               <div className={`${card.position} relative z-10`}>
@@ -60,7 +60,7 @@ export default function XerfResults() {
           ))}
 
           <motion.div
-            className="relative sm:absolute left-0 top-0 sm:left-1/2 sm:top-1/2 translate-x-0 translate-y-0 sm:-translate-x-1/2 sm:-translate-y-1/2 z-20 flex justify-center pointer-events-none"
+            className="relative lg:absolute left-0 top-0 sm:left-1/2 sm:top-1/2 translate-x-0 translate-y-0 sm:-translate-x-1/2 sm:-translate-y-1/2 z-20 flex justify-center pointer-events-none"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
