@@ -1,10 +1,10 @@
 "use client";
 
+import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FadeIn, StaggerContainer, StaggerItem, btnHover } from "./Animations";
+import { FadeIn } from "./Animations";
 import BookButton from "./BookButton";
-import { useT } from "@/i18n/LanguageProvider";
 
 const bullets = [
   "texture",
@@ -30,7 +30,7 @@ export default function SylfirmCandidate() {
         </h2>
       </FadeIn>
 
-      <div className="relative z-20 mt-10 sm:mt-16">
+      <div className="flex justify-center mt-[20px] md:mt-[50px] 2xl:absolute left-[8%] bottom-[10%] z-20">
         <FadeIn as="div" y={30}>
           <div className="bg-white/80 rounded-[30px] p-6 sm:p-10 w-full sm:w-[620px] backdrop-blur-sm">
             <div className="flex flex-col lg:flex-row justify-between items-stretch lg:items-end gap-6 lg:gap-10">
@@ -65,7 +65,7 @@ export default function SylfirmCandidate() {
         </FadeIn>
       </div>
 
-      <div className="relative z-10 mt-8 lg:-mt-[500px] w-full">
+      <div className="relative z-10 mt-8 w-full">
         <FadeIn as="div" y={30}>
           <Image
             src="/sylfirm-candidate.webp"
