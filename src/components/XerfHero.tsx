@@ -1,10 +1,10 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useLanguage, useT } from "@/i18n/LanguageProvider";
+import { ml, nv, sv, toLang } from "@/lib/i18n-helpers";
 import { smoothScrollToTarget } from "@/lib/scroll";
+import { motion } from "framer-motion";
 import { StaggerContainer, StaggerItem, btnHover } from "./Animations";
-import { useT, useLanguage } from "@/i18n/LanguageProvider";
-import { ml, toLang, sv, nv } from "@/lib/i18n-helpers";
 
 const cards = [
   {
@@ -98,7 +98,6 @@ export default function XerfHero({ cms, editing }: { cms?: Record<string, unknow
     >
       {/* Overlay */}
       {/* Overlay only when explicitly enabled (> 0) */}
-      {overlay > 0 && <div className="absolute inset-0 bg-black pointer-events-none" style={{ opacity: overlay / 100 }} />}
 
       <StaggerContainer staggerDelay={0.15} className="w-full flex-1 flex flex-col relative z-10">
         <StaggerItem>
