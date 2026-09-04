@@ -29,10 +29,8 @@ export default function PrimelaseConsultation() {
   const t = useT();
   return (
     <section className="relative overflow-hidden bg-white rounded-b-[60px] px-5 sm:px-10 pt-16 sm:pt-24 pb-20 sm:pb-40">
-      <h2 className="text-black text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske text-center mb-10 sm:mb-20">
-        {t("Unwanted Hair Shouldn&apos;t")}
-        <br />
-        {t("Steal Your Time Or Confidence")}
+      <h2 className="text-black text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske text-center mb-10 sm:mb-20 whitespace-pre-line">
+        {t("Unwanted Hair Shouldn't \n Steal Your Time Or Confidence")}
       </h2>
 
       <div className="flex flex-col lg:flex-row items-stretch lg:items-start gap-10 lg:gap-16">
