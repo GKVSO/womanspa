@@ -1,10 +1,10 @@
-﻿"use client";
+"use client";
 
-import { useRef } from "react";
+import { useLanguage, useT } from "@/i18n/LanguageProvider";
+import { ml, sv, toLang } from "@/lib/i18n-helpers";
 import { motion, useScroll, useSpring, useTransform, type MotionValue } from "framer-motion";
 import Image from "next/image";
-import { useT, useLanguage } from "@/i18n/LanguageProvider";
-import { ml, toLang, sv } from "@/lib/i18n-helpers";
+import { useRef } from "react";
 
 const cards = [
   {
@@ -128,11 +128,12 @@ export default function EmsellaBenefits({ cms, editing }: { cms?: Record<string,
         className="relative z-10 -mt-4 min-[768px]:-mt-8 flex justify-center will-change-transform "
       >
         <Image
-          src={cmsImage || "/emsella-device.webp"}
+          src={cmsImage || "/emsella-main.png"}
           alt={t("BTL Emsella")}
-          width={600}
-          height={900}
-          className="h-full w-full"
+          width={860}
+          height={848}
+          quality={100}
+          className="w-full max-w-[860px] h-auto object-contain"
         />
       </motion.div>
 
