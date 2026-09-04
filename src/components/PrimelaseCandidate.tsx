@@ -1,10 +1,10 @@
 "use client";
 
+import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FadeIn, btnHover } from "./Animations";
+import { FadeIn } from "./Animations";
 import BookButton from "./BookButton";
-import { useT } from "@/i18n/LanguageProvider";
 
 const womenBullets = [
   "Full legs, underarms, bikini line, Brazilian, face",
@@ -28,10 +28,8 @@ export default function PrimelaseCandidate() {
       }}
     >
       <FadeIn as="div" y={30}>
-        <h2 className="text-center text-white text-[32px] min-[768px]:text-[48px] min-[1200px]:text-[70px] min-[1600px]:text-[100px] leading-tight font-berlingske font-normal px-2">
-          {t("Who is Primelase")}
-          <br />
-          {t("Diode Laser suitable for?")}
+        <h2 className="text-center text-white text-[32px] min-[768px]:text-[48px] min-[1200px]:text-[70px] min-[1600px]:text-[100px] leading-tight font-berlingske font-normal px-2 whitespace-pre-line">
+          {t("Who is Primelase \n Diode Laser suitable for?")}
         </h2>
       </FadeIn>
 
