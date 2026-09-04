@@ -21,10 +21,8 @@ export default function IvTherapyCandidates() {
   return (
     <section className="relative overflow-hidden rounded-[60px] px-5 sm:px-10 pt-16 sm:pt-24 bg-[#cfd2d8] bg-contain bg-no-repeat bg-center">
       <FadeIn as="div" y={30}>
-        <h2 className="relative z-[100] text-center text-white text-[32px] min-[768px]:text-[48px] min-[1200px]:text-[70px] min-[1600px]:text-[100px] leading-tight font-berlingske font-normal">
-          {t("Who IV")}
-          <br />
-          {t("Therapy Is Best Suited For")}
+        <h2 className="relative z-[100] text-center text-white text-[32px] min-[768px]:text-[48px] min-[1200px]:text-[70px] min-[1600px]:text-[100px] leading-tight font-berlingske font-normal whitespace-pre-line">
+          {t("Who IV \n Therapy Is Best Suited For")}
         </h2>
       </FadeIn>
 

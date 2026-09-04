@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FadeIn } from "./Animations";
 import { useT } from "@/i18n/LanguageProvider";
+import { AnimatePresence, motion } from "framer-motion";
+import { useState } from "react";
+import { FadeIn } from "./Animations";
 
 const faqs = [
   {

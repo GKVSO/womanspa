@@ -81,10 +81,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     (key: string, vars?: Record<string, string | number>) => {
       const dict = dictionaries[lang];
       const enDict = dictionaries.En;
-      const normalized = key
-        .replace(/\\n|\\r|\\t/g, " ")
-        .replace(/\s+/g, " ")
-        .trim();
+      const normalized = key.trim();
       let out = dict[normalized] ?? enDict[normalized] ?? key;
       if (vars) {
         for (const [k, v] of Object.entries(vars)) {
