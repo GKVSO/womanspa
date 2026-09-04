@@ -13,6 +13,12 @@
       "skillPath": "plugins/frontend-mobile-development/skills/nextjs-app-router-patterns/SKILL.md",
       "computedHash": "3a46e9093baecb3a85819529ce05006f817663f48d9e872868c32ae6049c0d5c"
     },
+    "upscale-image": {
+      "source": "pilioai/skills",
+      "sourceType": "github",
+      "skillPath": "skills/upscale-image/SKILL.md",
+      "computedHash": "58d7f86803e58c9903dcd5b3fc9068a1e0e3efba66ca9314febec4bede44b98a"
+    },
     "vercel-react-best-practices": {
       "source": "vercel-labs/agent-skills",
       "sourceType": "github",
