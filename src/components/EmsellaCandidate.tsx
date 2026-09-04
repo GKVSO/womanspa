@@ -1,10 +1,10 @@
 ﻿"use client";
 
+import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FadeIn, StaggerContainer, StaggerItem, btnHover } from "./Animations";
+import { FadeIn } from "./Animations";
 import BookButton from "./BookButton";
-import { useT } from "@/i18n/LanguageProvider";
 
 const bullets = [
   "bladder leakage",
@@ -63,11 +63,12 @@ export default function EmsellaCandidate() {
 
         <FadeIn as="div" y={30} className="lg:flex-1 lg:-ml-24">
           <Image
-            src="/emsella-candidate-new.png"
+            src="/emsella-candidate-main.png"
             alt={t("Emsella pelvic floor ideal candidate")}
             width={500}
             height={790}
-            className="w-full lg:w-[560px] h-auto mx-auto lg:mx-0"
+            className="w-full max-w-[350px] lg:max-w-none lg:w-[500px] h-auto mx-auto lg:mx-0"
+            quality={100}
           />
         </FadeIn>
       </div>
