@@ -1,8 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { btnHover } from "./Animations";
 import { useT } from "@/i18n/LanguageProvider";
+import BookButton from "./BookButton";
 
 const struggleBullets = [
   "Daily or weekly hair removal routines that feel never-ending",
@@ -53,9 +52,7 @@ export default function PrimelaseConsultation() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-10 items-start sm:items-center mt-8">
-            <motion.button {...btnHover} className="bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer w-full min-[768px]:w-auto">
-              {t("Schedule Consultation")}
-            </motion.button>
+            <BookButton style={{ backgroundColor: "#fff", color: "#000" }} className="w-full sm:w-auto px-6 py-3 rounded-[10px] font-bold text-[14px]" label={t("Schedule Consultation")} />
           </div>
 
           <div className="mt-auto flex justify-center">

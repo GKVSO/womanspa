@@ -1,9 +1,10 @@
 "use client";
 
-import { Fragment } from "react";
-import { motion } from "framer-motion";
-import { StaggerContainer, StaggerItem, btnHover } from "./Animations";
 import { useT } from "@/i18n/LanguageProvider";
+import { motion } from "framer-motion";
+import { Fragment } from "react";
+import { StaggerContainer, StaggerItem } from "./Animations";
+import BookButton from "./BookButton";
 
 const items = [
   {
@@ -85,12 +86,7 @@ export default function PrimelaseTechnology() {
           </StaggerItem>
 
           <StaggerItem>
-            <motion.button
-              {...btnHover}
-              className="bg-white text-black font-bold text-[14px] rounded-[15px] px-8 py-4 mt-6 w-full min-[768px]:w-auto cursor-pointer"
-            >
-              {t("Schedule Consultation")}
-            </motion.button>
+            <BookButton style={{ backgroundColor: "#fff", color: "#000" }} className="bg-white text-black font-bold text-[14px] rounded-[15px] px-8 py-4 mt-6 w-full min-[768px]:w-auto cursor-pointer" label={t("Schedule Consultation")} />
           </StaggerItem>
 
           <StaggerItem>
