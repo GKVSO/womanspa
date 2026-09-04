@@ -32,8 +32,8 @@ export default function NadTherapyCandidates() {
         <div className="md:absolute top-0 lg:top-1/2 left-1/2 md:-translate-x-[80%] lg:-translate-x-[110%] lg:-translate-y-[40%] xl:-translate-x-[100%] xl:-translate-y-[15%] z-20">
           <FadeIn as="div" y={30}>
             <div className="bg-white/80 rounded-[30px] p-6 sm:p-8 xl:p-10 w-full md:w-[85vw] sm:w-[350px] md:w-[450px] xl:w-[620px] backdrop-blur-sm">
-              <div className="flex flex-col xl:flex-row justify-between items-stretch xl:items-end gap-6 xl:gap-10">
-                <div>
+              <div className="flex flex-col flex-wrap xl:flex-row justify-between items-stretch xl:items-end gap-6">
+                <div className="basis-[57%] grow">
                   <h3 className="text-[#313242] font-bold text-[20px] md:text-[24px] xl:text-[32px] mb-4 xl:mb-6">
                     {t("Especially Ideal For:")}
                   </h3>
@@ -56,7 +56,7 @@ export default function NadTherapyCandidates() {
                     ))}
                   </ul>
                 </div>
-                <BookButton className="mt-5 xl:mt-6" style={{ backgroundColor: "#B07E3F" }}>
+                <BookButton className="mt-5 xl:mt-6 whitespace-nowrap" style={{ backgroundColor: "#B07E3F" }}>
                   {t("Book Consultation")}
                 </BookButton>
               </div>
