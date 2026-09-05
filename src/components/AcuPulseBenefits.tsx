@@ -1,31 +1,31 @@
 "use client";
 
-import { useRef } from "react";
+import { useLanguage, useT } from "@/i18n/LanguageProvider";
+import { ml, sv, toLang } from "@/lib/i18n-helpers";
 import { motion, useScroll, useSpring, useTransform, type MotionValue } from "framer-motion";
 import Image from "next/image";
-import { useT, useLanguage } from "@/i18n/LanguageProvider";
-import { ml, toLang, sv } from "@/lib/i18n-helpers";
+import { useRef } from "react";
 
 const cards = [
   {
     title: "Improve Fine Lines & Wrinkles",
-    text: "Stimulates collagen\nto soften visible signs of aging",
+    text: "Stimulates collagen to soften visible signs of aging",
   },
   {
     title: "Refine Skin Texture",
-    text: "Improves roughness,\nenlarged pores, and uneven texture",
+    text: "Improves roughness, enlarged pores, and uneven texture",
   },
   {
     title: "Reduce Acne Scarring",
-    text: "Helps smooth acne\nscars and improve skin clarity",
+    text: "Helps smooth acne scars and improve skin clarity",
   },
   {
     title: "Brighten Pigmentation",
-    text: "Targets sun\ndamage and uneven skin tone",
+    text: "Targets sun damage and uneven skin tone",
   },
   {
     title: "Tighten & Renew Skin",
-    text: "Supports firmer,\nmore youthful-looking skin",
+    text: "Supports firmer, more youthful-looking skin",
   },
   {
     title: "Restore Confidence",

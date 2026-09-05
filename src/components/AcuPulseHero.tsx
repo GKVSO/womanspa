@@ -1,11 +1,11 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useLanguage, useT } from "@/i18n/LanguageProvider";
+import { ml, sv, toLang } from "@/lib/i18n-helpers";
 import { smoothScrollToTarget } from "@/lib/scroll";
+import { motion } from "framer-motion";
 import { StaggerContainer, StaggerItem, btnHover } from "./Animations";
 import BookButton from "./BookButton";
-import { useT, useLanguage } from "@/i18n/LanguageProvider";
-import { ml, toLang, sv } from "@/lib/i18n-helpers";
 
 export default function AcuPulseHero({ cms, editing }: { cms?: Record<string, unknown>; editing?: boolean }) {
   const t = useT();
@@ -44,8 +44,8 @@ export default function AcuPulseHero({ cms, editing }: { cms?: Record<string, un
         </StaggerItem>
 
         <StaggerItem>
-          <h1 {...e("text","hero_title")} className={`${titleFont || "font-berlingske"} text-white text-[24px] min-[768px]:text-[36px] min-[1200px]:text-[40px] min-[1600px]:text-[48px] leading-tight ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`} style={{ ...(cms ? { color: sv(cms.titleColor) || undefined, fontSize: cms.titleSize ? `${cms.titleSize}px` : undefined } : {}) }}>
-            {cmsTitle ? t(cmsTitle) : <>{t("AcuPulse CO2 Laser Resurfacing For Smoother, Younger-Looking Skin")}</>}
+          <h1 {...e("text","hero_title")} className={`${titleFont || "font-berlingske"} text-white text-[24px] min-[768px]:text-[36px] min-[1200px]:text-[40px] min-[1600px]:text-[48px] leading-tight whitespace-pre-line ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`} style={{ ...(cms ? { color: sv(cms.titleColor) || undefined, fontSize: cms.titleSize ? `${cms.titleSize}px` : undefined } : {}) }}>
+            {cmsTitle ? t(cmsTitle) : <>{t("AcuPulse CO2 Laser Resurfacing For \nSmoother, Younger-Looking Skin")}</>}
           </h1>
         </StaggerItem>
 
