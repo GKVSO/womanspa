@@ -21,15 +21,15 @@ const cards = [
   },
   {
     title: "Waistline Refinement",
-    text: "Supports a more\nsculpted-looking silhouette",
+    text: "Supports a more sculpted-looking silhouette",
   },
   {
     title: "Post-Pregnancy Confidence",
-    text: "Often chosen after body\nchanges related to pregnancy",
+    text: "Often chosen after body changes related to pregnancy",
   },
   {
     title: "Non-Surgical Body Contouring",
-    text: "No surgery, recovery,\nor interruption to daily life",
+    text: "No surgery, recovery, or interruption to daily life",
   },
 ];
 
@@ -109,9 +109,7 @@ export default function EmsculptBenefits({ cms, editing }: { cms?: Record<string
     >
       <motion.div ref={titleRef} style={{ opacity: titleOpacity, y: titleY }} className="will-change-transform">
         <h2 {...e("text","benefits_title")} className={`text-center text-white text-[32px] min-[768px]:text-[48px] min-[1200px]:text-[70px] min-[1600px]:text-[92px] leading-tight font-berlingske font-normal ${editing ? "cursor-pointer hover:ring-2 hover:ring-white" : ""}`}>
-          {cmsTitle ? t(cmsTitle) : <>{t("Beyond")}
-          <br />
-          {t("Fat Reduction")}</>}
+          {cmsTitle ? t(cmsTitle) : {t("Beyond Fat Reduction")}}
         </h2>
       </motion.div>
 

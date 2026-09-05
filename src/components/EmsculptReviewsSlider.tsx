@@ -132,9 +132,7 @@ export default function EmsculptReviewsSlider() {
         <StaggerContainer staggerDelay={0.12}>
           <StaggerItem>
             <h2 className="text-black text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] font-berlingske leading-tight mb-10 text-center">
-              {t("Why Clients Add")}
-              <br />
-              {t("EMSculpt Neo To Their Wellness Routine")}
+              {t("Why Clients Add EMSculpt Neo To Their Wellness Routine")}
             </h2>
           </StaggerItem>
 
@@ -223,7 +221,7 @@ function ReviewCard({ review }: { review: Review }) {
       </p>
       <div className="flex flex-wrap items-center gap-4 mt-6">
         <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center flex-shrink-0">
-          <span className="text-[#CBA07D] font-bold text-[16px]">{review.initials}</span>
+          <span className="text-[#CBA07D] font-bold text-[16px]">{t(review.initials)}</span>
         </div>
         <div>
           <p className="text-white font-bold text-[16px]">{t(review.name)}</p>
