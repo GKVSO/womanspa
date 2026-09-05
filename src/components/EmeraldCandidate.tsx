@@ -34,8 +34,8 @@ export default function EmeraldCandidate() {
       <div className="relative z-20 mt-12 lg:mt-48 mx-auto lg:mr-[unset] w-full sm:w-fit">
         <FadeIn as="div" y={30}>
           <div className="bg-white/80 rounded-[30px] p-6 sm:p-10 w-full sm:w-[620px] backdrop-blur-sm">
-            <div className="flex flex-col lg:flex-row justify-between items-stretch lg:items-end gap-6 lg:gap-10">
-              <div>
+            <div className="flex flex-col flex-wrap lg:flex-row justify-between items-stretch lg:items-end gap-6">
+              <div className="basis-[57%] grow">
                 <h3 className="text-[#313242] font-bold text-[20px] min-[768px]:text-[32px] mb-6">
                   {t("Ideal Candidate List")}
                 </h3>
