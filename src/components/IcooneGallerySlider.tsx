@@ -74,9 +74,7 @@ export default function IcooneGallerySlider() {
         <StaggerContainer staggerDelay={0.12}>
           <StaggerItem>
             <h2 className="text-white text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] font-berlingske leading-tight mb-10 text-center">
-              {t("A Body That Looks")}
-              <br />
-              {t("Smoother &amp; Feels Lighter")}
+              {t("A Body That Looks Smoother & Feels Lighter")}
             </h2>
           </StaggerItem>
 

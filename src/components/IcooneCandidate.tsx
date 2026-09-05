@@ -27,9 +27,7 @@ export default function IcooneCandidate() {
     >
       <FadeIn as="div" y={30}>
         <h2 className="text-center text-white text-[32px] min-[768px]:text-[48px] min-[1200px]:text-[70px] min-[1600px]:text-[100px] leading-tight font-berlingske font-normal">
-          {t("Focused On Body")}
-          <br />
-          {t("Wellness &amp; Refinement")}
+          {t("Focused On Body Wellness & Refinement")}
         </h2>
       </FadeIn>
 
