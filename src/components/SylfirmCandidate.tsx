@@ -26,7 +26,7 @@ export default function SylfirmCandidate() {
           <br />
           {t("Focused On Skin Quality")}
           <br />
-          {t("&amp; Prevention")}
+          {t("& Prevention")}
         </h2>
       </FadeIn>
 
@@ -39,7 +39,7 @@ export default function SylfirmCandidate() {
                   {t("Ideal Candidate List")}
                 </h3>
                 <p className="text-[#313242] font-semibold text-[14px] min-[768px]:text-[16px] mb-4">
-                  {t("Sylfirmx may be ideal for clients who want to improve:")}
+                  {t("Sylfirm X may be ideal for clients who want to improve:")}
                 </p>
                 <ul className="space-y-2">
                   {bullets.map((item, i) => (

@@ -65,13 +65,13 @@ export default function SylfirmHero({ cms, editing }: { cms?: Record<string, unk
 
         <StaggerItem>
           <h1 {...e("text","hero_title")} className={`${titleFont || "font-berlingske"} text-white text-[24px] min-[768px]:text-[36px] min-[1200px]:text-[40px] min-[1600px]:text-[48px] leading-tight ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`} style={{ ...(cms ? { color: sv(cms.titleColor) || undefined, fontSize: cms.titleSize ? `${cms.titleSize}px` : undefined } : {}) }}>
-            {cmsTitle ? t(cmsTitle) : <>{t("SylfirmX For Clearer, Smoother")}<br />{t("&amp; Healthier-Looking Skin")}</>}
+            {cmsTitle ? t(cmsTitle) : <>{t("SylfirmX For Clearer, Smoother")}<br />{t("& Healthier-Looking Skin")}</>}
           </h1>
         </StaggerItem>
 
         <StaggerItem>
           <p {...e("text","hero_subtitle")} className={`${subtitleFont || ""} text-white text-[16px] font-semibold leading-relaxed mt-6 max-w-[620px] ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`} style={{ ...(cms ? { color: sv(cms.subtitleColor) || undefined, fontSize: cms.subtitleSize ? `${cms.subtitleSize}px` : undefined } : {}) }}>
-            {cmsSubtitle ? t(cmsSubtitle) : t("A next-generation RF microneedling treatment designed to improve\nskin texture, redness, pigmentation, pores, and early visible signs\nof aging")}
+            {cmsSubtitle ? t(cmsSubtitle) : t("A next-generation RF microneedling treatment designed to improve skin texture, redness, pigmentation, pores, and early visible signs of aging")}
           </p>
         </StaggerItem>
 

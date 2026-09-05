@@ -51,11 +51,7 @@ export default function SylfirmConsultation() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               >
-                {t("Even when skin looks &ldquo;young,&rdquo; concerns like redness,")}
-                <br />
-                {t("pigmentation, enlarged pores, rough texture, and uneven tone can")}
-                <br />
-                {t("affect overall skin quality")}
+                {t('Even when skin looks "young," concerns like redness, pigmentation, enlarged pores, rough texture, and uneven tone can affect overall skin quality')}
               </motion.p>
             </StaggerItem>
 
@@ -76,7 +72,7 @@ export default function SylfirmConsultation() {
 
             <StaggerItem>
               <p className="text-black font-semibold text-[16px] min-[1600px]:text-[18px] mb-4">
-                {t("Beautiful skin is rarely about perfection, Usually, it&rsquo;s about:")}
+                {t("Beautiful skin is rarely about perfection. Usually, it's about:")}
               </p>
               <ul className="space-y-2 mb-8">
                 {["refined texture", "even tone", "smaller-looking pores", "less redness"].map((item, i) => (
@@ -116,9 +112,7 @@ export default function SylfirmConsultation() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               >
-                {t("When skin quality changes, the entire face can begin looking")}
-                <br />
-                {t("more tired, uneven, or textured &mdash; even without deep wrinkles")}
+                {t("When skin quality changes, the entire face can begin looking more tired, uneven, or textured — even without deep wrinkles")}
               </motion.p>
             </StaggerItem>
 
@@ -142,9 +136,7 @@ export default function SylfirmConsultation() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               >
-                {t("SylfirmX is designed to help improve overall")}
-                <br />
-                {t("skin quality using precision RF microneedling technology")}
+                {t("Sylfirm X is designed to help improve overall skin quality using precision RF microneedling technology")}
               </motion.div>
             </StaggerItem>
 
