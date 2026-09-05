@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { btnHover } from "./Animations";
+import BookButton from "./BookButton";
 import { useT } from "@/i18n/LanguageProvider";
 
 const struggleBullets = [
@@ -33,9 +34,7 @@ export default function EmeraldConsultation() {
   return (
     <section className="relative overflow-hidden bg-white rounded-b-[60px] px-5 sm:px-10 pt-16 sm:pt-24 pb-20 sm:pb-40">
       <h2 className="text-black text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske text-center mb-10 sm:mb-20">
-        {t("Stubborn Fat That")}
-        <br />
-        {t("Doesn&apos;t Respond to Diet or Exercise")}
+        {t("Stubborn Fat That Doesn't Respond to Diet or Exercise")}
       </h2>
 
       <div className="flex flex-col lg:flex-row items-stretch lg:items-start gap-10 lg:gap-16">
@@ -56,9 +55,12 @@ export default function EmeraldConsultation() {
           </p>
 
           <div className="flex flex-col gap-3 sm:gap-10 items-start mt-8">
-            <motion.button {...btnHover} className="bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer w-full min-[768px]:w-auto">
-              {t("Schedule Consultation")}
-            </motion.button>
+            <div className="mt-8">
+              <BookButton 
+                className="w-full sm:w-auto bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer whitespace-nowrap" 
+                label={t("Schedule Consultation")} 
+              />
+            </div>
             <img
               src="/emerald-device.webp"
               alt={t("Emerald Laser device")}
