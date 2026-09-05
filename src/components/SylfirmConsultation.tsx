@@ -1,9 +1,10 @@
 "use client";
 
+import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FadeIn, StaggerContainer, StaggerItem, btnHover } from "./Animations";
-import { useT } from "@/i18n/LanguageProvider";
+import { FadeIn, StaggerContainer, StaggerItem } from "./Animations";
+import BookButton from "./BookButton";
 
 function ConsultationImage({ className = "" }: { className?: string }) {
   const t = useT();
@@ -141,13 +142,7 @@ export default function SylfirmConsultation() {
             </StaggerItem>
 
             <StaggerItem>
-              <motion.button
-                {...btnHover}
-                className="text-white font-bold text-[14px] rounded-[10px] px-8 py-4 mt-8 cursor-pointer"
-                style={{ backgroundColor: "#B07E3F" }}
-              >
-                {t("Schedule Consultation")}
-              </motion.button>
+              <BookButton style={{ backgroundColor: "#fff", color: "#000" }} className="text-white font-bold text-[14px] rounded-[10px] px-8 py-4 mt-8 cursor-pointer" label={t("Schedule Consultation")} />
             </StaggerItem>
           </StaggerContainer>
 
