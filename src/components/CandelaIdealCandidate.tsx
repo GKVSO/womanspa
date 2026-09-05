@@ -1,10 +1,10 @@
 "use client";
 
+import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FadeIn, StaggerContainer, StaggerItem, btnHover } from "./Animations";
+import { FadeIn } from "./Animations";
 import BookButton from "./BookButton";
-import { useT } from "@/i18n/LanguageProvider";
 
 const bullets = [
   "texture",
@@ -35,8 +35,8 @@ export default function CandelaIdealCandidate() {
       <div className="relative z-20 mt-10 sm:mt-16 flex items-end gap-10">
         <FadeIn as="div" y={30}>
           <div className="bg-white/80 rounded-[30px] p-6 sm:p-10 w-full sm:w-[620px] backdrop-blur-sm">
-            <div className="flex flex-col lg:flex-row justify-between items-stretch lg:items-end gap-6 lg:gap-10">
-              <div>
+            <div className="flex flex-col flex-wrap lg:flex-row justify-between items-stretch lg:items-end gap-6">
+              <div className="basis-[57%] grow">
                 <h3 className="text-[#313242] font-bold text-[20px] min-[768px]:text-[32px] mb-6">
                   {t("Ideal Candidate List")}
                 </h3>
@@ -59,7 +59,7 @@ export default function CandelaIdealCandidate() {
                   ))}
                 </ul>
               </div>
-              <BookButton className="mt-6" style={{ backgroundColor: "#B07E3F" }}>
+              <BookButton className="mt-6 whitespace-nowrap" style={{ backgroundColor: "#B07E3F" }}>
                 {t("Book Consultation")}
                 </BookButton>
             </div>
