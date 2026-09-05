@@ -1,9 +1,10 @@
 "use client";
 
+import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FadeIn, StaggerContainer, StaggerItem, btnHover } from "./Animations";
-import { useT } from "@/i18n/LanguageProvider";
+import BookButton from "./BookButton";
 
 function ConsultationImage({ className = "" }: { className?: string }) {
   const t = useT();
@@ -109,13 +110,12 @@ export default function CandelaConsultation() {
             </StaggerItem>
 
             <StaggerItem>
-              <motion.button
+              <BookButton
                 {...btnHover}
                 className="text-white font-bold text-[14px] rounded-[10px] px-8 py-4 mt-8 cursor-pointer"
                 style={{ backgroundColor: "#B07E3F" }}
-              >
-                {t("Schedule Consultation")}
-              </motion.button>
+                label={t("Schedule Consultation")}
+              />
             </StaggerItem>
           </StaggerContainer>
 

@@ -1,9 +1,10 @@
 "use client";
 
-import { Fragment } from "react";
-import { motion } from "framer-motion";
-import { StaggerContainer, StaggerItem, FadeIn, btnHover } from "./Animations";
 import { useT } from "@/i18n/LanguageProvider";
+import { motion } from "framer-motion";
+import { Fragment } from "react";
+import { FadeIn, StaggerContainer, StaggerItem, btnHover } from "./Animations";
+import BookButton from "./BookButton";
 
 const items = [
   {
@@ -85,13 +86,12 @@ export default function CandelaTechnology() {
                 <br />
                 {t("minimal downtime")}
               </p>
-              <motion.button
+              <BookButton
                 {...btnHover}
                 className="text-white font-bold text-[14px] rounded-[10px] px-8 py-4 mt-10 w-full sm:w-auto cursor-pointer"
                 style={{ backgroundColor: "#B07E3F" }}
-              >
-                {t("Schedule Consultation")}
-              </motion.button>
+                label={t("Schedule Consultation")}
+              />
             </div>
           </FadeIn>
         </div>
