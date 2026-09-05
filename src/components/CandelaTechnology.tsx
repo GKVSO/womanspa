@@ -9,7 +9,7 @@ const items = [
   {
     num: "01",
     title: "Modern Skin Science",
-    text: "Candela Matrix uses intelligent impedance monitoring\ntechnology that helps personalize energy delivery in\nreal time based on how the skin responds during treatment",
+    text: "Candela Matrix uses intelligent impedance monitoring technology that helps personalize energy delivery in real time based on how the skin responds during treatment",
   },
   {
     num: "02",
@@ -47,9 +47,7 @@ export default function CandelaTechnology() {
           <StaggerContainer staggerDelay={0.12} className="max-w-[760px] flex-1">
             <StaggerItem>
               <h2 className="text-[#313242] text-[32px] sm:text-[48px] leading-tight font-berlingske font-normal">
-                {t("Intelligent RF Technology")}
-                <br />
-                {t("Designed Around Precision")}
+                {t("Intelligent RF Technology Designed Around Precision")}
               </h2>
             </StaggerItem>
 

@@ -10,32 +10,32 @@ const cards = [
   {
     title: "Fine Lines & Wrinkles",
     image: "/candela-ellipse-1.webp",
-    text: "Supports smoother,\nyounger-looking skin texture",
+    text: "Supports smoother, younger-looking skin texture",
   },
   {
     title: "Skin Firmness",
     image: "/candela-ellipse-2.webp",
-    text: "Helps improve visible\nskin laxity and elasticity",
+    text: "Helps improve visible skin laxity and elasticity",
   },
   {
     title: "Enlarged Pores",
     image: "/candela-ellipse-3.webp",
-    text: "Supports refined\nlooking skin texture",
+    text: "Supports refined looking skin texture",
   },
   {
     title: "Acne Scars & Texture",
     image: "/candela-ellipse-4.webp",
-    text: "Designed to improve\nuneven texture and skin quality",
+    text: "Designed to improve uneven texture and skin quality",
   },
   {
     title: "Dull Skin",
     image: "/candela-ellipse-5.webp",
-    text: "Supports brighter,\nhealthier-looking skin overall",
+    text: "Supports brighter, healthier-looking skin overall",
   },
   {
     title: "Collagen Support",
     image: "/candela-ellipse-6.webp",
-    text: "Stimulates natural regenerative\nprocesses beneath the skin",
+    text: "Stimulates natural regenerative processes beneath the skin",
   },
 ];
 
@@ -116,9 +116,7 @@ export default function CandelaBenefits({ cms, editing }: { cms?: Record<string,
     >
       <motion.div ref={titleRef} style={{ opacity: titleOpacity, y: titleY }} className="will-change-transform">
         <h2 {...e("text","benefits_title")} className={`text-center text-white text-[32px] min-[768px]:text-[48px] min-[1200px]:text-[70px] min-[1600px]:text-[92px] leading-tight font-berlingske font-normal px-2 sm:px-0 ${editing ? "cursor-pointer hover:ring-2 hover:ring-white" : ""}`}>
-          {cmsTitle ? t(cmsTitle) : <>{t("One Treatment.")}
-          <br />
-          {t("Multiple Skin Concerns")}</>}
+          {cmsTitle ? t(cmsTitle) : {t("One Treatment. Multiple Skin Concerns")}}
         </h2>
       </motion.div>
 

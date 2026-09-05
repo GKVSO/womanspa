@@ -28,9 +28,7 @@ export default function CandelaIdealCandidate() {
     >
       <FadeIn as="div" y={30}>
         <h2 className="text-center text-white text-[32px] min-[768px]:text-[48px] min-[1200px]:text-[70px] min-[1600px]:text-[100px] leading-tight font-berlingske font-normal px-2">
-          {t("Ideal For Clients Focused")}
-          <br />
-          {t("On Long-Term Skin Quality")}
+          {t("Ideal For Clients Focused On Long-Term Skin Quality")}
         </h2>
       </FadeIn>
 
@@ -88,13 +86,7 @@ export default function CandelaIdealCandidate() {
         >
           <img src="/sylfirm-frame.svg" alt="" className="w-12 h-12" />
           <p className="text-white font-bold text-[20px] leading-relaxed">
-            {t("Especially popular among clients")}
-            <br />
-            {t("wanting visible rejuvenation without")}
-            <br />
-            {t("aggressive surgery or extended")}
-            <br />
-            {t("recovery")}
+            {t("Especially popular among clients wanting visible rejuvenation without aggressive surgery or extended recovery")}
           </p>
         </div>
       </FadeIn>

@@ -36,9 +36,7 @@ export default function CandelaConsultation() {
           <StaggerContainer staggerDelay={0.1}>
             <StaggerItem>
               <h2 className="text-black text-[24px] min-[768px]:text-[36px] min-[1600px]:text-[48px] font-berlingske leading-tight mb-6 sm:mb-8">
-                {t("Over Time, Skin Starts Looking")}
-                <br />
-                {t("Less Smooth, Firm &amp; Even")}
+                {t("Over Time, Skin Starts Looking Less Smooth, Firm & Even")}
               </h2>
             </StaggerItem>
 
@@ -106,9 +104,7 @@ export default function CandelaConsultation() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               >
-                {t("Even healthy skin gradually loses collagen,")}
-                <br />
-                {t("elasticity, and smoothness over time")}
+                {t("Even healthy skin gradually loses collagen, elasticity, and smoothness over time")}
               </motion.p>
             </StaggerItem>
 
