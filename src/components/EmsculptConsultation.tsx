@@ -1,8 +1,8 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { btnHover } from "./Animations";
 import { useT } from "@/i18n/LanguageProvider";
+import { btnHover } from "./Animations";
+import BookButton from "./BookButton";
 
 const struggleBullets = [
   "stubborn areas of fat",
@@ -49,9 +49,9 @@ export default function EmsculptConsultation() {
           </p>
 
           <div className="flex flex-col gap-3 sm:gap-10 items-start mt-8">
-            <motion.button {...btnHover} className="bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer w-full min-[768px]:w-auto">
-              {t("Schedule Consultation")}
-            </motion.button>
+            <BookButton {...btnHover} className="bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer w-full min-[768px]:w-auto" 
+              label={t("Schedule Consultation")}
+            />
             <img
               src="/emsculpt-device.webp"
               alt={t("EMSculpt Neo device")}
