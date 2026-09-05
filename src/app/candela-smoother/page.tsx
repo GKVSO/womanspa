@@ -35,7 +35,16 @@ export default function CandelaSmootherPage() {
         <CandelaSmootherGallerySlider />
         <CandelaSmootherReviewsSlider />
         <CandelaSmootherFAQ />
-        <Consultation />
+        <Consultation 
+          title1="Feel More Comfortable &"
+          title2="Connected To Your Body"
+          bullets={[
+            "Private discussion",
+            "Personalized recommendations",
+            "Wellness-focused treatment planning",
+            "Questions answered comfortably & discreetly"
+          ]}
+        />
       </main>
     </div>
   );

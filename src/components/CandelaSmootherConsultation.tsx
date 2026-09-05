@@ -1,15 +1,9 @@
+
 "use client";
 
 import { motion } from "framer-motion";
 import { FadeIn, StaggerContainer, StaggerItem, btnHover } from "./Animations";
 import { useT } from "@/i18n/LanguageProvider";
-
-const feelings = [
-  "less confident",
-  "disconnected from their femininity",
-  "less comfortable",
-  "frustrated talking about intimate concerns",
-];
 
 const focus = ["Comfort", "Feminine wellness", "Confidence", "Quality of life", "Private care"];
 
@@ -32,18 +26,8 @@ export default function CandelaSmootherConsultation() {
   return (
     <section className="relative overflow-hidden bg-white rounded-b-[60px] px-5 sm:px-10 pt-16 sm:pt-24 pb-20 sm:pb-40">
       <FadeIn as="div" y={30}>
-        <h2 className="text-black text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske text-center mb-4 sm:mb-6">
-          {t("Your Skin Deserves A Solution")}
-          <br />
-          {t("That Doesn&apos;t Create New Problems")}
-        </h2>
-        <p className="text-black text-[22px] font-berlingske text-center">
-          {t("This Isn&apos;t About")}
-          <br />
-          {t("Aesthetic Perfection")}
-        </p>
-        <p className="text-black font-medium text-[14px] min-[768px]:text-[18px] text-center mt-3">
-          {t("It&apos;s About Feeling Comfortable In Your Body Again")}
+        <p className="text-black text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske text-center mb-4 sm:mb-6">
+          {t("This Isn't About Aesthetic Perfection. It's About Feeling Comfortable In Your Body Again")}
         </p>
       </FadeIn>
 
@@ -53,11 +37,7 @@ export default function CandelaSmootherConsultation() {
             {t("For many women, intimate wellness changes slowly over time")}
           </p>
           <p className="text-[#1F1D1B] font-medium text-[14px] min-[768px]:text-[18px] mb-6">
-            {t("After childbirth, hormonal shifts, stress, or aging, many begin feeling:")}
-          </p>
-          <DotList items={feelings} />
-          <p className="text-[#1F1D1B] font-medium text-[14px] min-[768px]:text-[18px] leading-relaxed mt-8">
-            {t("And most simply learn to live with it")}
+            {t("After childbirth, hormonal shifts, stress or aging many begin feeling less confident, disconnected from their femininity, less comfortable, frustrated talking about intimate concerns")}
           </p>
         </div>
 
@@ -66,16 +46,13 @@ export default function CandelaSmootherConsultation() {
             {t("EMFEMME 360 is designed as a discreet, non-surgical wellness treatment focused on:")}
           </p>
           <DotList items={focus} />
-          <p className="text-[#1F1D1B] font-medium text-[14px] min-[768px]:text-[18px] leading-relaxed mt-8">
-            {t("A modern feminine wellness experience designed to feel private, elevated, and supportive - not clinical or uncomfortable")}
-          </p>
 
           <div className="mt-auto pt-10">
             <motion.button
               {...btnHover}
               className="bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer w-full min-[768px]:w-auto "
       >
-              {t("Schedule Private Consultation")}
+              {t("Book Private Consultation")}
             </motion.button>
           </div>
         </div>

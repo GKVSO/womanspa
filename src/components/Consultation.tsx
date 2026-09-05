@@ -6,7 +6,7 @@ import Image from "next/image";
 import { FadeIn, StaggerContainer, StaggerItem, btnHover } from "./Animations";
 import { useT } from "@/i18n/LanguageProvider";
 
-export default function Consultation({ showOnMobile = true, hideAt1200 = false, showOnlyDesktop = false }: { showOnMobile?: boolean; hideAt1200?: boolean; showOnlyDesktop?: boolean }) {
+export default function Consultation({ showOnMobile = true, hideAt1200 = false, showOnlyDesktop = false, title1, title2, bullets }: { showOnMobile?: boolean; hideAt1200?: boolean; showOnlyDesktop?: boolean; title1?: string; title2?: string; bullets?: string[] }) {
   const [agreed, setAgreed] = useState(false);
   const t = useT();
 
@@ -21,9 +21,9 @@ export default function Consultation({ showOnMobile = true, hideAt1200 = false, 
           <StaggerContainer staggerDelay={0.1}>
             <StaggerItem>
               <h2 className="text-black text-[32px] sm:text-[48px] font-berlingske leading-tight mb-8">
-                {t("Begin With A")}
+                {t(title1 || "Begin With A")}
                 <br />
-                {t("Personalized Consultation")}
+                {t(title2 || "Personalized Consultation")}
               </h2>
             </StaggerItem>
 

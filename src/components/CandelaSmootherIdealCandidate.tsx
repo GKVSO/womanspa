@@ -39,12 +39,8 @@ export default function CandelaSmootherIdealCandidate() {
           <div className="bg-white/80 rounded-[30px] p-6 sm:p-10 w-full sm:w-[620px] backdrop-blur-sm">
             <div className="flex flex-col lg:flex-row justify-between items-stretch lg:items-end gap-6 lg:gap-10">
               <div>
-                <h3 className="text-[#313242] font-bold text-[20px] min-[768px]:text-[32px] mb-6">
-                  {t("Ideal Candidate List")}
-                </h3>
-                <p className="text-[#313242] font-semibold text-[14px] min-[768px]:text-[16px] mb-4">
-                  {t("This treatment may be ideal if you want to improve:")}
-                </p>
+                
+                
                 <ul className="space-y-2">
                   {bullets.map((item, i) => (
                     <motion.li

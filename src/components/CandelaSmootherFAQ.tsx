@@ -7,34 +7,28 @@ import { useT } from "@/i18n/LanguageProvider";
 
 const faqs = [
   {
-    question: "Is the treatment painful?",
-    answer:
-      "No. EMFEMME 360 is a comfortable, non-invasive procedure. Most clients describe a mild warming sensation during the session, with no anesthesia required.",
+    question: "01. How does EMFEMME work?",
+    answer: "EMFEMME uses controlled radiofrequency energy that gently heats tissues and stimulates natural collagen production, improves blood circulation and promotes tissue rejuvenation.",
   },
   {
-    question: "Is there downtime?",
-    answer:
-      "There is no downtime. You can return to your daily activities immediately after your session.",
+    question: "02. Is the EMFEMME treatment painful?",
+    answer: "No. Most patients describe the treatment as warm and comfortable. It is well tolerated and usually does not require anesthesia.",
   },
   {
-    question: "Is the experience private?",
-    answer:
-      "Yes. Sessions are designed around discretion and comfort, providing a private, elevated, and supportive environment.",
+    question: "03. How long does an EMFEMME session take?",
+    answer: "Most treatments take approximately 20-30 minutes, which makes them easy to fit even into a busy schedule.",
   },
   {
-    question: "How many sessions are recommended?",
-    answer:
-      "Most clients achieve optimal results with a series of sessions. Your provider will design a personalized treatment plan based on your goals during your consultation.",
+    question: "04. Is there any downtime after the treatment?",
+    answer: "No. Usually patients can immediately return to their normal daily activities after the visit.",
   },
   {
-    question: "Is surgery required?",
-    answer:
-      "No. EMFEMME 360 is a non-surgical solution designed to support feminine wellness without invasive procedures or extended recovery.",
+    question: "05. Is EMFEMME a surgical procedure?",
+    answer: "No. EMFEMME is completely non-invasive and requires no surgery, needles, incisions or recovery time.",
   },
   {
-    question: "When can I expect results?",
-    answer:
-      "Results develop gradually over time. Most clients notice improvements within the following weeks and continue to improve with a series of sessions.",
+    question: "06. Can EMFEMME help postpartum?",
+    answer: "Yes. Many women choose EMFEMME as part of their postpartum recovery to support tissues and improve overall feminine comfort.",
   },
 ];
 
