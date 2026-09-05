@@ -9,27 +9,27 @@ import { useRef } from "react";
 const cards = [
   {
     title: "Uneven Texture",
-    text: "Helps support\nsmoother-looking skin",
+    text: "Helps support smoother-looking skin",
   },
   {
     title: "Visible Pores",
-    text: "Designed to refine\noverall skin appearance",
+    text: "Designed to refine overall skin appearance",
   },
   {
     title: "Redness Appearance",
-    text: "Supports clearer\nlooking skin tone",
+    text: "Supports clearer looking skin tone",
   },
   {
     title: "Pigmentation Concerns",
-    text: "Helps improve uneven\ntone and discoloration appearance",
+    text: "Helps improve uneven tone and discoloration appearance",
   },
   {
     title: "Early Aging Signs",
-    text: "Supports collagen\nremodeling and skin renewal",
+    text: "Supports collagen remodeling and skin renewal",
   },
   {
     title: "Dull Skin",
-    text: "Helps skin appear brighter\nand healthier-looking",
+    text: "Helps skin appear brighter and healthier-looking",
   },
 ];
 
