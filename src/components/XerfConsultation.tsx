@@ -1,8 +1,7 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { btnHover } from "./Animations";
 import { useT } from "@/i18n/LanguageProvider";
+import BookButton from "./BookButton";
 
 const concerns = [
   "Skin that feels looser, less resilient",
@@ -59,12 +58,7 @@ export default function XerfConsultation() {
             {t("XERF was engineered to deliver structural change - deep, personalized, and needle-free - without asking you to sacrifice comfort or recovery time.")}
           </p>
 
-          <motion.button
-            {...btnHover}
-            className="self-start w-full min-[768px]:w-auto bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 mt-8 mb-8 min-[768px]:mb-0 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
-          >
-            {t("Schedule Consultation")}
-          </motion.button>
+          <BookButton className="self-start w-full min-[768px]:w-auto bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 mt-8 mb-8 min-[768px]:mb-0 shadow-sm hover:shadow-md transition-shadow cursor-pointer" label={t("Schedule Consultation")} />
 
           <div className="flex justify-center min-[768px]:mt-auto">
             <img
