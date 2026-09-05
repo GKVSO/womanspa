@@ -5,7 +5,7 @@ import { ml, nv, sv, toLang } from "@/lib/i18n-helpers";
 import { smoothScrollToTarget } from "@/lib/scroll";
 import { motion } from "framer-motion";
 import { StaggerContainer, StaggerItem, btnHover } from "./Animations";
-
+import BookButton from "./BookButton";
 const cards = [
   {
     num: "01",
@@ -146,13 +146,7 @@ export default function XerfHero({ cms, editing }: { cms?: Record<string, unknow
 
         <StaggerItem className="mt-auto sm:mt-0">
           <div {...e("button", "hero_buttons")} className={`flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mt-8 sm:mt-10 ${EDIT_CLS}`}>
-            <motion.button
-              {...btnHover}
-              className="w-full sm:w-auto font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer"
-              style={{ backgroundColor: buttonColor, color: buttonTextColor }}
-            >
-              {cmsPrimaryBtn ? t(cmsPrimaryBtn) : t("Claim 100$ Consultation")}
-            </motion.button>
+            <BookButton style={{ backgroundColor: buttonColor, color: buttonTextColor }} className="w-full sm:w-auto font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer" label={cmsPrimaryBtn ? t(cmsPrimaryBtn) : t("Claim 100$ Consultation")} />
             <motion.button onClick={() => smoothScrollToTarget('before-after')} {...btnHover} className="w-full sm:w-auto text-white font-bold text-[14px] border border-white rounded-[10px] px-8 py-4 bg-transparent hover:bg-white/10 transition-colors cursor-pointer">
               {cmsSecondaryBtn ? t(cmsSecondaryBtn) : t("Before&amp;After")}
             </motion.button>
