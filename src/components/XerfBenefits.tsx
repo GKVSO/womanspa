@@ -13,7 +13,7 @@ const cards = [
   },
   {
     title: "Multifrequency RF",
-    text: "Two frequencies working together reach\nthe shallow, middle, and deep dermal layers\n- stimulating collagen and elastin",
+    text: "Two frequencies working together reach the shallow, middle, and deep dermal layers - stimulating collagen and elastin",
   },
   {
     title: "Fully Personalized To Your Skin",
@@ -108,7 +108,7 @@ export default function XerfBenefits({ cms, editing }: { cms?: Record<string, un
     >
       <motion.div ref={titleRef} style={{ opacity: titleOpacity, y: titleY }} className="will-change-transform">
         <h2 {...e("text","benefits_title")} className={`text-center text-white text-[32px] min-[768px]:text-[48px] min-[1200px]:text-[70px] min-[1600px]:text-[92px] leading-tight font-berlingske font-normal ${editing ? "cursor-pointer hover:ring-2 hover:ring-white" : ""}`}>
-          {cmsTitle ? t(cmsTitle) : <>{t("XERF: Results")}<br />{t("Without Sacrifice")}</>}
+          {cmsTitle ? t(cmsTitle) : <>{t("XERF: Results Without Compromises")}</>}
         </h2>
       </motion.div>
 

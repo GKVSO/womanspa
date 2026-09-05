@@ -9,15 +9,15 @@ import { useT } from "@/i18n/LanguageProvider";
 const steps = [
   {
     title: "1. Fit The Depth - Shallow, Middle, Deep",
-    text: "EMSELLA uses High-Intensity Focused Electromagnetic (HIFEM)\ntechnology to stimulate deep pelvic floor muscles while you remain\nfully clothed and comfortably seated",
+    text: "Precise depth control allows targeting different tissue layers - from shallow to deep - providing comprehensive rejuvenation and skin tightening.",
   },
   {
     title: "2. Fit By Heat - Wave Fit Pulse",
-    text: "Traditional RF can spike in temperature, causing discomfort or burns.\nXERF's Wave Fit Pulse auto-adjusts the RF pulse according to delivered\nenergy, creating a stable, balanced thermal profile and a comfortably\nwarm sensation throughout",
+    text: "Traditional RF can spike in temperature, causing discomfort or burns. XERF's Wave Fit Pulse auto-adjusts the RF pulse according to delivered energy, creating a stable, balanced thermal profile and a comfortably warm sensation throughout",
   },
   {
     title: "3. Fit For Skin - Real-Time Impedance Feedback",
-    text: "Before each pulse, the system measures your skin's impedance and\nsynchronizes energy delivery. This means your treatment is constantly\nadapting to your tissue - not delivering a generic preset",
+    text: "Before each pulse, the system measures your skin's impedance and synchronizes energy delivery. This means your treatment is constantly adapting to your tissue - not delivering a generic preset",
   },
 ];
 
@@ -53,15 +53,13 @@ export default function XerfTechnology() {
         <StaggerContainer staggerDelay={0.12} className="max-w-[760px] min-[1200px]:max-w-[350px] min-[1600px]:max-w-[760px]">
           <StaggerItem>
             <h2 className="text-[#313242] text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske font-normal">
-              {t("How XERF Structural")}
-              <br />
-              {t("Skin Tightening Works")}
+              {t("How XERF Structural Skin Tightening Works")}
             </h2>
           </StaggerItem>
 
           <StaggerItem>
             <p className="text-[#1F1D1B] font-medium text-[16px] min-[1200px]:text-[14px] min-[1600px]:text-[16px] mt-6 max-w-[640px] min-[1200px]:max-w-[330px] min-[1600px]:max-w-[640px] leading-relaxed">
-              {t("XERF is the world's first monopolar RF device to combine 6.78 MHz\nand 2 MHz frequencies in one handpiece. This dual-frequency approach\nis the key to its depth versatility")}
+              {t("XERF is the world's first monopolar RF device to combine 6.78 MHz and 2 MHz frequencies in one handpiece. This dual-frequency approach is the key to its depth versatility")}
             </p>
           </StaggerItem>
 

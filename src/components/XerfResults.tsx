@@ -29,9 +29,7 @@ export default function XerfResults() {
     <section className="relative overflow-hidden rounded-b-[60px] bg-white px-5 sm:px-10 pt-14 sm:pt-24 pb-20 sm:pb-32">
       <FadeIn as="div" y={30}>
         <h2 className="text-center text-[#313242] text-[32px] sm:text-[48px] leading-tight font-berlingske font-normal mb-24">
-          {t("What results can")}
-          <br />
-          {t("you expect after XERF?")}
+          {t("What results can you expect after XERF?")}
         </h2>
       </FadeIn>
 

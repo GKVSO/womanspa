@@ -127,7 +127,7 @@ export default function XerfHero({ cms, editing }: { cms?: Record<string, unknow
             className={`xerf-hero-title text-white leading-tight ${titleFont} ${EDIT_CLS}`}
             style={titleStyle}
           >
-            {cmsTitle ? t(cmsTitle) : <>{t("Lift &amp; Tighten Loose Skin")}<br />{t("&mdash; Without Surgery or Downtime")}</>}
+            {cmsTitle ? t(cmsTitle) : <>{t("Lift & Tighten Loose Skin — Without Surgery or Downtime")}</>}
           </h1>
           {/* Responsive font-size overrides */}
           <style>{`
@@ -140,7 +140,7 @@ export default function XerfHero({ cms, editing }: { cms?: Record<string, unknow
 
         <StaggerItem>
           <p {...e("text", "hero_subtitle")} className={`text-white text-[16px] font-semibold leading-relaxed mt-6 max-w-[680px] ${EDIT_CLS}`}>
-            {cmsSubtitle ? t(cmsSubtitle) : <>{t("Restore a firmer jawline, tighter neck, and smoother skin with the newest")}{t("RF technology. Comfortable treatment. No needles. No downtime")}</>}
+            {cmsSubtitle ? t(cmsSubtitle) : <>{t("Restore a firmer jawline, tighter neck, and smoother skin with the newest RF technology. Comfortable treatment. No needles. No downtime.")}</>}
           </p>
         </StaggerItem>
 
