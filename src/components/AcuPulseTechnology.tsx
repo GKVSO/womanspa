@@ -50,9 +50,7 @@ export default function AcuPulseTechnology() {
         <StaggerContainer staggerDelay={0.12} className="max-w-[760px] min-[1200px]:max-w-[350px] min-[1600px]:max-w-[760px]">
           <StaggerItem>
             <h2 className="text-[#313242] text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske font-normal">
-              {t("How CO2 Laser")}
-              <br />
-              {t("Resurfacing Works")}
+              {t("How CO2 Laser Resurfacing Works")}
             </h2>
           </StaggerItem>
 

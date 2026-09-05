@@ -31,9 +31,7 @@ export default function AcuPulseConsultation() {
   return (
     <section className="relative overflow-hidden bg-white rounded-b-[60px] px-5 sm:px-10 pt-16 sm:pt-24 pb-20 sm:pb-40">
       <h2 className="text-black text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske text-center mb-10 sm:mb-20">
-        {t("Your Skin")}
-        <br />
-        {t("Changes Over Time")}
+        {t("Your Skin Changes Over Time")}
       </h2>
 
       <div className="flex flex-col lg:flex-row items-stretch lg:items-start gap-10 lg:gap-16">
@@ -46,13 +44,7 @@ export default function AcuPulseConsultation() {
 
         <div className="flex-1 bg-[#F4F1E7] rounded-[40px] sm:rounded-[60px] mt-0 lg:mt-32 p-6 sm:p-10">
           <p className="text-[#1F1D1B] text-[18px] min-[768px]:text-[24px] min-[1600px]:text-[32px] font-berlingske leading-snug max-w-[680px]">
-            {t("CO2 Laser Resurfacing stimulates collagen")}
-            <br />
-            {t("renewal and deeper skin regeneration to")}
-            <br />
-            {t("help the skin appear smoother, firmer,")}
-            <br />
-            {t("brighter, and more refined")}
+            {t("CO2 Laser Resurfacing stimulates collagen renewal and deeper skin regeneration to help the skin appear smoother, firmer, brighter, and more refined")}
           </p>
 
           <div className="flex flex-col gap-3 sm:gap-8 items-start mt-8">

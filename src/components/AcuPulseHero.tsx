@@ -45,7 +45,7 @@ export default function AcuPulseHero({ cms, editing }: { cms?: Record<string, un
 
         <StaggerItem>
           <h1 {...e("text","hero_title")} className={`${titleFont || "font-berlingske"} text-white text-[24px] min-[768px]:text-[36px] min-[1200px]:text-[40px] min-[1600px]:text-[48px] leading-tight ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`} style={{ ...(cms ? { color: sv(cms.titleColor) || undefined, fontSize: cms.titleSize ? `${cms.titleSize}px` : undefined } : {}) }}>
-            {cmsTitle ? t(cmsTitle) : <>{t("AcuPulse CO2 Laser Resurfacing For")}<br />{t("Smoother, Younger-Looking Skin")}</>}
+            {cmsTitle ? t(cmsTitle) : <>{t("AcuPulse CO2 Laser Resurfacing For Smoother, Younger-Looking Skin")}</>}
           </h1>
         </StaggerItem>
 

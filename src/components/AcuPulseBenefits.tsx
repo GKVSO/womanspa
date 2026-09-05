@@ -109,9 +109,7 @@ export default function AcuPulseBenefits({ cms, editing }: { cms?: Record<string
     >
       <motion.div ref={titleRef} style={{ opacity: titleOpacity, y: titleY }} className="will-change-transform">
         <h2 {...e("text","benefits_title")} className={`text-center text-white text-[32px] min-[768px]:text-[48px] min-[1200px]:text-[70px] min-[1600px]:text-[92px] leading-tight font-berlingske font-normal px-2 sm:px-0 ${editing ? "cursor-pointer hover:ring-2 hover:ring-white" : ""}`}>
-          {cmsTitle ? t(cmsTitle) : <>{t("Refined, Smoother,")}
-          <br />
-          {t("Healthier-Looking Skin")}</>}
+          {cmsTitle ? t(cmsTitle) : <>{t("Refined, Smoother, Healthier-Looking Skin")}</>}
         </h2>
       </motion.div>
 

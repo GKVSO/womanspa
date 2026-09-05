@@ -27,9 +27,7 @@ export default function AcuPulseCandidate() {
     >
       <FadeIn as="div" y={30}>
         <h2 className="text-center text-white text-[32px] min-[768px]:text-[48px] min-[1200px]:text-[70px] min-[1600px]:text-[100px] leading-tight font-berlingske font-normal px-2">
-          {t("Is CO2 Laser Resurfacing")}
-          <br />
-          {t("Right For You?")}
+          {t("Is CO2 Laser Resurfacing Right For You?")}
         </h2>
       </FadeIn>
 
