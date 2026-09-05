@@ -44,7 +44,7 @@ export default function HydrafacialHero({ cms, editing }: { cms?: Record<string,
 
         <StaggerItem>
           <h1 {...e("text","hero_title")} className={`${titleFont || "font-berlingske"} text-white text-[24px] min-[768px]:text-[36px] min-[1200px]:text-[40px] min-[1600px]:text-[48px] leading-tight ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`} style={{ ...(cms ? { color: sv(cms.titleColor) || undefined, fontSize: cms.titleSize ? `${cms.titleSize}px` : undefined } : {}) }}>
-            {cmsTitle ? t(cmsTitle) : <>{t("HydraFacial Syndeo - The Most")}<br />{t("Advanced HydraFacial Platform")}<br />{t("at Hallandale Beach")}</>}
+            {cmsTitle ? t(cmsTitle) : <>{t("HydraFacial Syndeo - The Most Advanced HydraFacial Platform at Hallandale Beach")}</>}
           </h1>
         </StaggerItem>
 

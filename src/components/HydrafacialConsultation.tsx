@@ -31,26 +31,24 @@ export default function HydrafacialConsultation() {
   return (
     <section className="relative overflow-hidden bg-white rounded-b-[60px] px-5 sm:px-10 pt-16 sm:pt-24 pb-20 sm:pb-40">
       <h2 className="text-black text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske text-center mb-10 sm:mb-20">
-        {t("Your Skin Faces More Than")}
-        <br />
-        {t("You Realize - Every Single Day")}
+        {t("Your Skin Faces More Than You Realize - Every Single Day")}
       </h2>
 
       <div className="flex flex-col lg:flex-row items-stretch lg:items-start gap-10 lg:gap-16">
         <div className="flex-1 bg-[#F4F1E7] rounded-[40px] sm:rounded-[60px] p-8 sm:p-14">
           <p className="text-[#1F1D1B] text-[18px] min-[768px]:text-[24px] min-[1600px]:text-[32px] font-berlingske mb-8">
-            {t("Miami&apos;s humidity, sun exposure, air conditioning, pollution, and stress create a constant cycle of:")}
+            {t("Miami's humidity, sun exposure, air conditioning, pollution, and stress create a constant cycle of:")}
           </p>
           <DotList items={struggleBullets} />
         </div>
 
         <div className="flex-1 bg-[#F4F1E7] rounded-[40px] sm:rounded-[60px] mt-0 lg:mt-32 pt-6 sm:pt-10 px-6 sm:px-10 pb-6 sm:pb-10 flex flex-col">
           <p className="text-[#1F1D1B] text-[18px] min-[768px]:text-[24px] min-[1600px]:text-[32px] font-berlingske leading-snug max-w-[680px]">
-            {t("You&apos;ve tried department store creams, random spa facials, and DIY routines - and yet your skin doesn&apos;t look or feel the way you want it to")}
+            {t("You've tried department store creams, random spa facials, and DIY routines - and yet your skin doesn't look or feel the way you want it to")}
           </p>
 
           <p className="text-[#1F1D1B] font-medium text-[14px] min-[768px]:text-[18px] mt-8 max-w-[600px] leading-relaxed">
-            {t("It&apos;s not your fault. Most facials address only the surface. Real transformation requires technology that cleanses, extracts, and infuses at a level skincare alone cannot reach")}
+            {t("It's not your fault. Most facials address only the surface. Real transformation requires technology that cleanses, extracts, and infuses at a level skincare alone cannot reach")}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-10 items-start sm:items-center mt-8">

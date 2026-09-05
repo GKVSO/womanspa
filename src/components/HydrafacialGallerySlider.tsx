@@ -74,9 +74,7 @@ export default function HydrafacialGallerySlider() {
         <StaggerContainer staggerDelay={0.12}>
           <StaggerItem>
             <h2 className="text-white text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] font-berlingske leading-tight mb-10 text-center">
-              {t("The Instant")}
-              <br />
-              {t("Transformation Your Skin Deserves")}
+              {t("The Instant Transformation Your Skin Deserves")}
             </h2>
           </StaggerItem>
 
