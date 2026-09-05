@@ -36,10 +36,8 @@ export default function PrimelaseTechnology() {
       <div className="flex flex-col">
         <StaggerContainer staggerDelay={0.12} className="max-w-[760px]">
           <StaggerItem>
-            <h2 className="text-[#313242] text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske font-normal">
-              {t("Why Primelase Diode Laser Works Faster, Gentler, and Across")}
-              <br />
-              {t("More Skin Types")}
+            <h2 className="text-[#313242] text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske font-normal whitespace-pre-line">
+              {t("Why Primelase Diode Laser Works Faster, Gentler, and Across \n More Skin Types")}
             </h2>
           </StaggerItem>
 

@@ -1,8 +1,8 @@
-﻿"use client";
+"use client";
 
+import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
 import { btnHover } from "./Animations";
-import { useT } from "@/i18n/LanguageProvider";
 
 const struggleBullets = [
   "leaking when laughing or exercising",
@@ -29,10 +29,8 @@ export default function EmsellaConsultation() {
   const t = useT();
   return (
     <section className="relative overflow-hidden bg-white rounded-b-[60px] px-5 sm:px-10 pt-16 sm:pt-24 pb-20 sm:pb-40">
-      <h2 className="text-black text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske text-center mb-10 sm:mb-20">
-        {t("You Shouldn&apos;t Have To Think")}
-        <br />
-        {t("About Your Bladder Every Day")}
+      <h2 className="text-black text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske text-center mb-10 sm:mb-20 whitespace-pre-line">
+        {t("You Shouldn&apos;t Have To Think \n About Your Bladder Every Day")}
       </h2>
 
       <div className="flex flex-col lg:flex-row items-stretch lg:items-start gap-10 lg:gap-16">
@@ -41,10 +39,8 @@ export default function EmsellaConsultation() {
             {t("Many women quietly deal with:")}
           </p>
           <DotList items={struggleBullets} />
-          <p className="text-[#1F1D1B] text-[18px] min-[768px]:text-[24px] min-[1600px]:text-[32px] font-berlingske mt-8">
-            {t("And most never")}
-            <br />
-            {t("talk about it!")}
+          <p className="text-[#1F1D1B] text-[18px] min-[768px]:text-[24px] min-[1600px]:text-[32px] font-berlingske mt-8 whitespace-pre-line">
+            {t("And most never \n talk about it!")}
           </p>
           <div className="mt-auto pt-10 flex justify-center">
             <img
@@ -64,7 +60,13 @@ export default function EmsellaConsultation() {
           </p>
 
           <div className="mt-8">
-            <DotList items={["No surgery", "No downtime", "No recovery", "Fully clothed treatment", "Pelvic floor strengthening"]} />
+            <DotList items={[
+                t("No surgery"), 
+                t("No downtime"), 
+                t("No recovery"), 
+                t("Fully clothed treatment"), 
+                t("Pelvic floor strengthening")
+              ]} />
           </div>
 
           <div className="mt-8">

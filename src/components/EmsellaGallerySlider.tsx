@@ -73,10 +73,8 @@ export default function EmsellaGallerySlider() {
       <div className="w-full sm:w-[90%] px-4 sm:px-0">
         <StaggerContainer staggerDelay={0.12}>
           <StaggerItem>
-<h2 className="text-white text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] font-berlingske leading-tight mb-10 text-center">
-              {t("A Sculpted, Refined Silhouette")}
-              <br />
-              {t("Through Cold Laser Technology")}
+            <h2 className="text-white text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] font-berlingske leading-tight mb-10 text-center whitespace-pre-line">
+              {t("A Sculpted, Refined Silhouette \n Through Cold Laser Technology")}
             </h2>
           </StaggerItem>
 

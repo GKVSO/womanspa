@@ -1,25 +1,25 @@
-﻿"use client";
+"use client";
 
+import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { StaggerContainer, StaggerItem, FadeIn } from "./Animations";
-import { useT } from "@/i18n/LanguageProvider";
+import { FadeIn, StaggerContainer, StaggerItem } from "./Animations";
 
 const cards = [
   {
     title: "Fully Clothed Treatment",
     image: "/emsella-tech-ellipse-20.png",
-    text: "Helps strengthen pelvic floor\nmuscles associated with urinary control",
+    text: "You sit comfortably throughout the entire session",
   },
   {
     title: "HIFEM Muscle Stimulation",
     image: "/emsella-tech-ellipse-19-1.png",
-    text: "Supports deeper muscle\nengagement beyond traditional Kegel exercises",
+    text: "Supports deeper muscle engagement beyond traditional Kegel exercises",
   },
   {
     title: "Pelvic Floor Re-Education",
     image: "/emsella-tech-ellipse-18-2.png",
-    text: "Popular among women\nafter pregnancy and childbirth",
+    text: "Popular among women after pregnancy and childbirth",
   },
 ];
 
@@ -44,10 +44,8 @@ export default function EmsellaTechnology() {
         <div className="flex-1 max-w-[620px]">
           <StaggerContainer staggerDelay={0.12}>
             <StaggerItem>
-              <h2 className="text-[#313242] text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske font-normal">
-                {t("Thousands Of Pelvic Floor")}
-                <br />
-                {t("Contractions In A Single Session")}
+              <h2 className="text-[#313242] text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske font-normal whitespace-pre-line">
+                {t("Thousands Of Pelvic Floor \n Contractions In A Single Session")}
               </h2>
             </StaggerItem>
 

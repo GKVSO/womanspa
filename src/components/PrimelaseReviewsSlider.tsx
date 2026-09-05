@@ -131,10 +131,8 @@ export default function PrimelaseReviewsSlider() {
       <div className="w-full sm:w-[90%] px-4 sm:px-0">
         <StaggerContainer staggerDelay={0.12}>
           <StaggerItem>
-            <h2 className="text-black text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] font-berlingske leading-tight mb-10 text-center">
-              {t("Why Clients Add Diode Laser")}
-              <br />
-              {t("To Their Skin Maintenance Routine")}
+            <h2 className="text-black text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] font-berlingske leading-tight mb-10 text-center whitespace-pre-line">
+              {t("Why Clients Add Diode Laser \n To Their Skin Maintenance Routine")}
             </h2>
           </StaggerItem>
 
