@@ -32,9 +32,7 @@ export default function AerolaseConsultation() {
   return (
     <section className="relative overflow-hidden bg-white rounded-b-[60px] px-5 sm:px-10 pt-16 sm:pt-24 pb-20 sm:pb-40">
       <h2 className="text-black text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske text-center mb-10 sm:mb-20">
-        {t("Your Skin Deserves A Solution")}
-        <br />
-        {t("That Doesn&apos;t Create New Problems")}
+        {t("Your Skin Deserves A Solution That Doesn't Create New Problems")}
       </h2>
 
       <div className="flex flex-col lg:flex-row items-stretch lg:items-start gap-10 lg:gap-16">
