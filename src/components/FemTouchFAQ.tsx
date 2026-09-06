@@ -9,22 +9,22 @@ const faqs = [
   {
     question: "Is there downtime?",
     answer:
-      "No. FemTouch is a gentle, non-invasive treatment with minimal to no downtime. Most women return to their daily activities immediately.",
+      "FemTouch requires little to no downtime. Most women can return to their normal daily activities immediately after the treatment. Your provider may recommend avoiding sexual activity for a short period after the procedure to allow the tissue to recover.",
   },
   {
     question: "Is FemTouch safe for women who’ve had a hysterectomy?",
     answer:
-      "Yes. FemTouch is safe and effective for women who’ve had a hysterectomy. Your provider will confirm your suitability during a consultation.",
+      "FemTouch may be suitable for women who have had a hysterectomy, depending on their individual health history and condition. A consultation with a qualified provider is recommended to determine if the treatment is right for you.",
   },
   {
     question: "Can FemTouch be combined with Emsella or Emfemme 360?",
     answer:
-      "Yes. FemTouch can be safely combined with Emsella or Emfemme 360 for a more complete, personalized feminine wellness plan. Your provider will tailor the treatment to your needs.",
+      "Yes. FemTouch can be combined with other women’s wellness treatments such as Emsella or EMFEMME 360. These treatments address different aspects of intimate health and may complement each other as part of a personalized wellness plan.",
   },
   {
     question: "Will my partner feel the difference?",
     answer:
-      "Most partners notice a difference in tone, tightness, and comfort, which can enhance intimacy and satisfaction for both partners.",
+      "Many women report improvements in comfort, tissue quality, and confidence after FemTouch treatments. Some women also notice positive changes in intimacy, but individual results may vary.",
   },
 ];
 

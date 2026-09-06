@@ -94,10 +94,8 @@ export default function FemTouchBenefits({ cms, editing }: { cms?: Record<string
       }}
     >
       <motion.div ref={titleRef} style={{ opacity: titleOpacity, y: titleY }} className="will-change-transform">
-        <h2 {...e("text","benefits_title")} className={`text-center text-white text-[32px] min-[768px]:text-[48px] min-[1200px]:text-[70px] min-[1600px]:text-[92px] leading-tight font-berlingske font-normal px-2 sm:px-0 ${editing ? "cursor-pointer hover:ring-2 hover:ring-white" : ""}`}>
-          {cmsTitle ? t(cmsTitle) : <>{t("FemTouch: A Few")}
-          <br />
-          {t("Gentle Minutes. Lasting Change")}</>}
+        <h2 {...e("text","benefits_title")} className={`text-center text-white text-[32px] min-[768px]:text-[48px] min-[1200px]:text-[70px] min-[1600px]:text-[92px] leading-tight font-berlingske font-normal px-2 sm:px-0 whitespace-pre-line ${editing ? "cursor-pointer hover:ring-2 hover:ring-white" : ""}`}>
+          {cmsTitle ? t(cmsTitle) : <>{t("FemTouch: A Few\nGentle Minutes. Lasting Change")}</>}
         </h2>
       </motion.div>
 

@@ -45,20 +45,20 @@ export default function FemTouchHero({ cms, editing }: { cms?: Record<string, un
         </StaggerItem>
 
         <StaggerItem>
-          <h1 {...e("text","hero_title")} className={`${titleFont || "font-berlingske"} text-white text-[24px] min-[768px]:text-[36px] min-[1200px]:text-[40px] min-[1600px]:text-[48px] leading-tight ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`} style={{ ...(cms ? { color: sv(cms.titleColor) || undefined, fontSize: cms.titleSize ? `${cms.titleSize}px` : undefined } : {}) }}>
-            {cmsTitle ? t(cmsTitle) : <>{t("FemTouch - CO2 Laser For")}<br />{t("Vaginal Health At WO/MAN")}<br />{t("Luxe MedSpa Hallandale Beach")}</>}
+          <h1 {...e("text","hero_title")} className={`${titleFont || "font-berlingske"} text-white text-[24px] min-[768px]:text-[36px] min-[1200px]:text-[40px] min-[1600px]:text-[48px] leading-tight whitespace-pre-line ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`} style={{ ...(cms ? { color: sv(cms.titleColor) || undefined, fontSize: cms.titleSize ? `${cms.titleSize}px` : undefined } : {}) }}>
+            {cmsTitle ? t(cmsTitle) : <>{t("FemTouch - CO2 Laser For Vaginal Health At\nWO/MAN Luxe MedSpa Hallandale Beach")}</>}
           </h1>
         </StaggerItem>
 
         <StaggerItem>
           <p {...e("text","hero_subtitle")} className={`${subtitleFont || ""} text-white text-[16px] font-semibold leading-relaxed mt-6 max-w-[720px] ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`} style={{ ...(cms ? { color: sv(cms.subtitleColor) || undefined, fontSize: cms.subtitleSize ? `${cms.subtitleSize}px` : undefined } : {}) }}>
-            {cmsSubtitle ? t(cmsSubtitle) : <>{t("A gentle, non-invasive laser treatment designed to restore vaginal tissue, improve moisture, and support feminine")}{t("wellness at every stage of life. Performed with complete privacy, medical precision, and the elevated care you deserve")}</>}
+            {cmsSubtitle ? t(cmsSubtitle) : <>{t("A gentle, non-invasive laser treatment designed to restore vaginal tissue, improve moisture, and support feminine wellness at every stage of life. Performed with complete privacy, medical precision, and the elevated care you deserve")}</>}
           </p>
         </StaggerItem>
 
         <StaggerItem className="mt-auto sm:mt-0">
           <div {...e("button","hero_buttons")} className={`flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mt-8 sm:mt-10 ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`}>
-            <BookButton className="w-full sm:w-auto bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer" label={cmsPrimaryBtn ? t(cmsPrimaryBtn) : t("Book Consultation")} />
+            <BookButton className="w-full sm:w-auto bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer whitespace-nowrap" label={cmsPrimaryBtn ? t(cmsPrimaryBtn) : t("Book Consultation")} />
           </div>
         </StaggerItem>
       </StaggerContainer>
