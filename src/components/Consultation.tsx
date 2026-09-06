@@ -67,12 +67,12 @@ export default function Consultation({ showOnMobile = true, hideAt1200 = false, 
             <StaggerItem>
               <p className="text-black font-semibold text-[16px] mb-4">{t("Consultation Includes:")}</p>
               <ul className="space-y-2 mb-8">
-                {[
+                {(bullets || [
                   "Personalized recommendations",
                   "Skin/body/wellness evaluation",
                   "Personalized treatment recommendations",
                   "Questions answered privately",
-                ].map((item, i) => (
+                ]).map((item, i) => (
                   <motion.li
                     key={item}
                     className="flex items-start gap-3 text-black font-semibold text-[16px]"

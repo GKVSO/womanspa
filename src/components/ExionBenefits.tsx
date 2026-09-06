@@ -10,32 +10,32 @@ const cards = [
   {
     title: "Natural Collagen Production",
     image: "/exion-ellipse-1.webp",
-    text: "Stimulates collagen remodeling\nto improve skin quality over time",
+    text: "Stimulates collagen remodeling to improve skin quality over time.",
   },
   {
     title: "Improve Skin Firmness",
     image: "/exion-ellipse-2.webp",
-    text: "Stimulates collagen remodeling\nto improve skin quality over time",
+    text: "Helps skin appear firmer and more lifted.",
   },
   {
     title: "Refine Texture & Tone",
     image: "/exion-ellipse-3.webp",
-    text: "Stimulates collagen remodeling\nto improve skin quality over time",
+    text: "Encourages smoother, more even and healthy-looking skin.",
   },
   {
     title: "Non-Invasive Treatment",
     image: "/exion-ellipse-4.webp",
-    text: "Stimulates collagen remodeling\nto improve skin quality over time",
+    text: "No surgery, no incisions, and no prolonged recovery.",
   },
   {
     title: "Natural-Looking Results",
     image: "/exion-ellipse-5.webp",
-    text: "Stimulates collagen remodeling\nto improve skin quality over time",
+    text: "Focuses on subtle, harmonious rejuvenation without an overdone look.",
   },
   {
     title: "Minimal Lifestyle Interruption",
     image: "/exion-group.webp",
-    text: "Stimulates collagen remodeling\nto improve skin quality over time",
+    text: "Quick treatments designed to fit easily into a busy schedule.",
   },
 ];
 
@@ -115,10 +115,8 @@ export default function ExionBenefits({ cms, editing }: { cms?: Record<string, u
       }}
     >
       <motion.div ref={titleRef} style={{ opacity: titleOpacity, y: titleY }} className="will-change-transform">
-        <h2 {...e("text","benefits_title")} className={`text-center text-white text-[32px] min-[768px]:text-[48px] min-[1200px]:text-[70px] min-[1600px]:text-[92px] leading-tight font-berlingske font-normal ${editing ? "cursor-pointer hover:ring-2 hover:ring-white" : ""}`}>
-          {cmsTitle ? t(cmsTitle) : <>{t("Rejuvenation Designed")}
-          <br />
-          {t("To Look Natural")}</>}
+        <h2 {...e("text","benefits_title")} className={`text-center text-white text-[32px] min-[768px]:text-[48px] min-[1200px]:text-[70px] min-[1600px]:text-[92px] leading-tight font-berlingske font-normal whitespace-pre-line ${editing ? "cursor-pointer hover:ring-2 hover:ring-white" : ""}`}>
+          {cmsTitle ? t(cmsTitle) : <>{t("Rejuvenation Designed\nTo Look Natural")}</>}
         </h2>
       </motion.div>
 

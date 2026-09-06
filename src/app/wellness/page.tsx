@@ -10,7 +10,17 @@ export default function WellnessPage() {
       <main className="flex-1">
         <WellnessHero />
         <WellnessTechnologiesSection />
-        <Consultation showOnMobile />
+        <Consultation 
+          showOnMobile 
+          title1="Book Your"
+          title2="Private Consultation"
+          bullets={[
+            "One-on-one conversation in a discreet luxury suite",
+            "Complete privacy and zero pressure",
+            "Technology recommendation",
+            "Transparent pricing and timeline"
+          ]}
+        />
       </main>
     </div>
   );

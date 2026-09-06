@@ -20,35 +20,35 @@ const reviews: Review[] = [
   {
     id: 1,
     category: "Skin Rejuvenation",
-    title: "Skin Looked Smoother!",
-    text: "I wanted healthier skin without downtime. Candela Matrix smoothed my texture and left my face looking fresher and much more radiant now too.",
+    title: "Skin Feels Much Smoother!",
+    text: "I mainly wanted to improve my acne scars and uneven texture. After two EXION treatments, my skin already felt smoother and the scars looked less noticeable. I'm continuing the recommended course to see the full result.",
     name: "Jennifer Morales",
     initials: "JM",
     stars: 5,
   },
   {
     id: 2,
-    category: "Body Contouring",
-    title: "Amazing Results!",
-    text: "The body contouring treatment exceeded all my expectations. I saw a clear difference after just a few sessions, and it was very comfortable.",
+    category: "Skin Rejuvenation",
+    title: "I Loved How Natural The Result Looks",
+    text: "I wanted some tightening without looking like I had done something drastic. The changes have been gradual, but my skin looks firmer and more refreshed. That natural-looking result is exactly what I was hoping for.",
     name: "Sarah Johnson",
     initials: "SJ",
     stars: 5,
   },
   {
     id: 3,
-    category: "Laser Hair Removal",
-    title: "Best Investment Ever",
-    text: "After years of waxing, laser hair removal changed everything. The staff was gentle and professional, and the results are so truly permanent.",
+    category: "Skin Rejuvenation",
+    title: "Much More Comfortable Than I Expected",
+    text: "I was nervous because I had heard different things about RF treatments. EXION was much more comfortable than I expected, and I didn't have to take time off from my normal routine afterward. So far, I'm really happy with how my skin is responding.",
     name: "Maria Rodriguez",
     initials: "MR",
     stars: 5,
   },
   {
     id: 4,
-    category: "Wellness",
-    title: "Felt Rejuvenated",
-    text: "The wellness program is a complete experience from the start. I walked out feeling like a new person. The treatments were tailored to needs.",
+    category: "Skin Rejuvenation",
+    title: "My Skin Looks Firmer",
+    text: "My main concern was early skin laxity and a tired-looking complexion. After completing my sessions, I noticed that my skin looked firmer and the overall texture was more refined. It's not an overnight transformation, but I really like the gradual improvement.",
     name: "Amanda Wilson",
     initials: "AW",
     stars: 5,
@@ -56,17 +56,17 @@ const reviews: Review[] = [
   {
     id: 5,
     category: "Skin Rejuvenation",
-    title: "Glowing Skin",
-    text: "My friends keep asking what I did to my skin! The rejuvenation treatments are top-notch and the results speak for themselves, truly amazing.",
+    title: "I Didn't Have To Change My Schedule",
+    text: "One of the biggest reasons I chose EXION was because I didn't want a treatment that would keep me at home for days. I was able to get back to my normal routine quickly, and over time my skin started looking smoother and healthier.",
     name: "Jessica Brown",
     initials: "JB",
     stars: 5,
   },
   {
     id: 6,
-    category: "Body Contouring",
-    title: "Contour Like Never Before",
-    text: "I was skeptical at first, but the body contouring results are incredible. My clothes fit better and I feel so much more confident in myself.",
+    category: "Skin Rejuvenation",
+    title: "Worth It For My Skin",
+    text: "EXION is definitely an investment, but I'm happy with the improvement in my skin. My texture looks better, my scars are less noticeable, and my skin has a healthier overall appearance. I'm glad I decided to complete the treatment.",
     name: "Elizabeth Garcia",
     initials: "EG",
     stars: 5,
@@ -131,10 +131,8 @@ export default function ExionReviewsSlider() {
       <div className="w-full sm:w-[90%] px-4 sm:px-0">
         <StaggerContainer staggerDelay={0.12}>
           <StaggerItem>
-            <h2 className="text-black text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] font-berlingske leading-tight mb-10 text-center">
-              {t("Why Clients")}
-              <br />
-              {t("Choose EXION")}
+            <h2 className="text-black text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] font-berlingske leading-tight mb-10 text-center whitespace-pre-line">
+              {t("Why Clients\nChoose EXION")}
             </h2>
           </StaggerItem>
 

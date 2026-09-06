@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FadeIn, StaggerContainer, StaggerItem, btnHover } from "./Animations";
+import BookButton from "./BookButton";
 import { useT } from "@/i18n/LanguageProvider";
 
 function ConsultationImage({ className = "" }: { className?: string }) {
@@ -35,10 +36,8 @@ export default function ExionConsultation() {
         <FadeIn as="div" className="max-w-[1440px] mx-auto" y={30}>
           <StaggerContainer staggerDelay={0.1}>
             <StaggerItem>
-              <h2 className="text-black text-[24px] min-[768px]:text-[36px] min-[1600px]:text-[48px] font-berlingske leading-tight mb-6 sm:mb-8">
-                {t("Your Skin Can Still Look")}
-                <br />
-                {t("Healthy, Firm &amp; Refined")}
+              <h2 className="text-black text-[24px] min-[768px]:text-[36px] min-[1600px]:text-[48px] font-berlingske leading-tight mb-6 sm:mb-8 whitespace-pre-line">
+                {t("Your Skin Can Still Look\nHealthy, Firm & Refined")}
               </h2>
             </StaggerItem>
 
@@ -51,7 +50,7 @@ export default function ExionConsultation() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               >
-                {t("Over time, collagen production naturally slows down")}
+                {t("Over time, collagen production naturally slows down.")}
               </motion.p>
             </StaggerItem>
 
@@ -72,10 +71,10 @@ export default function ExionConsultation() {
 
             <StaggerItem>
               <p className="text-black font-semibold text-[16px] min-[1600px]:text-[18px] mb-4">
-                {t("Beautiful skin is rarely about perfection, Usually, it&rsquo;s about:")}
+                {t("Beautiful skin is rarely about perfection. Usually, it's about:")}
               </p>
               <ul className="space-y-2 mb-8">
-                {["thinner", "less firm", "uneven", "dull"].map((item, i) => (
+                {["more dense", "firm", "even", "fresh and radiant"].map((item, i) => (
                   <motion.li
                     key={item}
                     className="flex items-start gap-3 text-black font-semibold text-[16px]"
@@ -112,9 +111,7 @@ export default function ExionConsultation() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               >
-                {t("EXION is designed to stimulate collagen and improve overall")}
-                <br />
-                {t("skin quality using advanced non-invasive technology")}
+                {t("EXION is designed to stimulate collagen and improve overall skin quality using advanced non-invasive technology.")}
               </motion.p>
             </StaggerItem>
 
@@ -138,20 +135,18 @@ export default function ExionConsultation() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
               >
-                {t("EXION is designed to stimulate collagen and improve")}
-                <br />
-                {t("overall skin quality using advanced non-invasive technology")}
+                {t("EXION helps stimulate collagen and improve skin quality without surgery.")}
               </motion.div>
             </StaggerItem>
 
             <StaggerItem>
-              <motion.button
-                {...btnHover}
-                className="text-white font-bold text-[14px] rounded-[10px] px-8 py-4 mt-8 cursor-pointer"
-                style={{ backgroundColor: "#B07E3F" }}
-              >
-                {t("Schedule Consultation")}
-              </motion.button>
+              <div className="mt-8">
+                <BookButton
+                  className="whitespace-nowrap cursor-pointer text-white font-bold text-[14px] rounded-[10px] px-8 py-4"
+                  style={{ backgroundColor: "#B07E3F" }}
+                  label={t("Book Consultation")}
+                />
+              </div>
             </StaggerItem>
           </StaggerContainer>
 
