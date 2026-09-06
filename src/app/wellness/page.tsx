@@ -12,8 +12,8 @@ export default function WellnessPage() {
         <WellnessTechnologiesSection />
         <Consultation 
           showOnMobile 
-          title="Book Your Private Consultation"
-          giftText="Book a complimentary consultation and get a $100 Welcome Gift toward your first treatment"
+          title1="Book Your"
+          title2="Private Consultation"
           bullets={[
             "One-on-one conversation in a discreet luxury suite",
             "Complete privacy and zero pressure",

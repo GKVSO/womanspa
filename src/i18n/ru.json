@@ -1089,7 +1089,7 @@
   "To Their Long-Term Skin Routine": "в свой долгосрочный уход за кожей",
   "To Their Skin Maintenance Routine": "в свой уход за кожей",
   "To Their Wellness Routine": "в свой режим благополучия",
-  "toward": "в счёт",
+  "toward": "на",
   "Transformation": "Трансформация",
   "Transformation Your Skin Deserves": "Трансформация, которую заслуживает ваша кожа",
   "Treatment in": "Процедура в",
@@ -1141,7 +1141,7 @@
   "You Shouldn't Have To Think": "Вы не должны думать",
   "You've likely experienced:": "Вы, вероятно, сталкивались с:",
   "You've tried department store creams, random spa facials, and DIY routines - and yet your skin doesn't look or feel the way you want it to": "Вы пробовали кремы из магазинов, случайные процедуры в салонах и домашний уход — но кожа всё равно не выглядит и не ощущается так, как вам хочется",
-  "your first treatment": "в счёт вашей первой процедуры",
+  "your first treatment": "первое посещение",
   "Your Skin": "Ваша кожа",
   "Your Skin Can Still Look": "Ваша кожа всё ещё может выглядеть",
   "Your Skin Deserves A Solution": "Ваша кожа заслуживает решения,",
@@ -1937,5 +1937,8 @@
   "Book Your Private Consultation": "Запишитесь на персональную консультацию",
   "Book a complimentary consultation and get a  Welcome Gift toward your first treatment": "Запишитесь на бесплатную консультацию и получите подарок  на первое посещение",
   "One-on-one conversation in a discreet luxury suite": "Индивидуальную беседу",
-  "Complete privacy and zero pressure": "Полную конфиденциальность"
+  "Complete privacy and zero pressure": "Полную конфиденциальность",
+  "Book Your": "Запишитесь на",
+  "Private Consultation": "персональную консультацию",
+  " Welcome Gift": "подарок "
 }

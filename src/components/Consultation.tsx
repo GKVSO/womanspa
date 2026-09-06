@@ -6,7 +6,7 @@ import Image from "next/image";
 import { FadeIn, StaggerContainer, StaggerItem, btnHover } from "./Animations";
 import { useT } from "@/i18n/LanguageProvider";
 
-export default function Consultation({ showOnMobile = true, hideAt1200 = false, showOnlyDesktop = false, title1, title2, title, giftText, bullets }: { showOnMobile?: boolean; hideAt1200?: boolean; showOnlyDesktop?: boolean; title1?: string; title2?: string; title?: string; giftText?: string; bullets?: string[] }) {
+export default function Consultation({ showOnMobile = true, hideAt1200 = false, showOnlyDesktop = false, title1, title2, bullets }: { showOnMobile?: boolean; hideAt1200?: boolean; showOnlyDesktop?: boolean; title1?: string; title2?: string; bullets?: string[] }) {
   const [agreed, setAgreed] = useState(false);
   const t = useT();
 
@@ -20,14 +20,10 @@ export default function Consultation({ showOnMobile = true, hideAt1200 = false, 
         <div className="flex-1">
           <StaggerContainer staggerDelay={0.1}>
             <StaggerItem>
-              <h2 className="text-black text-[32px] sm:text-[48px] font-berlingske leading-tight mb-8 whitespace-pre-line">
-                {title ? (
-                  <>{t(title)}</>
-                ) : title1 && title2 ? (
-                  <>{t(title1)}<br />{t(title2)}</>
-                ) : (
-                  <>{t(title1 || "Begin With A")}<br />{t(title2 || "Personalized Consultation")}</>
-                )}
+              <h2 className="text-black text-[32px] sm:text-[48px] font-berlingske leading-tight mb-8">
+                {t(title1 || "Begin With A")}
+                <br />
+                {t(title2 || "Personalized Consultation")}
               </h2>
             </StaggerItem>
 
@@ -48,17 +44,11 @@ export default function Consultation({ showOnMobile = true, hideAt1200 = false, 
                   <Image src="/gift-icon.svg" alt="" width={24} height={24} />
                 </div>
                 <p className="text-black text-[16px] font-semibold leading-relaxed">
-                  {giftText ? (
-                    t(giftText)
-                  ) : (
-                    <>
-                      {t("Book a complimentary consultation")}
-                      <br />
-                      {t("and get a")}&nbsp;<strong>{t("$100 Welcome Gift")}</strong>&nbsp;{t("toward")}
-                      <br />
-                      {t("your first treatment")}
-                    </>
-                  )}
+                  {t("Book a complimentary consultation")}
+                  <br />
+                  {t("and get a")}&nbsp;<strong>{t("$100 Welcome Gift")}</strong>&nbsp;{t("toward")}
+                  <br />
+                  {t("your first treatment")}
                 </p>
               </motion.div>
             </StaggerItem>
