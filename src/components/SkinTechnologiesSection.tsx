@@ -8,7 +8,7 @@ import { useT } from "@/i18n/LanguageProvider";
 const technologies = [
   {
     id: 1,
-    title: "SylfirmX RF Microneedling",
+    title: "Sylfirm X RF Microneedling",
     description:
       "RF + High-Intensity Focused Electromagnetic energy for simultaneous fat reduction and muscle building",
     image: "/skin-sylfirmx.webp",
@@ -24,7 +24,7 @@ const technologies = [
   },
   {
     id: 3,
-    title: "AcuPulse CO2 Laser",
+    title: "AcuPulse CO₂ Laser",
     description:
       "Ablative fractional CO2 laser - the gold standard for dramatic resurfacing, deep wrinkle reduction, and scar revision in a single treatment",
     image: "/skin-acupulse.webp",
@@ -40,7 +40,7 @@ const technologies = [
   },
   {
     id: 5,
-    title: "Aerolase Neo",
+    title: "AerolaSe Neo",
     description:
       "A revolutionary, single-platform solution that treats acne, clears pigmentation, reduces redness, stimulates collagen",
     image: "/skin-aerolase.webp",
@@ -63,10 +63,8 @@ export default function SkinTechnologiesSection() {
       <div className="w-[92%] sm:w-[90%]">
         <StaggerContainer staggerDelay={0.1}>
           <StaggerItem className="w-full flex justify-center">
-            <h2 className="text-black text-[24px] min-[768px]:text-[36px] min-[1600px]:text-[48px] font-berlingske leading-tight text-center">
-              {t("Six Technologies. Every")}
-              <br />
-              {t("Layer Of Skin Transformation")}
+            <h2 className="text-black text-[24px] min-[768px]:text-[36px] min-[1600px]:text-[48px] font-berlingske leading-tight text-center whitespace-pre-line">
+              {t("Six Technologies. Every\nLayer Of Skin Transformation")}
             </h2>
           </StaggerItem>
 
