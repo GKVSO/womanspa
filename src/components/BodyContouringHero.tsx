@@ -47,7 +47,7 @@ export default function BodyContouringHero({ cms, editing }: { cms?: Record<stri
 
         <StaggerItem>
           <h1 {...e("text","hero_title")} className={`${titleFont || "font-berlingske"} text-white text-[24px] min-[768px]:text-[36px] min-[1200px]:text-[40px] min-[1600px]:text-[48px] leading-tight whitespace-pre-line ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`} style={{ ...(cms ? { color: sv(cms.titleColor) || undefined, fontSize: cms.titleSize ? `${cms.titleSize}px` : undefined } : {}) }}>
-            {cmsTitle ? t(cmsTitle) : <>{t("Body Contouring & Fat Reduction\nAt WO/MAN Luxe MedSpa")}</>}
+            {cmsTitle ? t(cmsTitle) : <>{t("Body Contouring & Fat Reduction")}<br />{t("At WO/MAN Luxe MedSpa")}</>}
           </h1>
         </StaggerItem>
 
