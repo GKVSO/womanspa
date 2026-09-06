@@ -9,7 +9,7 @@ export default function ReviewsPage() {
       <Header />
       <main className="flex-1">
         <Hero
-          singleLineTitle="Client Reviews at\nWO/MAN Luxe MedSpa"
+          singleLineTitle={"Client Reviews at\nWO/MAN Luxe MedSpa"}
           primaryBtn="Book Consultation"
           secondaryBtn="Read Reviews"
           secondaryBtnHref="#reviews"
