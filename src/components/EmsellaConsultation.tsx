@@ -1,8 +1,8 @@
 "use client";
 
 import { useT } from "@/i18n/LanguageProvider";
-import { motion } from "framer-motion";
 import { btnHover } from "./Animations";
+import BookButton from "./BookButton";
 
 const struggleBullets = [
   "leaking when laughing or exercising",
@@ -70,9 +70,7 @@ export default function EmsellaConsultation() {
           </div>
 
           <div className="mt-8">
-            <motion.button {...btnHover} className="bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer w-full min-[768px]:w-auto">
-              {t("Schedule Private Consultation")}
-            </motion.button>
+            <BookButton {...btnHover} className="bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer w-full min-[768px]:w-auto" label={t("Schedule Private Consultation")} />
           </div>
 
           <div className="mt-auto flex justify-center">
