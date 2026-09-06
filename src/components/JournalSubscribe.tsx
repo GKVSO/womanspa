@@ -22,9 +22,9 @@ export default function JournalSubscribe() {
         type="submit"
         whileHover={{ scale: 1.04 }}
         whileTap={{ scale: 0.97 }}
-        className="w-full sm:w-auto justify-center bg-[#B07E3F] text-white font-medium text-[16px] rounded-full px-6 py-2.5 cursor-pointer "
+        className="w-full sm:w-auto justify-center bg-[#B07E3F] text-white font-medium text-[16px] rounded-full px-6 py-2.5 cursor-pointer whitespace-nowrap"
       >
-{t("Subscribe")}
+        {t("Subscribe")}
       </motion.button>
     </form>
   );
