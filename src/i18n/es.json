@@ -1,7 +1,7 @@
 {
   "div": "div",
   "section": "section",
-  "Body Contouring": "Contorno corporal",
+  "Body Contouring": "Moldeado corporal",
   "Skin Rejuvenation": "Rejuvenecimiento de la piel",
   "Wellness": "Bienestar",
   "After years of waxing, laser hair removal changed everything. The staff was gentle and professional, and the results are so truly permanent.": "Después de años de depilación con cera, la depilación láser lo cambió todo. El personal fue amable y profesional, y los resultados son realmente permanentes.",
@@ -112,7 +112,7 @@
   "There is minimal downtime. Most clients can return to their daily activities within 24 hours after their session.": "El tiempo de recuperación es mínimo. La mayoría de las clientas pueden volver a sus actividades diarias dentro de las 24 horas posteriores a la sesión.",
   "There is no downtime. You can return to your daily activities immediately after your session.": "No hay tiempo de recuperación. Puede volver a sus actividades diarias inmediatamente después de la sesión.",
   "Uneven texture": "textura irregular de la piel",
-  "View Before / After": "Ver antes / después",
+  "View Before / After": "Ver resultados de antes y después",
   "Wave Fit Pulse and ICD cooling keep skin comfortable and protected for a warm, pain-free experience": "La tecnología Wave Fit Pulse y el enfriamiento ICD mantienen la piel cómoda y protegida, ofreciendo una experiencia prácticamente indolora.",
   "WO/MAN Luxe MedSpa": "WO/MAN Luxe MedSpa",
   "Your Name": "Su nombre",
@@ -1835,5 +1835,7 @@
   "I was nervous before my first appointment, but the treatment was quick and surprisingly comfortable. I’ve noticed a big improvement and feel much more confident now.": "Estaba nerviosa antes de mi primera cita, pero el tratamiento fue rápido y sorprendentemente cómodo. He notado una gran mejoría y ahora me siento mucho más segura.",
   "After having kids, things definitely changed. EMFEMME made a noticeable difference for me. I feel more comfortable and much better overall.": "Después de tener hijos, las cosas definitivamente cambiaron. EMFEMME marcó una diferencia notable para mí. Me siento más cómoda y mucho mejor en general.",
   "This is one of those treatments you don’t realize you need until you try it. The results have been amazing and the whole experience felt very professional.": "Este es uno de esos tratamientos que no sabes que necesitas hasta que lo pruebas. Los resultados han sido increíbles y toda la experiencia se sintió muy profesional.",
-  "I wasn't expecting dramatic results, just some improvement. Honestly, it exceeded my expectations. I feel more confident and comfortable than I have in years.": "No esperaba resultados dramáticos, solo alguna mejora. Honestamente, superó mis expectativas. Me siento más segura y cómoda que en muchos años."
+  "I wasn't expecting dramatic results, just some improvement. Honestly, it exceeded my expectations. I feel more confident and comfortable than I have in years.": "No esperaba resultados dramáticos, solo alguna mejora. Honestamente, superó mis expectativas. Me siento más segura y cómoda que en muchos años.",
+  "A curated portfolio of actual patient results across body contouring, skin rejuvenation, facial aesthetics, laser hair removal": "Una selección de resultados reales de nuestros pacientes: corrección de contornos corporales, rejuvenecimiento de la piel, estética facial y depilación láser.",
+  "Filter by Your\nArea of Interest": "Elige el área que\nmás te interesa"
 }

@@ -1,9 +1,9 @@
 {
   "div": "div",
   "section": "section",
-  "Body Contouring": "Контуринг тела",
+  "Body Contouring": "Коррекция контуров тела",
   "Skin Rejuvenation": "Омоложение кожи",
-  "Wellness": "Велнес",
+  "Wellness": "Wellness / Общее самочувствие",
   "After years of waxing, laser hair removal changed everything. The staff was gentle and professional, and the results are so truly permanent.": "После многих лет восковой эпиляции лазерная эпиляция изменила всё. Персонал был бережным и профессиональным, а результат поистине постоянный.",
   "Amanda Wilson": "Аманда Уилсон",
   "Amazing Results!": "Потрясающие результаты!",
@@ -112,7 +112,7 @@
   "There is minimal downtime. Most clients can return to their daily activities within 24 hours after their session.": "Период восстановления минимальный. Большинство клиентов могут вернуться к повседневным делам в течение 24 часов после сеанса.",
   "There is no downtime. You can return to your daily activities immediately after your session.": "Период восстановления отсутствует. Вы можете вернуться к повседневным делам сразу после сеанса.",
   "Uneven texture": "неровную текстуру кожи",
-  "View Before / After": "Смотреть «До / После»",
+  "View Before / After": "Смотреть до/после",
   "Wave Fit Pulse and ICD cooling keep skin comfortable and protected for a warm, pain-free experience": "Технологии Wave Fit Pulse и ICD-охлаждение сохраняют кожу комфортной и защищенной, обеспечивая практически безболезненный опыт.",
   "WO/MAN Luxe MedSpa": "WO/MAN Luxe MedSpa",
   "Your Name": "Ваше имя",
@@ -1895,5 +1895,7 @@
   "I was nervous before my first appointment, but the treatment was quick and surprisingly comfortable. I’ve noticed a big improvement and feel much more confident now.": "Я нервничала перед первым визитом, но процедура оказалась быстрой и удивительно комфортной. Я заметила значительное улучшение и сейчас чувствую себя намного увереннее.",
   "After having kids, things definitely changed. EMFEMME made a noticeable difference for me. I feel more comfortable and much better overall.": "После рождения детей всё определенно изменилось. EMFEMME помогла мне заметить значительную разницу. Я чувствую себя комфортнее и в целом намного лучше.",
   "This is one of those treatments you don’t realize you need until you try it. The results have been amazing and the whole experience felt very professional.": "Это одна из тех процедур, о которых не понимаешь, что тебе они нужны, пока не попробуешь. Результаты меня удивили, а весь процесс был очень профессиональным.",
-  "I wasn't expecting dramatic results, just some improvement. Honestly, it exceeded my expectations. I feel more confident and comfortable than I have in years.": "Я не ожидала каких-то кардинальных изменений, просто хотела небольшого улучшения. Честно говоря, результат превзошел мои ожидания. Я чувствую себя увереннее и комфортнее, чем за последние годы."
+  "I wasn't expecting dramatic results, just some improvement. Honestly, it exceeded my expectations. I feel more confident and comfortable than I have in years.": "Я не ожидала каких-то кардинальных изменений, просто хотела небольшого улучшения. Честно говоря, результат превзошел мои ожидания. Я чувствую себя увереннее и комфортнее, чем за последние годы.",
+  "A curated portfolio of actual patient results across body contouring, skin rejuvenation, facial aesthetics, laser hair removal": "Подборка реальных результатов: коррекция контуров тела, омоложение кожи, эстетические процедуры для лица и лазерная эпиляция.",
+  "Filter by Your\nArea of Interest": "Выберите интересующую\nвас область"
 }

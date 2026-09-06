@@ -80,10 +80,8 @@ export default function GallerySlider() {
       <div className="w-[90%]">
         <StaggerContainer staggerDelay={0.12}>
           <StaggerItem>
-            <h2 className="text-black text-[32px] min-[768px]:text-[48px] font-berlingske leading-tight mb-6 text-center">
-              {t("Filter by Your")}
-              <br />
-              {t("Area of Interest")}
+            <h2 className="text-black text-[32px] min-[768px]:text-[48px] font-berlingske leading-tight mb-6 text-center whitespace-pre-line">
+              {t("Filter by Your\nArea of Interest")}
             </h2>
           </StaggerItem>
 

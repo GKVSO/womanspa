@@ -53,7 +53,7 @@ export default function Hero({
 
         <StaggerItem className="w-full flex justify-center">
           {singleLineTitle ? (
-            <h1 className="text-white text-[24px] min-[768px]:text-[36px] min-[1200px]:text-[40px] min-[1600px]:text-[48px] leading-tight font-berlingske max-w-4xl">
+            <h1 className="text-white text-[24px] min-[768px]:text-[36px] min-[1200px]:text-[40px] min-[1600px]:text-[48px] leading-tight font-berlingske max-w-4xl whitespace-pre-line">
               {t(singleLineTitle)}
             </h1>
           ) : (
@@ -76,8 +76,8 @@ export default function Hero({
         {showButtons && (
           <StaggerItem>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mt-8 sm:mt-10">
-              <BookButton label={t(primaryBtn)} className="w-full sm:w-auto" />
-              <motion.a href={secondaryBtnHref} {...btnHover} className="flex items-center justify-center w-full sm:w-auto text-white font-bold text-[14px] border border-white rounded-[10px] px-8 py-4 bg-transparent hover:bg-white/10 transition-colors cursor-pointer text-center">
+              <BookButton label={t(primaryBtn)} className="w-full sm:w-auto whitespace-nowrap" />
+              <motion.a href={secondaryBtnHref} {...btnHover} className="flex items-center justify-center w-full sm:w-auto text-white font-bold text-[14px] border border-white rounded-[10px] px-8 py-4 bg-transparent hover:bg-white/10 transition-colors cursor-pointer text-center whitespace-nowrap">
                 {t(secondaryBtn)}
               </motion.a>
             </div>
