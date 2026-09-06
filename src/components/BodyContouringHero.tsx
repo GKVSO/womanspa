@@ -46,23 +46,21 @@ export default function BodyContouringHero({ cms, editing }: { cms?: Record<stri
         </StaggerItem>
 
         <StaggerItem>
-          <h1 {...e("text","hero_title")} className={`${titleFont || "font-berlingske"} text-white text-[24px] min-[768px]:text-[36px] min-[1200px]:text-[40px] min-[1600px]:text-[48px] leading-tight ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`} style={{ ...(cms ? { color: sv(cms.titleColor) || undefined, fontSize: cms.titleSize ? `${cms.titleSize}px` : undefined } : {}) }}>
-            {cmsTitle ? t(cmsTitle) : <>{t("Body Contouring &amp; Fat Reduction")}<br />{t("At WO/MAN Luxe MedSpa")}</>}
+          <h1 {...e("text","hero_title")} className={`${titleFont || "font-berlingske"} text-white text-[24px] min-[768px]:text-[36px] min-[1200px]:text-[40px] min-[1600px]:text-[48px] leading-tight whitespace-pre-line ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`} style={{ ...(cms ? { color: sv(cms.titleColor) || undefined, fontSize: cms.titleSize ? `${cms.titleSize}px` : undefined } : {}) }}>
+            {cmsTitle ? t(cmsTitle) : <>{t("Body Contouring & Fat Reduction\nAt WO/MAN Luxe MedSpa")}</>}
           </h1>
         </StaggerItem>
 
         <StaggerItem>
           <p {...e("text","hero_subtitle")} className={`${subtitleFont || ""} text-white text-[16px] font-semibold leading-relaxed mt-6 max-w-[680px] ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`} style={{ ...(cms ? { color: sv(cms.subtitleColor) || undefined, fontSize: cms.subtitleSize ? `${cms.subtitleSize}px` : undefined } : {}) }}>
-            {cmsSubtitle ? t(cmsSubtitle) : t(`Five advanced, non-invasive technologies designed to target
-            stubborn fat, improve muscle tone, and refine body contours
-            with zero downtime`)}
+            {cmsSubtitle ? t(cmsSubtitle) : t("Five advanced, non-invasive technologies designed to target stubborn fat, improve muscle tone, and refine body contours with zero downtime")}
           </p>
         </StaggerItem>
 
         <StaggerItem className="mt-auto sm:mt-0 pt-10 sm:pt-0">
           <div {...e("button","hero_buttons")} className={`flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mt-8 sm:mt-10 ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`}>
-            <BookButton className="w-full sm:w-auto bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer" label={cmsPrimaryBtn ? t(cmsPrimaryBtn) : t("Book Consultation")} />
-            <motion.button onClick={() => smoothScrollToTarget('treatments')} {...btnHover} className="w-full sm:w-auto text-white font-bold text-[14px] border border-white rounded-[10px] px-8 py-4 bg-transparent hover:bg-white/10 transition-colors cursor-pointer">
+            <BookButton className="w-full sm:w-auto bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer whitespace-nowrap" label={cmsPrimaryBtn ? t(cmsPrimaryBtn) : t("Book Consultation")} />
+            <motion.button onClick={() => smoothScrollToTarget('treatments')} {...btnHover} className="w-full sm:w-auto text-white font-bold text-[14px] border border-white rounded-[10px] px-8 py-4 bg-transparent hover:bg-white/10 transition-colors cursor-pointer whitespace-nowrap">
               {cmsSecondaryBtn ? t(cmsSecondaryBtn) : t("Explore Treatments")}</motion.button>
           </div>
         </StaggerItem>

@@ -90,7 +90,7 @@ export default function TechnologiesSection() {
                   <Link href={tech.href} className="self-start mt-6">
                     <motion.button
                       {...btnHover}
-                      className="bg-[#CBA07D] text-white font-bold text-[12px] min-[768px]:text-[14px] rounded-[10px] px-10 py-4 cursor-pointer "
+                      className="bg-[#CBA07D] text-white font-bold text-[12px] min-[768px]:text-[14px] rounded-[10px] px-10 py-4 cursor-pointer whitespace-nowrap"
       >
                       {t("Explore More")}
                     </motion.button>
