@@ -46,7 +46,7 @@ export default function Hero({
             ))}
           </div>
             <span className="text-white text-[16px] ml-2">
-              {t("Rated 5.0 on Google &middot; Hallandale Beach, FL")}
+              {t("Rated 5.0 on Google · Hallandale Beach, FL")}
             </span>
           </div>
         </StaggerItem>
