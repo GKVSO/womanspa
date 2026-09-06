@@ -338,6 +338,15 @@ export default function Header() {
                                 className="overflow-hidden"
                               >
                                 <ul className="pb-5 space-y-3">
+                                  <li>
+                                    <Link
+                                      href={group.href}
+                                      onClick={() => setOpen(false)}
+                                      className="text-white/85 hover:text-white text-[18px] font-bold transition-colors block mb-2"
+                                    >
+                                      {t(group.label)}
+                                    </Link>
+                                  </li>
                                   {group.children.map((child) => (
                                     <li key={child.label}>
                                       <Link
