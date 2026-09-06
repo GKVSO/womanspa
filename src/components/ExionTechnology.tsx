@@ -19,7 +19,7 @@ const items = [
     text: "The body responds by stimulating natural collagen production.",
   },
   {
-    num: "04",
+    num: "03",
     title: "Gradual Rejuvenation",
     text: "Results continue improving over time as collagen develops.",
   },
