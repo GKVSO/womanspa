@@ -4,6 +4,7 @@ import { Fragment } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { StaggerContainer, StaggerItem, FadeIn, btnHover } from "./Animations";
+import BookButton from "./BookButton";
 import { useT } from "@/i18n/LanguageProvider";
 
 const items = [
@@ -46,10 +47,8 @@ export default function CandelaSmootherTechnology() {
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 flex-1 items-stretch lg:justify-between">
           <StaggerContainer staggerDelay={0.12} className="max-w-[760px]">
             <StaggerItem>
-              <h2 className="text-[#313242] text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske font-normal">
-                {t("Gentle Technology Designed")}
-                <br />
-                {t("Around Feminine Wellness")}
+              <h2 className="text-[#313242] text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske font-normal whitespace-pre-line">
+                {t("Gentle Technology Designed\nAround Feminine Wellness")}
               </h2>
             </StaggerItem>
 
@@ -85,13 +84,7 @@ export default function CandelaSmootherTechnology() {
                 <br />
                 {t("confidence through a painless, non-invasive experience")}
               </p>
-              <motion.button
-                {...btnHover}
-                className="text-white font-bold text-[14px] rounded-[10px] px-8 py-4 mt-10 w-full min-[768px]:w-auto cursor-pointer"
-                style={{ backgroundColor: "#B07E3F" }}
-              >
-                {t("Schedule Consultation")}
-              </motion.button>
+              <BookButton className="whitespace-nowrap mt-10 w-full min-[768px]:w-auto" style={{ backgroundColor: "#B07E3F" }} label={t("Book Private Consultation")} />
             </div>
           </FadeIn>
         </div>

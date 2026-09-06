@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { FadeIn, StaggerContainer, StaggerItem, btnHover } from "./Animations";
+import BookButton from "./BookButton";
 import { useT } from "@/i18n/LanguageProvider";
 
 const symptoms = [
@@ -31,10 +32,8 @@ export default function FemTouchConsultation() {
   return (
     <section className="relative overflow-hidden bg-white rounded-b-[60px] px-5 sm:px-10 pt-16 sm:pt-24 pb-20 sm:pb-40">
       <FadeIn as="div" y={30}>
-        <h2 className="text-black text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske text-center mb-4 sm:mb-6">
-          {t("Some Changes Are Rarely")}
-          <br />
-          {t("Spoken About &mdash; But Deeply Felt")}
+        <h2 className="text-black text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske text-center mb-4 sm:mb-6 whitespace-pre-line">
+          {t("Some Changes Are Rarely\nSpoken About — But Deeply Felt")}
         </h2>
       </FadeIn>
 
@@ -52,12 +51,7 @@ export default function FemTouchConsultation() {
           </p>
 
           <div className="mt-auto pt-10">
-            <motion.button
-              {...btnHover}
-              className="bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer w-full min-[768px]:w-auto "
-      >
-              {t("Schedule Consultation")}
-            </motion.button>
+            <BookButton className="bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer w-full min-[768px]:w-auto whitespace-nowrap" label={t("Schedule Consultation")} />
           </div>
         </div>
       </div>

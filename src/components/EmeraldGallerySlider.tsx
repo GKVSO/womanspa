@@ -74,9 +74,7 @@ export default function EmeraldGallerySlider() {
         <StaggerContainer staggerDelay={0.12}>
           <StaggerItem>
             <h2 className="text-white text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] font-berlingske leading-tight mb-10 text-center">
-              {t("A Sculpted, Refined Silhouette")}
-              <br />
-              {t("Through Cold Laser Technology")}
+              {t("A Sculpted, Refined Silhouette Through Cold Laser Technology")}
             </h2>
           </StaggerItem>
 

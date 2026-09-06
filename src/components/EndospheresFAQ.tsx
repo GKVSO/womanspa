@@ -9,32 +9,27 @@ const faqs = [
   {
     question: "Is Endospheres Therapy painful?",
     answer:
-      "No. Endospheres is a comfortable, non-invasive procedure. Most clients describe a pleasant deep-tissue massage-like sensation during the session, with no anesthesia and no downtime required.",
+      "Endospheres Therapy is generally comfortable and is often described as a firm, rhythmic massage. Some areas may feel more intense or sensitive, but the pressure can be adjusted to your comfort level. Temporary redness or mild soreness may occur afterward.",
   },
   {
     question: "Is there downtime?",
     answer:
-      "There is zero downtime. You can return to your daily activities immediately after your session.",
+      "No significant downtime is typically required. Most people can return to their normal daily activities immediately after treatment. Temporary redness or mild soreness can occur but usually resolves quickly.",
   },
   {
-    question: "How many sessions are recommended?",
+    question: "Can Endospheres help cellulite?",
     answer:
-      "Most clients achieve optimal results with a series of sessions. Your provider will design a personalized treatment plan based on your goals during your consultation.",
+      "Endospheres is designed to improve the appearance of cellulite through compressive microvibration and mechanical stimulation of the tissues. Research on vibration therapy has also found improvements in cellulite grade after a course of treatments, although results can vary between individuals.",
   },
   {
-    question: "When will I see results?",
+    question: "Does Endospheres support lymphatic drainage?",
     answer:
-      "Results develop gradually as the body responds to treatment. Most clients notice visible improvements within the following weeks and continue to improve over time.",
+      "Yes. The treatment uses rhythmic mechanical compression to stimulate tissue movement and support fluid circulation. Endospheres materials specifically describe reduced lymphatic fluid retention as one of the intended effects of body treatments.",
   },
   {
-    question: "Can Endospheres replace surgery?",
+    question: "When will I notice results?",
     answer:
-      "Endospheres is a non-invasive alternative designed to improve body contouring, lymphatic drainage, and skin firmness without surgery or downtime. For more advanced concerns, your provider will recommend the best approach for you.",
-  },
-  {
-    question: "Can Endospheres be combined with other treatments?",
-    answer:
-      "Yes. Endospheres can safely complement other treatments to enhance overall results. Your provider will tailor a plan to your individual needs.",
+      "Some people notice changes after the first few sessions, particularly in skin texture and fluid retention. For more noticeable and lasting body-contouring and cellulite improvements, a course of treatments is generally recommended. One published Endospheres study evaluated results over multiple sessions, while other clinical information recommends a personalized treatment course.",
   },
 ];
 
@@ -52,7 +47,7 @@ export default function EndospheresFAQ() {
     >
       <FadeIn as="div" y={30}>
         <h2 className="text-[#313242] text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske font-normal text-center">
-          {t("Endospheres Frequently Asked Questions")}
+          {t("Questions About Endospheres Therapy")}
         </h2>
       </FadeIn>
 

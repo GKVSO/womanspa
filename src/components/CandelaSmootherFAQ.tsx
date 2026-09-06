@@ -45,7 +45,7 @@ export default function CandelaSmootherFAQ() {
       }}
     >
       <FadeIn as="div" y={30}>
-        <h2 className="text-[#313242] text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske font-normal text-center">
+        <h2 className="text-[#313242] text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske font-normal text-center whitespace-pre-line">
           {t("Frequently Asked Questions")}
         </h2>
       </FadeIn>

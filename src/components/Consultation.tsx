@@ -213,7 +213,7 @@ export default function Consultation({ showOnMobile = true, hideAt1200 = false, 
                     disabled={!agreed}
                     whileHover={agreed ? { scale: 1.03 } : {}}
                     whileTap={agreed ? { scale: 0.97 } : {}}
-                    className={`w-full text-white font-bold text-[14px] rounded-full py-4 transition-all cursor-pointer ${
+                    className={`w-full text-white font-bold text-[14px] rounded-full py-4 transition-all cursor-pointer whitespace-nowrap ${
                       agreed ? "bg-[#CBA07D] shadow-sm hover:shadow-lg" : "bg-[#CBA07D]/40 cursor-not-allowed"
                     }`}
                   >

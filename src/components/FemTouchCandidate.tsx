@@ -11,10 +11,8 @@ export default function FemTouchCandidate() {
   return (
     <section className="relative overflow-hidden rounded-b-[60px] px-5 sm:px-10 pt-16 sm:pt-24 bg-[#CFD2D8]">
       <FadeIn as="div" y={30}>
-        <h2 className="text-center text-white text-[32px] min-[768px]:text-[48px] min-[1200px]:text-[70px] min-[1600px]:text-[100px] leading-tight font-berlingske font-normal">
-          {t("Who Benefits Most")}
-          <br />
-          {t("From FemTouch?")}
+        <h2 className="text-center text-white text-[32px] min-[768px]:text-[48px] min-[1200px]:text-[70px] min-[1600px]:text-[100px] leading-tight font-berlingske font-normal whitespace-pre-line">
+          {t("Who Benefits Most\nFrom FemTouch?")}
         </h2>
       </FadeIn>
 
@@ -53,9 +51,7 @@ export default function FemTouchCandidate() {
                   </p>
                 </div>
 
-                <BookButton className="mt-6" style={{ backgroundColor: "#B07E3F" }}>
-                  {t("Book Consultation")}
-                  </BookButton>
+                <BookButton className="mt-6 whitespace-nowrap" style={{ backgroundColor: "#B07E3F" }} label={t("Book Consultation")} />
               </div>
             </div>
           </FadeIn>

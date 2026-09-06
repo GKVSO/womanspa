@@ -38,10 +38,8 @@ export default function FemTouchTechnology() {
       <div className="flex flex-col lg:flex-row gap-10 lg:gap-16 items-start lg:justify-between">
         <StaggerContainer staggerDelay={0.12} className="max-w-[760px] flex-1">
           <StaggerItem>
-            <h2 className="text-[#313242] text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske font-normal">
-              {t("How Fractional CO2 Laser")}
-              <br />
-              {t("Restores Feminine Wellness")}
+            <h2 className="text-[#313242] text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske font-normal whitespace-pre-line">
+              {t("How Fractional CO2 Laser\nRestores Feminine Wellness")}
             </h2>
           </StaggerItem>
 

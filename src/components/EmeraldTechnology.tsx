@@ -3,6 +3,7 @@
 import { Fragment } from "react";
 import { motion } from "framer-motion";
 import { StaggerContainer, StaggerItem, btnHover } from "./Animations";
+import BookButton from "./BookButton";
 import { useT } from "@/i18n/LanguageProvider";
 
 const items = [
@@ -48,9 +49,7 @@ export default function EmeraldTechnology() {
         <StaggerContainer staggerDelay={0.12} className="max-w-[760px]">
           <StaggerItem>
             <h2 className="text-[#313242] text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske font-normal">
-              {t("Cold Photobiomodulation")}
-              <br />
-              {t("That Respects the Body")}
+              {t("Cold Photobiomodulation That Respects the Body")}
             </h2>
           </StaggerItem>
 
@@ -85,12 +84,12 @@ export default function EmeraldTechnology() {
           ))}
 
           <StaggerItem>
-            <motion.button
-              {...btnHover}
-              className="bg-white text-black font-bold text-[14px] rounded-[15px] px-8 py-4 mt-6 w-full min-[768px]:w-auto cursor-pointer"
-            >
-              {t("Schedule Consultation")}
-            </motion.button>
+            <div className="mt-6">
+              <BookButton 
+                className="w-full sm:w-auto bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer whitespace-nowrap" 
+                label={t("Schedule Consultation")} 
+              />
+            </div>
           </StaggerItem>
 
           <StaggerItem>

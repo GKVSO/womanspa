@@ -27,17 +27,15 @@ export default function EmeraldCandidate() {
     >
       <FadeIn as="div" y={30}>
         <h2 className="text-center text-white text-[32px] min-[768px]:text-[48px] min-[1200px]:text-[70px] min-[1600px]:text-[100px] leading-tight font-berlingske font-normal px-2">
-          {t("For Discerning Clients")}
-          <br />
-          {t("Who Expect Measurable Results")}
+          {t("For Discerning Clients Who Expect Measurable Results")}
         </h2>
       </FadeIn>
 
       <div className="relative z-20 mt-12 lg:mt-48 mx-auto lg:mr-[unset] w-full sm:w-fit">
         <FadeIn as="div" y={30}>
           <div className="bg-white/80 rounded-[30px] p-6 sm:p-10 w-full sm:w-[620px] backdrop-blur-sm">
-            <div className="flex flex-col lg:flex-row justify-between items-stretch lg:items-end gap-6 lg:gap-10">
-              <div>
+            <div className="flex flex-col flex-wrap lg:flex-row justify-between items-stretch lg:items-end gap-6">
+              <div className="basis-[57%] grow">
                 <h3 className="text-[#313242] font-bold text-[20px] min-[768px]:text-[32px] mb-6">
                   {t("Ideal Candidate List")}
                 </h3>
@@ -60,9 +58,7 @@ export default function EmeraldCandidate() {
                   ))}
                 </ul>
               </div>
-              <BookButton className="mt-6 whitespace-nowrap" style={{ backgroundColor: "#B07E3F" }}>
-                {t("Book Consultation")}
-              </BookButton>
+              <BookButton className="mt-6 whitespace-nowrap" style={{ backgroundColor: "#B07E3F" }} label={t("Book Consultation")} />
             </div>
           </div>
         </FadeIn>
