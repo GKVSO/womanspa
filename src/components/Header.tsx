@@ -40,6 +40,7 @@ const menuGroups = [
     children: [
       { label: "Emsella", href: "/emsella" },
       { label: "EMFEMME 360", href: "/candela-smoother" },
+      { label: "FemTouch", href: "/femtouch" },
     ],
   },
   { label: "Laser Hair Removal", href: "/primelase" },
