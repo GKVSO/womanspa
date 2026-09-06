@@ -46,19 +46,19 @@ export default function EndospheresHero({ cms, editing }: { cms?: Record<string,
 
         <StaggerItem>
           <h1 {...e("text","hero_title")} className={`${titleFont || "font-berlingske"} text-white text-[24px] min-[768px]:text-[36px] min-[1200px]:text-[40px] min-[1600px]:text-[48px] leading-tight ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`} style={{ ...(cms ? { color: sv(cms.titleColor) || undefined, fontSize: cms.titleSize ? `${cms.titleSize}px` : undefined } : {}) }}>
-            {cmsTitle ? t(cmsTitle) : <>{t("Endospheres Therapy For Cellulite,")}<br />{t("Body Tone &amp; Lymphatic Activation")}</>}
+            {cmsTitle ? t(cmsTitle) : {t("Endospheres Therapy For Cellulite,\nBody Tone & Lymphatic Activation")}}
           </h1>
         </StaggerItem>
 
         <StaggerItem>
           <p {...e("text","hero_subtitle")} className={`${subtitleFont || ""} text-white text-[16px] font-semibold leading-relaxed mt-6 max-w-[680px] ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`} style={{ ...(cms ? { color: sv(cms.subtitleColor) || undefined, fontSize: cms.subtitleSize ? `${cms.subtitleSize}px` : undefined } : {}) }}>
-            {cmsSubtitle ? t(cmsSubtitle) : <>{t("Advanced Italian Compressive Microvibration technology designed")}{t("to stimulate circulation, support lymphatic drainage, improve")}{t("skin texture, and help refine body contours without downtime")}</>}
+            {cmsSubtitle ? t(cmsSubtitle) : {t("Advanced Italian Compressive Microvibration technology designed to stimulate circulation, support lymphatic drainage, improve skin texture, and help refine body contours without downtime.")}}
           </p>
         </StaggerItem>
 
         <StaggerItem className="mt-auto sm:mt-0">
           <div {...e("button","hero_buttons")} className={`flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mt-8 sm:mt-10 ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`}>
-            <BookButton className="w-full sm:w-auto bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer" label={cmsPrimaryBtn ? t(cmsPrimaryBtn) : t("Book Free Consultation")} />
+            <BookButton className="w-full sm:w-auto bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer whitespace-nowrap" label={cmsPrimaryBtn ? t(cmsPrimaryBtn) : t("Book Free Consultation")} />
           </div>
         </StaggerItem>
       </StaggerContainer>

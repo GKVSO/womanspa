@@ -3,12 +3,13 @@
 import { motion } from "framer-motion";
 import { btnHover } from "./Animations";
 import { useT } from "@/i18n/LanguageProvider";
+import BookButton from "./BookButton";
 
 const benefitsBullets = [
   "active tissue stimulation",
-  "rhytmic compression",
+  "rhythmic compression",
   "mechanical circulation activation",
-  "deep lymphatic movement",
+  "deep impact on the lymphatic system",
   "body-wide microvibration",
 ];
 
@@ -38,24 +39,14 @@ export default function EndospheresConsultation() {
   const t = useT();
   return (
     <section className="relative overflow-hidden bg-white rounded-b-[60px] px-5 sm:px-10 pt-16 sm:pt-24 pb-20 sm:pb-40">
-      <h2 className="text-black text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske text-center mb-10 sm:mb-20">
-        {t("Compression Microvibration")}
-        <br />
-        {t("Designed To Stimulate The Entire Body")}
+      <h2 className="text-black text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske text-center mb-10 sm:mb-20 whitespace-pre-line">
+        {t("Compression Microvibration\nDesigned To Stimulate The Entire Body")}
       </h2>
 
       <div className="flex flex-col lg:flex-row items-stretch lg:items-start gap-10 lg:gap-16">
         <div className="flex-1 bg-[#F4F1E7] rounded-[40px] sm:rounded-[60px] p-8 sm:p-14">
           <p className="text-[#1F1D1B] text-[18px] min-[768px]:text-[24px] min-[1600px]:text-[32px] font-berlingske leading-snug mb-10">
-            {t("Endospheres Therapy uses patented")}
-            <br />
-            {t("Compressive Microvibration technology")}
-            <br />
-            {t("that creates rhythmic mechanical stimulation")}
-            <br />
-            {t("throughout the tissue using a rotating cylinder")}
-            <br />
-            {t("with 55 silicone spheres")}
+            {t("Endospheres Therapy uses a patented Compressive Microvibration technology that creates rhythmic mechanical stimulation throughout the tissue using a rotating cylinder with 55 silicone spheres.")}
           </p>
 
           <p className="text-[#1F1D1B] font-medium text-[14px] min-[768px]:text-[18px] mb-2">
@@ -66,19 +57,14 @@ export default function EndospheresConsultation() {
 
         <div className="flex-1 bg-[#F4F1E7] rounded-[40px] sm:rounded-[60px] mt-0 lg:mt-32 p-6 sm:p-10">
           <p className="text-[#1F1D1B] text-[18px] min-[768px]:text-[24px] min-[1600px]:text-[32px] font-berlingske leading-snug max-w-[680px]">
-            {t("Unlike traditional massage or passive drainage treatments,")}
-            {t("Endospheres creates active tissue stimulation, rhythmic")}
-            {t("compression, mechanical circulation activation, deep lymphatic")}
-            {t("movement, and body-wide microvibration")}
+            {t("Unlike traditional massage and passive drainage treatments, Endospheres provides:")}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 items-start sm:items-center mt-8 sm:mt-10">
             <div className="flex-1">
               <DotList items={benefitsBullets} />
 
-              <motion.button {...btnHover} className="bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 mt-10 shadow-sm hover:shadow-md transition-shadow cursor-pointer w-full min-[768px]:w-auto">
-                {t("Schedule Consultation")}
-              </motion.button>
+              <div className="mt-10"><BookButton className="w-full sm:w-auto bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer whitespace-nowrap" label={t("Schedule Private Consultation")} /></div>
             </div>
             <img
               src="/endo-device.webp"

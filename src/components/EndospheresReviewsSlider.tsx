@@ -19,56 +19,56 @@ interface Review {
 const reviews: Review[] = [
   {
     id: 1,
-    category: "Cellulite Smoothing",
-    title: "Skin Looked Smoother!",
-    text: "I wanted healthier skin without downtime. Candela Matrix smoothed my texture and left my face looking fresher and much more radiant now too.",
+    category: "",
+    title: "My Legs Feel So Much Lighter",
+    text: "I started Endospheres because I wanted to improve the appearance of cellulite and reduce that heavy feeling in my legs. After several sessions, my skin looked smoother and my legs felt noticeably lighter. The treatment is also surprisingly relaxing.",
     name: "Jennifer Morales",
     initials: "JM",
     stars: 5,
   },
   {
     id: 2,
-    category: "Lymphatic Drainage",
-    title: "Amazing Results!",
-    text: "The body contouring treatment exceeded all my expectations. I saw a clear difference after just a few sessions, and it was very comfortable.",
-    name: "Sarah Johnson",
-    initials: "SJ",
+    category: "",
+    title: "Smoother Skin After Just a Few Sessions",
+    text: "I noticed a difference in the texture of my skin after only a few treatments. My thighs looked smoother and firmer, and I really liked how comfortable the sessions were. I’m definitely planning to continue with maintenance treatments.",
+    name: "Sofia Bennett",
+    initials: "SB",
     stars: 5,
   },
   {
     id: 3,
-    category: "Body Wellness",
-    title: "Best Investment Ever",
-    text: "After years of waxing, laser hair removal changed everything. The staff was gentle and professional, and the results are so truly permanent.",
-    name: "Maria Rodriguez",
-    initials: "MR",
+    category: "",
+    title: "I Love How Relaxed I Feel Afterwards",
+    text: "For me, the biggest difference was how light and relaxed my body felt after the treatment. I also started noticing smoother-looking skin around my thighs. It feels more like a wellness treatment than something uncomfortable.",
+    name: "Emily Carter",
+    initials: "EC",
     stars: 5,
   },
   {
     id: 4,
-    category: "Wellness",
-    title: "Felt Rejuvenated",
-    text: "The wellness program is a complete experience from the start. I walked out feeling like a new person. The treatments were tailored to needs.",
-    name: "Amanda Wilson",
-    initials: "AW",
+    category: "",
+    title: "My Body Looks More Defined",
+    text: "I’m active and train regularly, but I still had areas where my skin didn’t look as firm as I wanted. After a course of Endospheres, I noticed a smoother appearance and a more defined look. The treatment itself was very comfortable.",
+    name: "Michael Anderson",
+    initials: "MA",
     stars: 5,
   },
   {
     id: 5,
-    category: "Skin Smoothing",
-    title: "Glowing Skin",
-    text: "My friends keep asking what I did to my skin! The rejuvenation treatments are top-notch and the results speak for themselves, truly amazing.",
-    name: "Jessica Brown",
-    initials: "JB",
+    category: "",
+    title: "A Big Difference in My Cellulite",
+    text: "I had been looking for something to improve the appearance of cellulite without injections or downtime. After several Endospheres sessions, my skin looked noticeably smoother and firmer. I’m really happy with the overall improvement.",
+    name: "Laura Martinez",
+    initials: "LM",
     stars: 5,
   },
   {
     id: 6,
-    category: "Body Contouring",
-    title: "Contour Like Never Before",
-    text: "I was skeptical at first, but the body contouring results are incredible. My clothes fit better and I feel so much more confident in myself.",
-    name: "Elizabeth Garcia",
-    initials: "EG",
+    category: "",
+    title: "The Results Looked Natural",
+    text: "What I liked most was that the improvement looked very natural. My skin felt smoother, my legs felt less heavy, and I noticed a better overall tone. It’s become one of my favorite treatments for body maintenance.",
+    name: "Anna Williams",
+    initials: "AW",
     stars: 5,
   },
 ];
@@ -131,10 +131,8 @@ export default function EndospheresReviewsSlider() {
       <div className="w-full sm:w-[90%] px-4 sm:px-0">
         <StaggerContainer staggerDelay={0.12}>
           <StaggerItem>
-            <h2 className="text-black text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] font-berlingske leading-tight mb-10 text-center">
-              {t("Why Clients Add")}
-              <br />
-              {t("Endospheres To Their Wellness Routine")}
+            <h2 className="text-black text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] font-berlingske leading-tight mb-10 text-center whitespace-pre-line">
+              {t("Why Clients Choose Endospheres Therapy\nFor Body Care")}
             </h2>
           </StaggerItem>
 

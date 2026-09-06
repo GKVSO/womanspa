@@ -3,6 +3,7 @@
 import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
 import { Fragment } from "react";
+import BookButton from "./BookButton";
 import { StaggerContainer, StaggerItem, btnHover } from "./Animations";
 
 const items = [
@@ -48,10 +49,8 @@ export default function EndospheresTechnology() {
       <div className="relative">
         <StaggerContainer staggerDelay={0.12} className="max-w-[760px]">
           <StaggerItem>
-            <h2 className="text-[#313242] text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske font-normal">
-              {t("Rhythmic Mechanical")}
-              <br />
-              {t("Stimulation Explained Simply")}
+            <h2 className="text-[#313242] text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske font-normal whitespace-pre-line">
+              {t("Rhythmic Mechanical\nStimulation Explained Simply")}
             </h2>
           </StaggerItem>
 
@@ -78,12 +77,7 @@ export default function EndospheresTechnology() {
           ))}
 
           <StaggerItem>
-            <motion.button
-              {...btnHover}
-              className="bg-white text-black font-bold text-[14px] rounded-[15px] px-8 py-4 mt-6 w-full min-[768px]:w-auto cursor-pointer "
-      >
-              {t("Schedule Consultation")}
-            </motion.button>
+            <BookButton className="bg-white text-black font-bold text-[14px] rounded-[15px] px-8 py-4 mt-6 w-full min-[768px]:w-auto cursor-pointer whitespace-nowrap" label={t("Schedule Private Consultation")} />
           </StaggerItem>
 
           <StaggerItem>
