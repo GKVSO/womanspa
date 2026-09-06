@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useRef, useEffect, useCallback } from "react";
-import { motion } from "framer-motion";
-import BeforeAfterSlider from "./BeforeAfterSlider";
-import { FadeIn, StaggerContainer, StaggerItem } from "./Animations";
 import { useT } from "@/i18n/LanguageProvider";
+import { motion } from "framer-motion";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { FadeIn, StaggerContainer, StaggerItem } from "./Animations";
+import BeforeAfterSlider from "./BeforeAfterSlider";
 import { useDraggableScroll } from "./useDraggableScroll";
 
 const slides = [
@@ -69,7 +69,7 @@ export default function EmeraldGallerySlider() {
   const isLast = scrollPos >= maxScroll - 1;
 
   return (
-    <FadeIn as="section" className="bg-[#CBA07D] flex justify-center py-16 sm:py-20">
+    <FadeIn id="before-after" as="section" className="bg-[#CBA07D] flex justify-center py-16 sm:py-20">
       <div className="w-full sm:w-[90%] px-4 sm:px-0">
         <StaggerContainer staggerDelay={0.12}>
           <StaggerItem>
