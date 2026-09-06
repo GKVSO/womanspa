@@ -7,12 +7,12 @@ import BookButton from "./BookButton";
 import { useT } from "@/i18n/LanguageProvider";
 
 const bullets = [
-  "Mild to moderate skin laxity",
-  "Fine lines & wrinkles",
-  "Loss of firmness",
-  "Dull or tired-looking skin",
-  "Uneven texture",
-  "Early visible aging signs",
+  "mild to moderate skin laxity",
+  "fine lines and wrinkles",
+  "loss of skin firmness",
+  "dull or tired-looking skin",
+  "uneven texture",
+  "early visible signs of aging",
 ];
 
 export default function ExionCandidate() {
@@ -21,26 +21,24 @@ export default function ExionCandidate() {
     <section className="relative overflow-hidden rounded-b-[60px] px-5 sm:px-10 pt-16 sm:pt-24"
       style={{
         backgroundColor: "#CFD2D8",
-                backgroundSize: "contain",
+        backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
       }}
     >
       <FadeIn as="div" y={30}>
-        <h2 className="text-center text-white text-[32px] min-[768px]:text-[48px] min-[1200px]:text-[70px] min-[1600px]:text-[100px] leading-tight font-berlingske font-normal">
-          {t("Who EXION Is")}
-          <br />
-          {t("Best Suited For")}
+        <h2 className="text-center text-white text-[32px] min-[768px]:text-[48px] min-[1200px]:text-[70px] min-[1600px]:text-[100px] leading-tight font-berlingske font-normal whitespace-pre-line">
+          {t("Who EXION Is\nBest Suited For")}
         </h2>
       </FadeIn>
 
       <div className="relative z-20 mt-10 sm:mt-16">
         <FadeIn as="div" y={30}>
           <div className="bg-white/80 rounded-[30px] p-6 sm:p-10 w-full sm:w-[620px] backdrop-blur-sm">
-            <div className="flex flex-col lg:flex-row justify-between items-stretch lg:items-end gap-6 lg:gap-10">
-              <div>
+            <div className="flex flex-col flex-wrap lg:flex-row justify-between items-stretch lg:items-end gap-6">
+              <div className="basis-[57%] grow">
                 <h3 className="text-[#313242] font-bold text-[20px] min-[768px]:text-[32px] mb-6">
-                  {t("Ideal Candidate List")}
+                  {t("Ideal Candidate")}
                 </h3>
                 <p className="text-[#313242] font-semibold text-[14px] min-[768px]:text-[16px] mb-4">
                   {t("This treatment may be ideal if you want to improve:")}
@@ -61,9 +59,13 @@ export default function ExionCandidate() {
                   ))}
                 </ul>
               </div>
-              <BookButton className="mt-6" style={{ backgroundColor: "#B07E3F" }}>
-                {t("Book Consultation")}
-                </BookButton>
+              <div>
+                <BookButton
+                  className="whitespace-nowrap"
+                  style={{ backgroundColor: "#B07E3F" }}
+                  label={t("Book Consultation")}
+                />
+              </div>
             </div>
           </div>
         </FadeIn>

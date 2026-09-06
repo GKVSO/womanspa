@@ -9,32 +9,32 @@ const faqs = [
   {
     question: "Is EXION painful?",
     answer:
-      "No. EXION is a comfortable, non-invasive procedure. Most clients describe a mild warming sensation during the session, with no anesthesia and no downtime required.",
+      "EXION Face is generally well tolerated. Most patients describe a mild warming sensation with minimal discomfort during treatment. For EXION Fractional RF, a topical numbing cream may be used to make the procedure more comfortable.",
   },
   {
     question: "Is there downtime?",
     answer:
-      "There is zero downtime. You can return to your daily activities immediately after your session.",
+      "EXION Face requires little to no downtime, and most patients can return to their normal activities immediately. Mild redness may occur and typically fades within a few hours. Fractional RF can cause more noticeable temporary redness or sensitivity, depending on treatment intensity.",
   },
   {
     question: "How many sessions are recommended?",
     answer:
-      "Most clients achieve optimal results with a series of sessions. Your provider will design a personalized treatment plan based on your goals during your consultation.",
+      "For EXION Face, BTL recommends a series of at least four treatments, typically spaced 7–14 days apart. The exact treatment plan depends on your skin, treatment area and goals.",
   },
   {
     question: "When will I see results?",
     answer:
-      "Results develop gradually as the skin builds new collagen. Most clients notice visible improvements within the following weeks and continue to improve over time.",
+      "Some patients notice an initial improvement after treatment, but results develop gradually as the skin produces new collagen and elastin. Optimal improvement may become more visible over the following weeks and months.",
   },
   {
     question: "Can EXION replace surgery?",
     answer:
-      "EXION is a non-invasive alternative designed to improve skin firmness, texture, and quality without surgery or downtime. For more advanced concerns, your provider will recommend the best approach for you.",
+      "EXION is a non-invasive treatment designed to improve skin firmness, texture and signs of aging. It can be a good option for patients with mild to moderate concerns, but it is not a replacement for surgical procedures when significant skin laxity requires surgery.",
   },
   {
     question: "Can EXION be combined with other treatments?",
     answer:
-      "Yes. EXION can safely complement other treatments to enhance overall results. Your provider will tailor a plan to your individual needs.",
+      "Yes, EXION can be incorporated into a broader aesthetic treatment plan. However, combining procedures should be planned by a qualified provider based on your skin condition, treatment goals and recovery needs. The timing between treatments may vary.",
   },
 ];
 

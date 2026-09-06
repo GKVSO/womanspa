@@ -4,23 +4,24 @@ import { Fragment } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { StaggerContainer, StaggerItem, FadeIn, btnHover } from "./Animations";
+import BookButton from "./BookButton";
 import { useT } from "@/i18n/LanguageProvider";
 
 const items = [
   {
     num: "01",
     title: "Energy Delivery",
-    text: "Advanced technology delivers controlled energy to targeted tissue",
+    text: "Advanced technology delivers controlled energy to targeted tissue.",
   },
   {
     num: "02",
     title: "Collagen Activation",
-    text: "The body responds by stimulating natural collagen production",
+    text: "The body responds by stimulating natural collagen production.",
   },
   {
-    num: "03",
+    num: "04",
     title: "Gradual Rejuvenation",
-    text: "Results continue improving over time as collagen develops",
+    text: "Results continue improving over time as collagen develops.",
   },
 ];
 
@@ -45,10 +46,8 @@ export default function ExionTechnology() {
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 flex-1 items-stretch lg:justify-between">
           <StaggerContainer staggerDelay={0.12} className="max-w-[760px]">
             <StaggerItem>
-              <h2 className="text-[#313242] text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske font-normal">
-                {t("Intelligent RF Technology")}
-                <br />
-                {t("Designed Around Precision")}
+              <h2 className="text-[#313242] text-[24px] min-[768px]:text-[32px] min-[1200px]:text-[36px] min-[1600px]:text-[48px] leading-tight font-berlingske font-normal whitespace-pre-line">
+                {t("Intelligent RF Technology\nDesigned Around Precision")}
               </h2>
             </StaggerItem>
 
@@ -61,7 +60,7 @@ export default function ExionTechnology() {
                 <StaggerItem>
                   <div className="py-2">
                     <p className="text-[#313242] font-semibold text-[16px] min-[1600px]:text-[20px]">
-                      {item.num} - {t(item.title)}
+                      {item.num} — {t(item.title)}
                     </p>
                     <p className="text-[#313242] font-medium text-[14px] min-[1600px]:text-[16px] mt-2 max-w-[520px]">
                       {t(item.text)}
@@ -78,19 +77,15 @@ export default function ExionTechnology() {
           <FadeIn as="div" y={30} className="flex items-center">
             <div className="w-full lg:w-[480px] flex flex-col items-end justify-end min-[1200px]:justify-center pb-8 min-[1200px]:pb-0">
               <p className="text-[#313242] font-semibold text-[16px] min-[1600px]:text-[20px] leading-relaxed">
-                {t("EXION combines advanced radiofrequency energy")}
-                <br />
-                {t("and targeted ultrasound technology to stimulate")}
-                <br />
-                {t("collagen and support skin renewal at deeper levels")}
+                {t("EXION combines advanced radiofrequency energy and targeted ultrasound technology to stimulate collagen and support skin renewal at deeper levels.")}
               </p>
-              <motion.button
-                {...btnHover}
-                className="text-white font-bold text-[14px] rounded-[10px] px-8 py-4 mt-10 w-full sm:w-auto cursor-pointer"
-                style={{ backgroundColor: "#B07E3F" }}
-              >
-                {t("Schedule Consultation")}
-              </motion.button>
+              <div className="mt-10 w-full sm:w-auto">
+                <BookButton
+                  className="whitespace-nowrap cursor-pointer text-white font-bold text-[14px] rounded-[10px] px-8 py-4 w-full sm:w-auto"
+                  style={{ backgroundColor: "#B07E3F" }}
+                  label={t("Book Consultation")}
+                />
+              </div>
             </div>
           </FadeIn>
         </div>
