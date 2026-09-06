@@ -1,9 +1,9 @@
 "use client";
 
+import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { FadeIn, StaggerContainer, StaggerItem, btnHover } from "./Animations";
-import { useT } from "@/i18n/LanguageProvider";
 
 const technologies = [
   {
@@ -52,7 +52,7 @@ export default function TechnologiesSection() {
   const t = useT();
   return (
     <FadeIn as="section" className="flex justify-center py-20">
-      <div className="w-[92%] sm:w-[90%]">
+      <div id="treatments" className="w-[92%] sm:w-[90%]">
         <StaggerContainer staggerDelay={0.1}>
           <StaggerItem className="w-full flex justify-center">
             <h2 className="text-black text-[24px] min-[768px]:text-[36px] font-berlingske leading-tight text-center">

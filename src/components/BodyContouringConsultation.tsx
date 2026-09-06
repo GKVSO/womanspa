@@ -1,17 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FadeIn, StaggerContainer, StaggerItem, btnHover } from "./Animations";
-import { useT } from "@/i18n/LanguageProvider";
+import { useState } from "react";
+import { FadeIn, StaggerContainer, StaggerItem } from "./Animations";
 
 export default function BodyContouringConsultation() {
   const [agreed, setAgreed] = useState(false);
   const t = useT();
 
   return (
-    <section id="treatments" className="hidden min-[1600px]:block bg-cover bg-center bg-no-repeat rounded-t-[60px] px-5 sm:px-10 py-16 sm:py-20 "
+    <section className="hidden min-[1600px]:block bg-cover bg-center bg-no-repeat rounded-t-[60px] px-5 sm:px-10 py-16 sm:py-20 "
       >
       <FadeIn as="div" className="flex flex-col lg:flex-row gap-10 lg:gap-12 max-w-[1440px] mx-auto" y={30}>
         <div className="flex-1">
