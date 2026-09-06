@@ -1,10 +1,10 @@
 "use client";
 
-import { useRef } from "react";
+import { useLanguage, useT } from "@/i18n/LanguageProvider";
+import { ml, sv, toLang } from "@/lib/i18n-helpers";
 import { motion, useScroll, useSpring, useTransform, type MotionValue } from "framer-motion";
 import Image from "next/image";
-import { useT, useLanguage } from "@/i18n/LanguageProvider";
-import { ml, toLang, sv } from "@/lib/i18n-helpers";
+import { useRef } from "react";
 
 const cards = [
   {
@@ -123,7 +123,7 @@ export default function ExionBenefits({ cms, editing }: { cms?: Record<string, u
       <motion.div
         ref={deviceRef}
         style={{ opacity: deviceOpacity, y: deviceY }}
-        className="relative z-10 -mt-4 sm:-mt-12 lg:-mt-24 flex justify-center will-change-transform "
+        className="relative z-10 flex justify-center will-change-transform "
       >
         <Image
           src={cmsImage || "/exion-device.webp"}
