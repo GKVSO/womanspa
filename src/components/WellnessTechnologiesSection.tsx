@@ -10,7 +10,7 @@ const technologies = [
     id: 1,
     title: "Emsella for man and woman",
     description:
-      "Stimulates thousands of supramaximal pelvic floor contractions in a single 28-minute session - painless, non-invasive, and powerful",
+      "Stimulates thousands of supramaximal pelvic floor contractions in a single 28-minute session — painless, non-invasive, and powerful",
     image: "/wellness-emsella.webp",
     href: "/emsella",
   },
@@ -26,9 +26,9 @@ const technologies = [
     id: 3,
     title: "Femtouch",
     description:
-      "Fractional CO2 laser for internal vaginal health. Restores moisture, improves tone, and reduces mild stress incontinence through collagen remodeling - without hormones",
+      "Fractional CO2 laser for internal vaginal health. Restores moisture, improves tone, and reduces mild stress incontinence through collagen remodeling — without hormones",
     image: "/wellness-femtouch.webp",
-    href: "/candela-smoother",
+    href: "/femtouch",
   },
 ];
 

@@ -10,7 +10,17 @@ export default function WellnessPage() {
       <main className="flex-1">
         <WellnessHero />
         <WellnessTechnologiesSection />
-        <Consultation showOnMobile />
+        <Consultation 
+          showOnMobile 
+          title="Book Your Private Consultation"
+          giftText="Book a complimentary consultation and get a $100 Welcome Gift toward your first treatment"
+          bullets={[
+            "One-on-one conversation in a discreet luxury suite",
+            "Complete privacy and zero pressure",
+            "Technology recommendation",
+            "Transparent pricing and timeline"
+          ]}
+        />
       </main>
     </div>
   );
