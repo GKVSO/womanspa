@@ -77,7 +77,7 @@ export default function EndospheresTechnology() {
           ))}
 
           <StaggerItem>
-            <BookButton className="bg-white text-black font-bold text-[14px] rounded-[15px] px-8 py-4 mt-6 w-full min-[768px]:w-auto cursor-pointer whitespace-nowrap" label={t("Schedule Private Consultation")} />
+            <BookButton className="bg-white text-black font-bold text-[14px] rounded-[15px] px-8 py-4 mt-6 w-full min-[768px]:w-auto cursor-pointer whitespace-nowrap" label={t("Book Consultation")} />
           </StaggerItem>
 
           <StaggerItem>

@@ -58,7 +58,7 @@ export default function EndospheresHero({ cms, editing }: { cms?: Record<string,
 
         <StaggerItem className="mt-auto sm:mt-0">
           <div {...e("button","hero_buttons")} className={`flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mt-8 sm:mt-10 ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`}>
-            <BookButton className="w-full sm:w-auto bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer whitespace-nowrap" label={cmsPrimaryBtn ? t(cmsPrimaryBtn) : t("Book Free Consultation")} />
+            <BookButton className="w-full sm:w-auto bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer whitespace-nowrap" label={cmsPrimaryBtn ? t(cmsPrimaryBtn) : t("Book Consultation")} />
           </div>
         </StaggerItem>
       </StaggerContainer>
