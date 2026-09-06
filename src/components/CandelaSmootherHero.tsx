@@ -65,7 +65,7 @@ export default function CandelaSmootherHero({ cms, editing }: { cms?: Record<str
 
         <StaggerItem>
           <h1 {...e("text","hero_title")} className={`${titleFont || "font-berlingske"} text-white text-[24px] min-[768px]:text-[36px] min-[1200px]:text-[40px] min-[1600px]:text-[48px] leading-tight ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`} style={{ ...(cms ? { color: sv(cms.titleColor) || undefined, fontSize: cms.titleSize ? `${cms.titleSize}px` : undefined } : {}) }}>
-            {cmsTitle ? t(cmsTitle) : <>{t("EMFEMME 360 For Feminine Wellness,")}<br />{t("Comfort & Intimate Confidence")}</>}
+            {cmsTitle ? t(cmsTitle) : <>{t("EMFEMME 360 For Feminine Wellness,\nComfort & Intimate Confidence")}</>}
           </h1>
         </StaggerItem>
 
@@ -77,8 +77,8 @@ export default function CandelaSmootherHero({ cms, editing }: { cms?: Record<str
 
         <StaggerItem className="mt-auto sm:mt-0">
           <div {...e("button","hero_buttons")} className={`flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 mt-8 sm:mt-10 ${editing ? "cursor-pointer hover:ring-2 hover:ring-[#CBA07D]" : ""}`}>
-            <BookButton className="w-full sm:w-auto bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer" label={cmsPrimaryBtn ? t(cmsPrimaryBtn) : t("Book Private Consultation")} />
-            <motion.button onClick={() => smoothScrollToTarget('treatments')} {...btnHover} className="w-full sm:w-auto text-white font-bold text-[14px] border border-white rounded-[10px] px-8 py-4 bg-transparent hover:bg-white/10 transition-colors cursor-pointer">
+            <BookButton className="w-full sm:w-auto bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer whitespace-nowrap" label={cmsPrimaryBtn ? t(cmsPrimaryBtn) : t("Book Private Consultation")} />
+            <motion.button onClick={() => smoothScrollToTarget('treatments')} {...btnHover} className="w-full sm:w-auto text-white font-bold text-[14px] border border-white rounded-[10px] px-8 py-4 bg-transparent hover:bg-white/10 transition-colors cursor-pointer whitespace-nowrap">
               {cmsSecondaryBtn ? t(cmsSecondaryBtn) : t("Learn How It Works")}</motion.button>
           </div>
         </StaggerItem>

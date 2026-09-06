@@ -3,6 +3,7 @@
 
 import { motion } from "framer-motion";
 import { FadeIn, StaggerContainer, StaggerItem, btnHover } from "./Animations";
+import BookButton from "./BookButton";
 import { useT } from "@/i18n/LanguageProvider";
 
 const focus = ["Comfort", "Feminine wellness", "Confidence", "Quality of life", "Private care"];
@@ -48,12 +49,7 @@ export default function CandelaSmootherConsultation() {
           <DotList items={focus} />
 
           <div className="mt-auto pt-10">
-            <motion.button
-              {...btnHover}
-              className="bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer w-full min-[768px]:w-auto "
-      >
-              {t("Book Private Consultation")}
-            </motion.button>
+            <BookButton className="bg-white text-black font-bold text-[14px] rounded-[10px] px-8 py-4 shadow-sm hover:shadow-md transition-shadow cursor-pointer w-full min-[768px]:w-auto whitespace-nowrap" label={t("Book Private Consultation")} />
           </div>
         </div>
       </div>
