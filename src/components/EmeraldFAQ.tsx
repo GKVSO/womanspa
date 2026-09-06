@@ -9,27 +9,27 @@ const faqs = [
   {
     question: "Is it painful?",
     answer:
-      "No. Emerald Laser is a comfortable, non-invasive treatment. Most clients feel nothing more than a mild warming or tingling sensation, with no anesthesia and no downtime required.",
+      "No. Emerald Laser is a non-invasive low-level laser treatment. Most people do not feel anything during the session, although some may notice a slight tingling sensation.",
   },
   {
     question: "Is there any downtime?",
     answer:
-      "There is zero downtime. You can return to your daily activities immediately after your Emerald Laser session.",
+      "No. Emerald Laser does not require downtime or a recovery period. You can return to your normal daily activities immediately after the session.",
   },
   {
-    question: "How does it work?",
+    question: "How does Emerald Laser work?",
     answer:
-      "Emerald Laser uses 532nm low-level laser energy to target fat cells through cold photobiomodulation. This process creates temporary pores in fat cells, allowing fatty acids to be released and naturally cleared by the body.",
+      "Emerald Laser uses low-level green laser light directed at targeted areas of fat. According to the manufacturer, the laser creates temporary pores in fat-cell membranes, allowing fatty acids to move into the surrounding tissue and then be processed naturally by the body’s lymphatic system. A typical session lasts about 30 minutes.",
   },
   {
-    question: "Who is eligible?",
+    question: "Who is eligible for Emerald Laser?",
     answer:
-      "Emerald Laser is ideal for men and women close to their goal weight who want to reduce stubborn fat pockets that resist diet and exercise. Your provider will determine if you are a good candidate during your consultation.",
+      "Emerald Laser is FDA-cleared for overall body circumference reduction and for treating patients with a BMI up to 40. Suitability still depends on your individual health, body composition and goals, so a consultation with a qualified provider is recommended before treatment.",
   },
   {
     question: "Can Emerald Laser replace weight loss?",
     answer:
-      "Emerald Laser is not a weight loss treatment. It is a body contouring solution designed to reduce stubborn fat deposits and refine body shape. A healthy lifestyle helps maintain and enhance results.",
+      "No. Emerald Laser is intended for body-contouring and circumference reduction, not as a replacement for a healthy diet, exercise or medical weight-management program. The manufacturer recommends combining treatment with healthy lifestyle habits to help achieve and maintain results.",
   },
 ];
 
