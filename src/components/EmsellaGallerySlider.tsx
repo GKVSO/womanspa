@@ -110,8 +110,8 @@ export default function EmsellaGallerySlider() {
                 transition={{ duration: 0.6, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
               >
                 <div
-                  className="h-full rounded-full bg-[#A5712E] transition-all duration-300"
-                  style={{ width: `${progressPercent}%` }}
+                  className="h-full rounded-full bg-[#A5712E] transition-transform duration-300 origin-left"
+                  style={{ transform: `scaleX(${progressPercent / 100})` }}
                 />
               </motion.div>
 

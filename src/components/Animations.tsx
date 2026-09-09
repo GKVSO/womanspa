@@ -21,6 +21,7 @@ export function FadeIn({ children, delay = 0, y = 30, className, as = "div", id 
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.7, delay, ease: [0.25, 0.1, 0.25, 1] }}
+      style={{ willChange: "transform, opacity" }}
     >
       {children}
     </Component>
@@ -58,6 +59,7 @@ export function StaggerItem({ children, className }: { children: React.ReactNode
         hidden: { opacity: 0, y: 20 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] } },
       }}
+      style={{ willChange: "transform, opacity" }}
     >
       {children}
     </motion.div>
