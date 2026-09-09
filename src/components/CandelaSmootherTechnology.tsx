@@ -1,11 +1,11 @@
 "use client";
 
-import { Fragment } from "react";
+import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { StaggerContainer, StaggerItem, FadeIn, btnHover } from "./Animations";
+import { Fragment } from "react";
+import { FadeIn, StaggerContainer, StaggerItem } from "./Animations";
 import BookButton from "./BookButton";
-import { useT } from "@/i18n/LanguageProvider";
 
 const items = [
   {
@@ -41,7 +41,7 @@ function Divider() {
 export default function CandelaSmootherTechnology() {
   const t = useT();
   return (
-    <section id="treatments" className="relative overflow-hidden px-5 sm:px-10 pt-14 sm:pt-20 pb-0 bg-[#F2F1F3] lg: lg:bg-contain lg:bg-no-repeat lg:bg-center bg-[url(/candela-smoother-tech-bg.webp)]"
+    <section id="treatments" className="relative overflow-hidden px-5 sm:px-10 pt-14 sm:pt-20 pb-0 bg-[#F2F1F3] lg: lg:bg-contain lg:bg-no-repeat lg:bg-center lg:bg-[url(/candela-smoother-tech-2.png)]"
       >
       <div className="flex flex-col">
         <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 flex-1 items-stretch lg:justify-between">
@@ -76,7 +76,7 @@ export default function CandelaSmootherTechnology() {
           </StaggerContainer>
 
           <FadeIn as="div" y={30} className="flex items-center">
-            <div className="w-full lg:w-[480px] flex flex-col items-end justify-end min-[1200px]:justify-center pb-8 min-[1200px]:pb-0">
+            <div className="w-full lg:w-[480px] flex flex-col items-start lg:items-end justify-end min-[1200px]:justify-center pb-8 min-[1200px]:pb-0">
               <p className="text-[#313242] font-semibold text-[16px] min-[1600px]:text-[20px] leading-relaxed">
                 {t("EMFEMME 360 uses gentle radiofrequency energy to")}
                 <br />
@@ -99,9 +99,9 @@ export default function CandelaSmootherTechnology() {
           />
         </div>
 
-        <div className="w-full overflow-hidden mt-6 -mb-4">
+        <div className="w-full overflow-hidden -mt-30 mb-20 md:-mt-50 md:mb-40 lg:mt-6 lg:mb-5">
           <motion.p
-            className="text-white font-berlingske text-[50px] min-[768px]:text-[100px] min-[1200px]:text-[180px] min-[1600px]:text-[250px] leading-none text-center whitespace-nowrap select-none"
+            className="text-white font-berlingske text-[70px] min-[768px]:text-[100px] min-[1200px]:text-[180px] min-[1600px]:text-[250px] leading-none text-center whitespace-nowrap select-none"
             initial={{ opacity: 0, y: 40, scale: 0.9 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
