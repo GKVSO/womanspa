@@ -1,10 +1,10 @@
 "use client";
 
+import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FadeIn, StaggerContainer, StaggerItem, btnHover } from "./Animations";
+import { FadeIn } from "./Animations";
 import BookButton from "./BookButton";
-import { useT } from "@/i18n/LanguageProvider";
 
 const bullets = [
   "Feminine wellness",
@@ -61,14 +61,14 @@ export default function CandelaSmootherIdealCandidate() {
         </FadeIn>
       </div>
 
-      <div className="relative z-10 mt-8 lg:-mt-[500px] w-full">
+      <div className="relative z-10 mt-8 lg:-mt-[320px] xl:-mt-[400px] w-full">
         <FadeIn as="div" y={30}>
           <Image
-            src="/candela-smoother-candidate.webp"
+            src="/candela-smoother-candidate-2.png"
             alt={t("EMFEMME 360 ideal candidate")}
-            width={2400}
-            height={1350}
-            className="w-full h-auto rounded-[30px] mx-auto"
+            width={1618}
+            height={972}
+            className="h-auto rounded-[30px] mx-auto"
           />
         </FadeIn>
       </div>
