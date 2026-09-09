@@ -1,10 +1,10 @@
 "use client";
 
-import { useRef } from "react";
+import { useLanguage, useT } from "@/i18n/LanguageProvider";
+import { ml, sv, toLang } from "@/lib/i18n-helpers";
 import { motion, useScroll, useSpring, useTransform, type MotionValue } from "framer-motion";
 import Image from "next/image";
-import { useT, useLanguage } from "@/i18n/LanguageProvider";
-import { ml, toLang, sv } from "@/lib/i18n-helpers";
+import { useRef } from "react";
 
 const cards = [
   {
@@ -116,18 +116,17 @@ export default function CandelaSmootherBenefits({ cms, editing, hideDevice = fal
       <motion.div
         ref={deviceRef}
         style={{ opacity: deviceOpacity, y: deviceY }}
-        className={`${hideDevice ? "hidden" : ""} relative z-10 -mt-4 min-[768px]:-mt-8 flex justify-center will-change-transform`}
+        className={`${hideDevice ? "hidden" : ""} relative z-10 flex justify-center will-change-transform`}
       >
         <Image
-          src={cmsImage || "/candela-smoother-benefits.webp"}
+          src={cmsImage || "/candela-smoother-benefits.png"}
           alt={t("EMFEMME 360 feminine wellness")}
-          width={600}
-          height={900}
-          className="h-full w-full"
+          width={800}
+          height={710}
         />
       </motion.div>
 
-      <div ref={cardsRef} className={`relative z-20 ${hideDevice ? "mt-6" : "-mt-8 min-[768px]:-mt-[100px]"} w-full`}>
+      <div ref={cardsRef} className={`relative z-20 ${hideDevice ? "mt-6" : " -mt-[100px] lg:-mt-[200px]"} w-full`}>
         <div
           className="absolute -inset-8 rounded-[60px]"
           style={{ backgroundColor: "#CBA07D", filter: "blur(10px)", opacity: 0.9 }}
