@@ -128,9 +128,8 @@ export default function CandelaBenefits({ cms, editing }: { cms?: Record<string,
         <Image
           src={cmsImage || "/candela-benefits.webp"}
           alt={t("CandelaX results")}
-          width={779}
-          height={1341}
-          className="h-full w-full"
+          width={1364}
+          height={909}
         />
       </motion.div>
 
