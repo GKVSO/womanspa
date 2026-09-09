@@ -126,11 +126,10 @@ export default function CandelaBenefits({ cms, editing }: { cms?: Record<string,
         className="relative z-10 -mt-4 min-[768px]:-mt-12 min-[1200px]:-mt-16 min-[1600px]:-mt-20 flex justify-center will-change-transform "
       >
         <Image
-          src={cmsImage || "/candela-benefits.webp"}
+          src={cmsImage || "/candela-benefits.png"}
           alt={t("CandelaX results")}
-          width={779}
-          height={1341}
-          className="h-full w-full"
+          width={1364}
+          height={909}
         />
       </motion.div>
 
