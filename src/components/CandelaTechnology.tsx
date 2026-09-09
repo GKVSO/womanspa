@@ -36,7 +36,7 @@ export default function CandelaTechnology() {
   const t = useT();
   return (
     <section
-      className="relative overflow-hidden px-5 sm:px-10 pt-14 sm:pt-20 pb-0"
+      className="relative overflow-hidden px-5 sm:px-10 pt-14 sm:pt-20 pb-0 lg:bg-[url(/candela-technology-bg.png)]"
       style={{
                 backgroundSize: "contain",
         backgroundRepeat: "no-repeat",
