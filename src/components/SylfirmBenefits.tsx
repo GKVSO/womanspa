@@ -121,11 +121,11 @@ export default function SylfirmBenefits({ cms, editing }: { cms?: Record<string,
         className="relative z-10 -mt-4 min-[768px]:-mt-12 min-[1200px]:-mt-16 min-[1600px]:-mt-20 flex justify-center will-change-transform "
       >
         <Image
-          src={cmsImage || "/sylfirm-benefits-device.webp"}
+          src={cmsImage || "/sylfirm-benefits-device.png"}
           alt={t("SylfirmX results")}
-          width={779}
-          height={1341}
-          className="h-full w-[30%]"
+          width={369}
+          height={765}
+          quiality={100}
         />
       </motion.div>
 
