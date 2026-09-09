@@ -39,7 +39,7 @@ const menuGroups = [
     href: "/wellness",
     children: [
       { label: "Emsella", href: "/emsella" },
-      { label: "EMFEMME 360", href: "/candela-smoother" },
+      { label: "EMFEMME 360", href: "/emfemme" },
       { label: "FemTouch", href: "/femtouch" },
     ],
   },

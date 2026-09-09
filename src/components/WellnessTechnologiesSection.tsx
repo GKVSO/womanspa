@@ -20,7 +20,7 @@ const technologies = [
     description:
       "Gently heats tissue to stimulate collagen, improve circulation, and restore tightness and sensitivity",
     image: "/wellness-emfemme.webp",
-    href: "/candela-smoother",
+    href: "/emfemme",
   },
   {
     id: 3,

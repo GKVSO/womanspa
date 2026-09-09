@@ -8,7 +8,7 @@ export const dynamic = "force-dynamic";
 
 const FRONTEND_ROUTES = new Set([
   "acupulse", "aerolase", "before-after", "body-contouring",
-  "candela-matrix", "candela-smoother", "emerald-laser", "emsculpt-neo",
+  "candela-matrix", "emfemme", "emerald-laser", "emsculpt-neo",
   "emsella", "endospheres", "exion", "femtouch", "hydrafacial",
   "icoone", "journal", "primelase", "reviews", "skin-rejuvenation",
   "sylfirmx", "wellness", "xerf",

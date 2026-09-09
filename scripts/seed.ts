@@ -204,7 +204,7 @@ const PAGES: { slug: string; title: string; seo_title: string; seo_description: 
 
   // ========== 6. CANDELA SMOOTHER (EMFEMME 360) ==========
   {
-    slug: "candela-smoother", title: "Emfemme 360 Feminine Wellness",
+    slug: "emfemme", title: "Emfemme 360 Feminine Wellness",
     seo_title: "Emfemme 360 Feminine Wellness | WO/MAN Luxe MedSpa",
     seo_description: "Non-surgical feminine wellness treatment for comfort, confidence, and quality of life.",
     blocks: [
