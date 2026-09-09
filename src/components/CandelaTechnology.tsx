@@ -2,6 +2,7 @@
 
 import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Fragment } from "react";
 import { FadeIn, StaggerContainer, StaggerItem, btnHover } from "./Animations";
 import BookButton from "./BookButton";
@@ -44,7 +45,7 @@ export default function CandelaTechnology() {
       }}
     >
       <div className="flex flex-col">
-        <div className="flex flex-col lg:flex-row gap-10 lg:gap-12 flex-1">
+        <div className="flex flex-col justify-between lg:flex-row gap-10 lg:gap-12 flex-1">
           <StaggerContainer staggerDelay={0.12} className="max-w-[760px] flex-1">
             <StaggerItem>
               <h2 className="text-[#313242] text-[32px] sm:text-[48px] leading-tight font-berlingske font-normal">
@@ -96,9 +97,19 @@ export default function CandelaTechnology() {
           </FadeIn>
         </div>
 
-        <div className="w-full overflow-hidden mt-6 -mb-4">
+        <div className="lg:hidden w-full mt-8 rounded-[20px] overflow-hidden">
+          <Image
+            src="/candela-technology-bg.png"
+            alt={t("candela technology")}
+            width={768}
+            height={583}
+            className="w-full h-auto object-cover"
+          />
+        </div>
+
+        <div className="w-full overflow-hidden -mt-30 mb-20 md:-mt-50 md:mb-40 lg:mt-6 lg:mb-5">
           <motion.p
-            className="text-white font-berlingske text-[80px] sm:text-[200px] leading-none text-center whitespace-nowrap select-none"
+            className="text-white font-berlingske text-[70px] min-[768px]:text-[100px] min-[1200px]:text-[180px] min-[1600px]:text-[250px] leading-none text-center whitespace-nowrap select-none"
             initial={{ opacity: 0, y: 40, scale: 0.9 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
