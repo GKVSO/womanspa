@@ -68,11 +68,12 @@ export default function SylfirmCandidate() {
       <div className="relative z-10 mt-8 w-full">
         <FadeIn as="div" y={30}>
           <Image
-            src="/sylfirm-candidate.webp"
+            src="/sylfirm-candidate.png"
             alt={t("SylfirmX ideal candidate")}
-            width={2400}
-            height={1350}
-            className="w-full h-auto rounded-[30px]"
+            width={1211}
+            height={894}
+            quiality={100}
+            className="rounded-[30px] mx-auto"
           />
         </FadeIn>
       </div>
