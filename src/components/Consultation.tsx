@@ -8,7 +8,35 @@ import { useT } from "@/i18n/LanguageProvider";
 
 export default function Consultation({ showOnMobile = true, hideAt1200 = false, showOnlyDesktop = false, title1, title2, bullets }: { showOnMobile?: boolean; hideAt1200?: boolean; showOnlyDesktop?: boolean; title1?: string; title2?: string; bullets?: string[] }) {
   const [agreed, setAgreed] = useState(false);
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [concern, setConcern] = useState("");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const t = useT();
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!agreed) return;
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ formType: "consultation", name, phone, concern }),
+      });
+      if (res.ok) {
+        setStatus("success");
+        setName("");
+        setPhone("");
+        setConcern("");
+        setAgreed(false);
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
+  };
 
   const visibilityClass = showOnlyDesktop
     ? "hidden min-[1600px]:block"
@@ -159,21 +187,35 @@ export default function Consultation({ showOnMobile = true, hideAt1200 = false, 
                 </h3>
               </StaggerItem>
 
-              <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
-                {["Your Name", "Phone Number"].map((placeholder) => (
-                  <StaggerItem key={placeholder}>
-                    <motion.input
-                      type="text"
-                      placeholder={t(placeholder)}
-                      className="w-full px-5 py-4 rounded-[20px] text-[18px] font-medium outline-none"
-                      style={{ backgroundColor: "#FAFAFA", border: "1px solid #F6F6F7", color: "#313242" }}
-                      whileFocus={{ scale: 1.01, borderColor: "#CBA07D" }}
-                      transition={{ duration: 0.3 }}
-                    />
-                  </StaggerItem>
-                ))}
+              <form className="space-y-5" onSubmit={handleSubmit}>
+                <StaggerItem>
+                  <motion.input
+                    type="text"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    placeholder={t("Your Name")}
+                    className="w-full px-5 py-4 rounded-[20px] text-[18px] font-medium outline-none"
+                    style={{ backgroundColor: "#FAFAFA", border: "1px solid #F6F6F7", color: "#313242" }}
+                    whileFocus={{ scale: 1.01, borderColor: "#CBA07D" }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </StaggerItem>
+                <StaggerItem>
+                  <motion.input
+                    type="text"
+                    value={phone}
+                    onChange={(e) => setPhone(e.target.value)}
+                    placeholder={t("Phone Number")}
+                    className="w-full px-5 py-4 rounded-[20px] text-[18px] font-medium outline-none"
+                    style={{ backgroundColor: "#FAFAFA", border: "1px solid #F6F6F7", color: "#313242" }}
+                    whileFocus={{ scale: 1.01, borderColor: "#CBA07D" }}
+                    transition={{ duration: 0.3 }}
+                  />
+                </StaggerItem>
                 <StaggerItem>
                   <motion.textarea
+                    value={concern}
+                    onChange={(e) => setConcern(e.target.value)}
                     placeholder={t("Main Skin Concern")}
                     rows={5}
                     className="w-full px-5 py-4 rounded-[20px] text-[18px] font-medium outline-none resize-none"
@@ -207,17 +249,28 @@ export default function Consultation({ showOnMobile = true, hideAt1200 = false, 
                   </div>
                 </StaggerItem>
 
+                {status === "success" && (
+                  <StaggerItem>
+                    <p className="text-[#9A6D44] font-medium text-center">{t("Thank you! Your request has been sent.")}</p>
+                  </StaggerItem>
+                )}
+                {status === "error" && (
+                  <StaggerItem>
+                    <p className="text-red-500 font-medium text-center">{t("Failed to send request. Please try again.")}</p>
+                  </StaggerItem>
+                )}
+
                 <StaggerItem>
                   <motion.button
                     type="submit"
-                    disabled={!agreed}
-                    whileHover={agreed ? { scale: 1.03 } : {}}
-                    whileTap={agreed ? { scale: 0.97 } : {}}
+                    disabled={!agreed || status === "loading"}
+                    whileHover={agreed && status !== "loading" ? { scale: 1.03 } : {}}
+                    whileTap={agreed && status !== "loading" ? { scale: 0.97 } : {}}
                     className={`w-full text-white font-bold text-[14px] rounded-full py-4 transition-all cursor-pointer whitespace-nowrap ${
-                      agreed ? "bg-[#CBA07D] shadow-sm hover:shadow-lg" : "bg-[#CBA07D]/40 cursor-not-allowed"
+                      agreed && status !== "loading" ? "bg-[#CBA07D] shadow-sm hover:shadow-lg" : "bg-[#CBA07D]/40 cursor-not-allowed"
                     }`}
                   >
-                    {t("Book Private Consultation")}
+                    {status === "loading" ? t("Sending...") : t("Book Private Consultation")}
                   </motion.button>
                 </StaggerItem>
               </form>

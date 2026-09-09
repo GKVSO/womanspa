@@ -14,15 +14,17 @@ export async function GET(req: NextRequest) {
   if (!(await authed(req))) {
     return NextResponse.json({ error: "unauthorized" }, { status: 401 });
   }
-  const [bookingUrl, bookingEmbed, bookingMode] = await Promise.all([
+  const [bookingUrl, bookingEmbed, bookingMode, notificationEmail] = await Promise.all([
     getSetting("vagaro_booking_url"),
     getSetting("vagaro_booking_embed"),
     getSetting("vagaro_booking_mode"),
+    getSetting("notification_email"),
   ]);
   return NextResponse.json({
     vagaro_booking_url: bookingUrl || "",
     vagaro_booking_embed: bookingEmbed || "",
     vagaro_booking_mode: bookingMode || "link",
+    notification_email: notificationEmail || "",
   });
 }
 
@@ -40,6 +42,9 @@ export async function POST(req: NextRequest) {
   }
   if (typeof body.vagaro_booking_mode === "string") {
     await setSetting("vagaro_booking_mode", body.vagaro_booking_mode);
+  }
+  if (typeof body.notification_email === "string") {
+    await setSetting("notification_email", body.notification_email);
   }
   return NextResponse.json({ ok: true });
 }

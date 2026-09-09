@@ -9,6 +9,7 @@ interface VagaroSettings {
   vagaro_booking_url: string;
   vagaro_booking_embed: string;
   vagaro_booking_mode: string;
+  notification_email: string;
 }
 
 export default function AdminSettingsPage() {
@@ -18,6 +19,7 @@ export default function AdminSettingsPage() {
     vagaro_booking_url: "",
     vagaro_booking_embed: "",
     vagaro_booking_mode: "link",
+    notification_email: "",
   });
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -162,6 +164,23 @@ export default function AdminSettingsPage() {
               ? "Se usa en el modo «Widget en la página /book»"
               : "Used in «Widget on /book page» mode"}
           </p>
+        </div>
+
+        {/* Email Notifications */}
+        <div className="rounded-[16px] p-5" style={{ background: "var(--admin-panel)", border: "1px solid var(--admin-border)" }}>
+          <p className="text-[13px] font-semibold mb-3" style={{ color: "var(--admin-text)" }}>
+            {lang === "ru" ? "Уведомления на email (Формы)" : lang === "es" ? "Notificaciones por correo (Formularios)" : "Email Notifications (Forms)"}
+          </p>
+          <label className="text-[11px] mb-1 block" style={{ color: "var(--admin-muted)" }}>
+            {lang === "ru" ? "Email для получения заявок с форм (по умолчанию womancare1006@gmail.com)" : lang === "es" ? "Correo para recibir formularios (por defecto womancare1006@gmail.com)" : "Email to receive form submissions (default womancare1006@gmail.com)"}
+          </label>
+          <input
+            value={settings.notification_email}
+            onChange={(e) => setSettings({ ...settings, notification_email: e.target.value })}
+            placeholder="womancare1006@gmail.com"
+            className="w-full px-3 py-2 rounded-[8px] text-[13px] outline-none"
+            style={inputStyle}
+          />
         </div>
       </div>
     </div>
