@@ -1,10 +1,10 @@
 "use client";
 
+import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FadeIn, StaggerContainer, StaggerItem, btnHover } from "./Animations";
+import { FadeIn } from "./Animations";
 import BookButton from "./BookButton";
-import { useT } from "@/i18n/LanguageProvider";
 
 const bullets = [
   "mild to moderate skin laxity",
@@ -74,7 +74,7 @@ export default function ExionCandidate() {
       <div className="relative z-10 mt-8 lg:-mt-[500px] w-full">
         <FadeIn as="div" y={30}>
           <Image
-            src="/exion-candidate.webp"
+            src="/exion-candidate-2.png"
             alt={t("EXION ideal candidate")}
             width={2400}
             height={1350}
