@@ -1,15 +1,15 @@
 "use client";
 
+import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { StaggerContainer, StaggerItem, FadeIn } from "./Animations";
-import { useT } from "@/i18n/LanguageProvider";
+import { FadeIn, StaggerContainer, StaggerItem } from "./Animations";
 
 export default function CandelaCandidate() {
   const t = useT();
   return (
     <section
-      className="relative overflow-hidden px-5 sm:px-10 pt-16 sm:pt-20 pb-0"
+      className="relative overflow-hidden px-5 sm:px-10 pt-16 sm:pt-20 pb-0 bg-[url(/candela-candidate-bg.png)]"
       style={{
         backgroundColor: "#F1F2F4",
                 backgroundSize: "cover",
