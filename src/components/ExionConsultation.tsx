@@ -1,10 +1,10 @@
 "use client";
 
+import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { FadeIn, StaggerContainer, StaggerItem, btnHover } from "./Animations";
+import { FadeIn, StaggerContainer, StaggerItem } from "./Animations";
 import BookButton from "./BookButton";
-import { useT } from "@/i18n/LanguageProvider";
 
 function ConsultationImage({ className = "" }: { className?: string }) {
   const t = useT();
@@ -17,12 +17,13 @@ function ConsultationImage({ className = "" }: { className?: string }) {
       transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.1, 0.25, 1] }}
     >
       <Image
-        src="/exion-consultation.webp"
+        src="/exion-consultation.png"
         alt={t("EXION treatment")}
         fill
-        sizes="50vw"
+        sizes="777px"
         className="object-cover"
         priority
+        quality={100}
       />
     </motion.div>
   );
@@ -156,7 +157,7 @@ export default function ExionConsultation() {
         </FadeIn>
       </div>
 
-      <div className="hidden lg:block relative w-full lg:w-1/2 min-h-[480px]">
+      <div className="hidden lg:block relative min-h-[480px] max-w-[50vw] w-[777px]">
         <ConsultationImage className="h-full" />
       </div>
     </section>
