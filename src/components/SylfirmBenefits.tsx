@@ -125,7 +125,7 @@ export default function SylfirmBenefits({ cms, editing }: { cms?: Record<string,
           alt={t("SylfirmX results")}
           width={369}
           height={765}
-          quiality={100}
+          quality={100}
         />
       </motion.div>
 

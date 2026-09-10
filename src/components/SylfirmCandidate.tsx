@@ -72,7 +72,7 @@ export default function SylfirmCandidate() {
             alt={t("SylfirmX ideal candidate")}
             width={1211}
             height={894}
-            quiality={100}
+            quality={100}
             className="rounded-[30px] mx-auto"
           />
         </FadeIn>
