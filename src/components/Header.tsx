@@ -351,7 +351,7 @@ export default function Header() {
                                       onClick={() => setOpen(false)}
                                       className="text-white/85 hover:text-white text-[18px] font-bold transition-colors block mb-2"
                                     >
-                                      {t(group.label)}
+                                      {t("See all")}
                                     </Link>
                                   </li>
                                   {group.children.map((child) => (
