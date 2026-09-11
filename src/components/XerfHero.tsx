@@ -123,10 +123,10 @@ export default function XerfHero({ cms, editing }: { cms?: Record<string, unknow
         <StaggerItem>
           <h1
             {...e("text", "hero_title")}
-            className={`xerf-hero-title text-white leading-tight ${titleFont} ${EDIT_CLS}`}
+            className={`xerf-hero-title text-white leading-tight whitespace-pre-line ${titleFont} ${EDIT_CLS}`}
             style={titleStyle}
           >
-            {cmsTitle ? t(cmsTitle) : <>{t("Lift & Tighten Loose Skin — Without Surgery or Downtime")}</>}
+            {cmsTitle ? t(cmsTitle) : <>{t("Lift & Tighten Loose Skin\nWithout Surgery or Downtime")}</>}
           </h1>
           {/* Responsive font-size overrides */}
           <style>{`
