@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+import { getPageBySlug } from '@/lib/db';
 import Header from "@/components/Header";
 import XerfHero from "@/components/XerfHero";
 import XerfConsultation from "@/components/XerfConsultation";
@@ -45,4 +47,17 @@ export default function XerfPage() {
       </main>
     </div>
   );
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  try {
+    const page = await getPageBySlug('xerf');
+    if (page && (page.seo_title || page.seo_description)) {
+      return {
+        title: page.seo_title || undefined,
+        description: page.seo_description || undefined,
+      };
+    }
+  } catch {}
+  return {};
 }

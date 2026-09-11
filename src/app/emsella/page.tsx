@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+import { getPageBySlug } from '@/lib/db';
 ﻿import Header from "@/components/Header";
 import EmsellaHero from "@/components/EmsellaHero";
 import EmsellaConsultation from "@/components/EmsellaConsultation";
@@ -39,4 +41,17 @@ export default function EmsellaPage() {
       </main>
     </div>
   );
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  try {
+    const page = await getPageBySlug('emsella');
+    if (page && (page.seo_title || page.seo_description)) {
+      return {
+        title: page.seo_title || undefined,
+        description: page.seo_description || undefined,
+      };
+    }
+  } catch {}
+  return {};
 }

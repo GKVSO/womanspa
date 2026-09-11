@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+import { getPageBySlug } from '@/lib/db';
 import Header from "@/components/Header";
 import AerolaseHero from "@/components/AerolaseHero";
 import AerolaseConsultation from "@/components/AerolaseConsultation";
@@ -39,4 +41,16 @@ export default function AerolasePage() {
       </main>
     </div>
   );
+}
+export async function generateMetadata(): Promise<Metadata> {
+  try {
+    const page = await getPageBySlug('aerolase');
+    if (page && (page.seo_title || page.seo_description)) {
+      return {
+        title: page.seo_title || undefined,
+        description: page.seo_description || undefined,
+      };
+    }
+  } catch {}
+  return {};
 }

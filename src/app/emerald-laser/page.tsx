@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+import { getPageBySlug } from '@/lib/db';
 import Header from "@/components/Header";
 import EmeraldHero from "@/components/EmeraldHero";
 import EmeraldConsultation from "@/components/EmeraldConsultation";
@@ -39,4 +41,16 @@ export default function EmeraldPage() {
       </main>
     </div>
   );
+}
+export async function generateMetadata(): Promise<Metadata> {
+  try {
+    const page = await getPageBySlug('emerald-laser');
+    if (page && (page.seo_title || page.seo_description)) {
+      return {
+        title: page.seo_title || undefined,
+        description: page.seo_description || undefined,
+      };
+    }
+  } catch {}
+  return {};
 }

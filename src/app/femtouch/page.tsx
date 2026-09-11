@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+import { getPageBySlug } from '@/lib/db';
 import Header from "@/components/Header";
 import FemTouchHero from "@/components/FemTouchHero";
 import FemTouchConsultation from "@/components/FemTouchConsultation";
@@ -24,4 +26,16 @@ export default function FemTouchPage() {
       </main>
     </div>
   );
+}
+export async function generateMetadata(): Promise<Metadata> {
+  try {
+    const page = await getPageBySlug('femtouch');
+    if (page && (page.seo_title || page.seo_description)) {
+      return {
+        title: page.seo_title || undefined,
+        description: page.seo_description || undefined,
+      };
+    }
+  } catch {}
+  return {};
 }

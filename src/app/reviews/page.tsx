@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+import { getPageBySlug } from '@/lib/db';
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
 import ReviewsSlider from "@/components/ReviewsSlider";
@@ -19,4 +21,17 @@ export default function ReviewsPage() {
       </main>
     </div>
   );
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  try {
+    const page = await getPageBySlug('reviews');
+    if (page && (page.seo_title || page.seo_description)) {
+      return {
+        title: page.seo_title || undefined,
+        description: page.seo_description || undefined,
+      };
+    }
+  } catch {}
+  return {};
 }

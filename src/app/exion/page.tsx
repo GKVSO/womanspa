@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+import { getPageBySlug } from '@/lib/db';
 import Header from "@/components/Header";
 import ExionHero from "@/components/ExionHero";
 import ExionConsultation from "@/components/ExionConsultation";
@@ -39,4 +41,16 @@ export default function ExionPage() {
       </main>
     </div>
   );
+}
+export async function generateMetadata(): Promise<Metadata> {
+  try {
+    const page = await getPageBySlug('exion');
+    if (page && (page.seo_title || page.seo_description)) {
+      return {
+        title: page.seo_title || undefined,
+        description: page.seo_description || undefined,
+      };
+    }
+  } catch {}
+  return {};
 }

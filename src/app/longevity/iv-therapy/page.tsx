@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+import { getPageBySlug } from '@/lib/db';
 import Header from "@/components/Header";
 import HomeFooter from "@/components/home/HomeFooter";
 import IvTherapyHero from "@/components/IvTherapyHero";
@@ -24,4 +26,17 @@ export default function IvTherapyPage() {
       <HomeFooter />
     </div>
   );
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  try {
+    const page = await getPageBySlug('iv-therapy');
+    if (page && (page.seo_title || page.seo_description)) {
+      return {
+        title: page.seo_title || undefined,
+        description: page.seo_description || undefined,
+      };
+    }
+  } catch {}
+  return {};
 }

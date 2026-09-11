@@ -1,4 +1,18 @@
+import type { Metadata } from "next";
 import Header from "@/components/Header";
+
+export async function generateMetadata(): Promise<Metadata> {
+  try {
+    const page = await getPageBySlug("home");
+    if (page && (page.seo_title || page.seo_description)) {
+      return {
+        title: page.seo_title || undefined,
+        description: page.seo_description || undefined,
+      };
+    }
+  } catch {}
+  return {};
+}
 import HomeHero from "@/components/home/HomeHero";
 import HomeTreatments from "@/components/home/HomeTreatments";
 import HomeMoreBody from "@/components/home/HomeMoreBody";

@@ -1,4 +1,19 @@
+import type { Metadata } from "next";
 import { redirect } from "next/navigation";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+  try {
+    const { slug } = await params;
+    const page = await getPageBySlug(slug);
+    if (page && (page.seo_title || page.seo_description)) {
+      return {
+        title: page.seo_title || undefined,
+        description: page.seo_description || undefined,
+      };
+    }
+  } catch {}
+  return {};
+}
 import { getPageBySlug, getBlocks } from "@/lib/db";
 import BlockRenderer from "@/components/cms/BlockRenderer";
 import { LanguageProvider } from "@/i18n/LanguageProvider";

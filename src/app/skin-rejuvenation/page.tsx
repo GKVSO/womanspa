@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+import { getPageBySlug } from '@/lib/db';
 import Header from "@/components/Header";
 import SkinRejuvenationHero from "@/components/SkinRejuvenationHero";
 import SkinTechnologiesSection from "@/components/SkinTechnologiesSection";
@@ -14,4 +16,16 @@ export default function SkinRejuvenationPage() {
       </main>
     </div>
   );
+}
+export async function generateMetadata(): Promise<Metadata> {
+  try {
+    const page = await getPageBySlug('skin-rejuvenation');
+    if (page && (page.seo_title || page.seo_description)) {
+      return {
+        title: page.seo_title || undefined,
+        description: page.seo_description || undefined,
+      };
+    }
+  } catch {}
+  return {};
 }

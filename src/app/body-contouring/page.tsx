@@ -1,3 +1,5 @@
+import type { Metadata } from 'next';
+import { getPageBySlug } from '@/lib/db';
 import Header from "@/components/Header";
 import BodyContouringHero from "@/components/BodyContouringHero";
 import TechnologiesSection from "@/components/TechnologiesSection";
@@ -14,4 +16,17 @@ export default function BodyContouringPage() {
       </main>
     </div>
   );
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  try {
+    const page = await getPageBySlug('body-contouring');
+    if (page && (page.seo_title || page.seo_description)) {
+      return {
+        title: page.seo_title || undefined,
+        description: page.seo_description || undefined,
+      };
+    }
+  } catch {}
+  return {};
 }
