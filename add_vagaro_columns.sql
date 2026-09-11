@@ -1,0 +1,1 @@
+ALTER TABLE pages ADD COLUMN IF NOT EXISTS vagaro_booking_url TEXT DEFAULT ''; ALTER TABLE pages ADD COLUMN IF NOT EXISTS vagaro_booking_embed TEXT DEFAULT ''; ALTER TABLE pages ADD COLUMN IF NOT EXISTS vagaro_booking_mode TEXT DEFAULT '';

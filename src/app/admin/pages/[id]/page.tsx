@@ -18,6 +18,9 @@ interface PageInfo {
   seo_description: string;
   published: number;
   is_home: number;
+  vagaro_booking_url?: string;
+  vagaro_booking_embed?: string;
+  vagaro_booking_mode?: string;
 }
 
 interface BlockItem {
@@ -225,6 +228,58 @@ export default function AdminPageEditor({ params }: { params: Promise<{ id: stri
 
       {/* Text editor: all sections, all text fields */}
       <div className="max-w-[860px] mx-auto px-4 py-6 space-y-6">
+        {/* Vagaro Settings Override (Directly on page) */}
+        <div className="rounded-[16px] p-5" style={{ background: "var(--admin-panel)", border: "1px solid var(--admin-border)" }}>
+          <p className="text-[13px] font-semibold mb-4" style={{ color: "var(--admin-text)" }}>
+            {lang === "ru" ? "Виджет записи (Vagaro) для этой страницы" : lang === "es" ? "Widget de reserva (Vagaro) para esta página" : "Booking Widget (Vagaro) for this page"}
+          </p>
+          <p className="text-[11px] mb-4" style={{ color: "var(--admin-muted)" }}>
+            {lang === "ru" ? "Оставьте пустым, чтобы использовать глобальные настройки." : lang === "es" ? "Dejar en blanco para usar la configuración global." : "Leave blank to use global settings."}
+          </p>
+          <div className="space-y-4">
+            <div>
+              <label className="text-[12px] mb-1 block" style={{ color: "var(--admin-muted)" }}>
+                {lang === "ru" ? "Режим бронирования" : lang === "es" ? "Modo de reserva" : "Booking mode"}
+              </label>
+              <select
+                value={page.vagaro_booking_mode || ""}
+                onChange={(e) => setPage({ ...page, vagaro_booking_mode: e.target.value })}
+                className="w-full px-3 py-2.5 rounded-[8px] text-[13px] outline-none"
+                style={inputStyle}
+              >
+                <option value="">{lang === "ru" ? "По умолчанию (как в общих настройках)" : "Default (global settings)"}</option>
+                <option value="embed">{lang === "ru" ? "Виджет (embed)" : "Widget (embed)"}</option>
+                <option value="link">{lang === "ru" ? "Ссылка (link)" : "Link"}</option>
+              </select>
+            </div>
+            <div>
+              <label className="text-[12px] mb-1 block" style={{ color: "var(--admin-muted)" }}>
+                {lang === "ru" ? "Ссылка (Booking Link)" : "Booking Link"}
+              </label>
+              <input
+                value={page.vagaro_booking_url || ""}
+                onChange={(e) => setPage({ ...page, vagaro_booking_url: e.target.value })}
+                className="w-full px-3 py-2.5 rounded-[8px] text-[13px] outline-none"
+                style={inputStyle}
+                placeholder="https://www.vagaro.com/your-business/booking"
+              />
+            </div>
+            <div>
+              <label className="text-[12px] mb-1 block" style={{ color: "var(--admin-muted)" }}>
+                {lang === "ru" ? "Код виджета (Embed code)" : "Embed code"}
+              </label>
+              <textarea
+                value={page.vagaro_booking_embed || ""}
+                onChange={(e) => setPage({ ...page, vagaro_booking_embed: e.target.value })}
+                rows={4}
+                className="w-full px-3 py-2.5 rounded-[8px] text-[12px] outline-none resize-y font-mono"
+                style={inputStyle}
+                placeholder='<script src="..."></script>'
+              />
+            </div>
+          </div>
+        </div>
+
         {blocks.map((block, bi) => {
           const def = BLOCK_DEFS.find((b) => b.type === block.type);
           const blockName = def ? tr(lang, def.labelKey as Parameters<typeof tr>[1]) : block.type;
@@ -327,15 +382,16 @@ export default function AdminPageEditor({ params }: { params: Promise<{ id: stri
         })}
       </div>
 
-      {/* SEO modal */}
+      {/* Settings modal */}
       {showSeo && page && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" style={{ background: "rgba(0,0,0,0.4)" }} onClick={() => setShowSeo(false)}>
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto" style={{ background: "rgba(0,0,0,0.4)" }} onClick={() => setShowSeo(false)}>
           <div
-            className="w-full max-w-[500px] rounded-[20px] p-6 shadow-2xl"
+            className="w-full max-w-[500px] rounded-[20px] p-6 shadow-2xl my-auto"
             style={{ background: "var(--admin-panel)", border: "1px solid var(--admin-border)" }}
             onClick={(e) => e.stopPropagation()}
           >
-            <h2 className="text-[16px] font-semibold mb-4" style={{ color: "var(--admin-text)" }}>SEO</h2>
+            <h2 className="text-[16px] font-semibold mb-4" style={{ color: "var(--admin-text)" }}>SEO & {tr(lang, "general" as any) || "Общие"}</h2>
+            
             <div className="space-y-3">
               <div>
                 <label className="text-[12px] mb-1 block" style={{ color: "var(--admin-muted)" }}>{tr(lang, "pageTitle")}</label>
@@ -385,7 +441,8 @@ export default function AdminPageEditor({ params }: { params: Promise<{ id: stri
                 </label>
               </div>
             </div>
-            <div className="flex justify-end mt-5">
+
+            <div className="flex justify-end mt-6">
               <button
                 onClick={() => setShowSeo(false)}
                 className="px-5 py-2.5 rounded-[10px] text-[13px] font-bold text-white cursor-pointer"

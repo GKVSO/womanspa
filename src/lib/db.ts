@@ -18,10 +18,22 @@ export async function initDB() {
       seo_description TEXT NOT NULL DEFAULT '',
       published INTEGER NOT NULL DEFAULT 1,
       is_home INTEGER NOT NULL DEFAULT 0,
+      vagaro_booking_url TEXT DEFAULT '',
+      vagaro_booking_embed TEXT DEFAULT '',
+      vagaro_booking_mode TEXT DEFAULT '',
       created_at TIMESTAMP DEFAULT NOW(),
       updated_at TIMESTAMP DEFAULT NOW()
     )
   `;
+
+  // Migration for existing tables
+  try {
+    await sql`ALTER TABLE pages ADD COLUMN IF NOT EXISTS vagaro_booking_url TEXT DEFAULT ''`;
+    await sql`ALTER TABLE pages ADD COLUMN IF NOT EXISTS vagaro_booking_embed TEXT DEFAULT ''`;
+    await sql`ALTER TABLE pages ADD COLUMN IF NOT EXISTS vagaro_booking_mode TEXT DEFAULT ''`;
+  } catch (e) {
+    // Ignore if column already exists or error
+  }
 
   await sql`
     CREATE TABLE IF NOT EXISTS page_blocks (
@@ -58,7 +70,17 @@ export function createPage(slug: string, title: string) {
   return sql`INSERT INTO pages (slug, title) VALUES (${slug}, ${title}) RETURNING id`.then((r) => r[0].id);
 }
 
-export async function updatePage(id: number, data: { title?: string; slug?: string; seo_title?: string; seo_description?: string; published?: number; is_home?: number }) {
+export async function updatePage(id: number, data: { 
+  title?: string; 
+  slug?: string; 
+  seo_title?: string; 
+  seo_description?: string; 
+  published?: number; 
+  is_home?: number;
+  vagaro_booking_url?: string;
+  vagaro_booking_embed?: string;
+  vagaro_booking_mode?: string;
+}) {
   const sets: string[] = [];
   const values: (string | number)[] = [];
   let i = 1;

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { useT } from "@/i18n/LanguageProvider";
 import VagaroEmbed from "./VagaroEmbed";
@@ -18,20 +19,25 @@ export default function BookingModal({
   open: boolean;
   onClose: () => void;
 }) {
-  const [settings, setSettings] = useState<BookingSettings>({ bookingUrl: "", bookingEmbed: "", bookingMode: "link" });
+  const [settings, setSettings] = useState<BookingSettings | null>(null);
   const t = useT();
+  const pathname = usePathname();
 
   useEffect(() => {
-    fetch("/api/booking-settings")
+    // Clear settings immediately on route change so we don't leak previous page's custom widget
+    setSettings(null);
+    
+    fetch(`/api/booking-settings?path=${encodeURIComponent(pathname || "")}`)
       .then((r) => r.json())
       .then((set) => setSettings(set))
       .catch(() => {});
-  }, []);
+  }, [pathname]);
 
-  const bookHref = settings.bookingUrl || "/book";
-  const openInNewTab = !!settings.bookingUrl;
+  const activeSettings = settings || { bookingUrl: "", bookingEmbed: "", bookingMode: "link" };
+  const bookHref = activeSettings.bookingUrl || "/book";
+  const openInNewTab = !!activeSettings.bookingUrl;
 
-  const showEmbed = settings.bookingMode === "embed" && settings.bookingEmbed;
+  const showEmbed = activeSettings.bookingMode === "embed" && activeSettings.bookingEmbed;
 
   return (
     <motion.div
@@ -70,9 +76,13 @@ export default function BookingModal({
           </svg>
         </motion.button>
 
-        {showEmbed ? (
+        {!settings ? (
+          <div className="p-8 sm:p-12 pt-16 flex items-center justify-center min-h-[300px]">
+            <div className="w-10 h-10 border-4 border-[#CBA07D]/30 border-t-[#CBA07D] rounded-full animate-spin"></div>
+          </div>
+        ) : showEmbed ? (
           <motion.div layout className="p-4 sm:p-8 pt-12 sm:pt-16 w-full">
-            <VagaroEmbed code={settings.bookingEmbed} />
+            <VagaroEmbed code={activeSettings.bookingEmbed} />
           </motion.div>
         ) : (
           <>

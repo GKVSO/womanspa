@@ -33,6 +33,9 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
       seo_description: body.page.seo_description,
       published: body.page.published,
       is_home: body.page.is_home,
+      vagaro_booking_url: body.page.vagaro_booking_url,
+      vagaro_booking_embed: body.page.vagaro_booking_embed,
+      vagaro_booking_mode: body.page.vagaro_booking_mode,
     });
   }
 

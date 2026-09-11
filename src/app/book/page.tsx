@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import HomeFooter from "@/components/home/HomeFooter";
 import Hero from "@/components/Hero";
-import { getSetting } from "@/lib/db";
+import { getSetting, getPageBySlug } from "@/lib/db";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
 import VagaroEmbed from "@/components/VagaroEmbed";
 
@@ -13,11 +13,22 @@ export const metadata = {
 };
 
 export default async function BookPage() {
-  const [bookingUrl, bookingEmbed, bookingMode] = await Promise.all([
-    getSetting("vagaro_booking_url"),
-    getSetting("vagaro_booking_embed"),
-    getSetting("vagaro_booking_mode"),
-  ]);
+  const bookPage = await getPageBySlug("book");
+  
+  let bookingUrl = bookPage?.vagaro_booking_url;
+  let bookingEmbed = bookPage?.vagaro_booking_embed;
+  let bookingMode = bookPage?.vagaro_booking_mode;
+
+  if (!bookingUrl && !bookingEmbed) {
+    const globals = await Promise.all([
+      getSetting("vagaro_booking_url"),
+      getSetting("vagaro_booking_embed"),
+      getSetting("vagaro_booking_mode"),
+    ]);
+    bookingUrl = globals[0];
+    bookingEmbed = globals[1];
+    bookingMode = globals[2];
+  }
 
   return (
     <LanguageProvider>
