@@ -11,14 +11,18 @@ const FRONTEND_ROUTES = new Set([
   "candela-matrix", "emfemme", "emerald-laser", "emsculpt-neo",
   "emsella", "endospheres", "exion", "femtouch", "hydrafacial",
   "icoone", "journal", "primelase", "reviews", "skin-rejuvenation",
-  "sylfirmx", "wellness", "xerf",
+  "sylfirmx", "wellness", "xerf", "nad-therapy", "iv-therapy"
 ]);
 
 export default async function CmsPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
 
   if (FRONTEND_ROUTES.has(slug)) {
-    redirect(`/${slug}`);
+    if (slug === "nad-therapy" || slug === "iv-therapy") {
+      redirect(`/longevity/${slug}`);
+    } else {
+      redirect(`/${slug}`);
+    }
   }
 
   const page = await getPageBySlug(slug);
