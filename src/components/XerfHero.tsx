@@ -85,7 +85,6 @@ export default function XerfHero({ cms, editing }: { cms?: Record<string, unknow
   const titleStyle: React.CSSProperties = {
     lineHeight: nv(c.titleLineHeight, DEFAULTS.titleLineHeight),
     letterSpacing: c.titleLetterSpacing != null && c.titleLetterSpacing !== "" ? `${nv(c.titleLetterSpacing, 0)}px` : undefined,
-    fontSize: `${sMobile}px`,
   };
 
   return (
