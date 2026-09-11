@@ -2,14 +2,13 @@
 
 import { useT } from "@/i18n/LanguageProvider";
 import { motion } from "framer-motion";
-import Image from "next/image";
-import { FadeIn, StaggerContainer, StaggerItem } from "./Animations";
+import { StaggerContainer, StaggerItem } from "./Animations";
 
 export default function CandelaCandidate() {
   const t = useT();
   return (
     <section
-      className="relative overflow-hidden px-5 sm:px-10 pt-16 sm:pt-20 pb-0 bg-[url(/candela-candidate-bg.png)]"
+      className="relative overflow-hidden px-5 sm:px-10 py-16 sm:py-20 bg-[url(/candela-candidate-bg.png)]"
       style={{
         backgroundColor: "#F1F2F4",
                 backgroundSize: "cover",
@@ -74,25 +73,6 @@ export default function CandelaCandidate() {
           </p>
         </StaggerItem>
       </StaggerContainer>
-
-      <div className="flex justify-end mt-8 sm:mt-12">
-        <FadeIn as="div" y={30}>
-          <motion.div className="bg-white/80 rounded-t-[30px] w-full sm:w-[620px] p-6 sm:p-10 backdrop-blur-sm">
-            <p className="text-[#313242] font-berlingske text-[24px] sm:text-[32px] leading-tight">
-              {t("RF Microneedling")}
-            </p>
-            <div className="flex justify-center items-center py-10">
-              <Image
-                src="/candela-card-circle.webp"
-                alt={t("RF Microneedling")}
-                width={300}
-                height={300}
-                className="rounded-full"
-              />
-            </div>
-          </motion.div>
-        </FadeIn>
-      </div>
     </section>
   );
 }
