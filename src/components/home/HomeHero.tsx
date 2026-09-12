@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
 import { useT } from "@/i18n/LanguageProvider";
 import { smoothScrollToTarget } from "@/lib/scroll";
 import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { StaggerContainer, StaggerItem, btnHover } from "../Animations";
 import BookButton from "../BookButton";
 
@@ -23,7 +23,7 @@ export default function HomeHero() {
     <section className="relative rounded-b-[60px] px-5 sm:px-10 pt-20 sm:pt-24 pb-10 sm:pb-16 min-h-[100vh] flex flex-col justify-between overflow-hidden">
       
       {/* Background Poster (Fallback & Base layer) */}
-      <div className="absolute inset-0 w-full h-full bg-[url(/home-hero.webp)] bg-cover bg-center bg-no-repeat -z-30" />
+      <div className="absolute inset-0 w-full h-full bg-[#CBA07D] -z-30" />
 
       {/* Video Background */}
       <motion.video
@@ -41,8 +41,13 @@ export default function HomeHero() {
         <source src="/hero-video.mp4" type="video/mp4" />
       </motion.video>
 
-      {/* Overlay for text contrast */}
-      <div className="absolute inset-0 bg-black/30 -z-10" />
+      {/* Overlay for text contrast (Only shows with video) */}
+      <motion.div 
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isVideoLoaded ? 1 : 0 }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+        className="absolute inset-0 bg-black/30 -z-10" 
+      />
 
       <StaggerContainer staggerDelay={0.15} className="relative z-10 w-full flex-1 flex flex-col justify-end">
         <StaggerItem>
