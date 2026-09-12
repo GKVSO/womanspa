@@ -23,7 +23,7 @@ export default function HomeGallery() {
 
   const filteredSlides = activeFilter === "All Results"
     ? slides
-    : slides.filter((s) => (typeof s.category === "object" ? s.category.en : s.category) === activeFilter);
+    : slides.filter((s) => s.category === activeFilter);
 
   const updateDimensions = useCallback(() => {
     if (trackRef.current) {

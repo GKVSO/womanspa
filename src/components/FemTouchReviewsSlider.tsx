@@ -32,7 +32,7 @@ export default function FemTouchReviewsSlider() {
 
   const filteredReviews = activeFilter === "All Reviews"
     ? reviews
-    : reviews.filter((r) => (typeof r.category === "object" ? r.category.en : r.category) === activeFilter);
+    : reviews.filter((r) => r.category === activeFilter);
 
   const updateDimensions = useCallback(() => {
     if (trackRef.current) {

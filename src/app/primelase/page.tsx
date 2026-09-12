@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getPageBySlug, getBlocks } from '@/lib/db';
+import { getPageBySlug } from '@/lib/db';
 import Header from "@/components/Header";
 import PrimelaseHero from "@/components/PrimelaseHero";
 import PrimelaseConsultation from "@/components/PrimelaseConsultation";
@@ -11,18 +11,13 @@ import PrimelaseReviewsSlider from "@/components/PrimelaseReviewsSlider";
 import PrimelaseFAQ from "@/components/PrimelaseFAQ";
 import Consultation from "@/components/Consultation";
 
-export default async function PrimelasePage() {
-  const page = await getPageBySlug('primelase');
-  const blocks = page ? await getBlocks(page.id) : [];
-  const heroBlock = blocks.find((b: any) => b.type === 'hero');
-  const benefitsBlock = blocks.find((b: any) => b.type === 'benefits');
-
+export default function PrimelasePage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1">
         <div style={{ backgroundColor: "#F1F2F4" }}>
-          <PrimelaseHero cms={heroBlock?.content as Record<string, unknown>} />
+          <PrimelaseHero />
         </div>
 
         <div style={{ backgroundColor: "#CBA07D" }}>
@@ -30,7 +25,7 @@ export default async function PrimelasePage() {
         </div>
 
         <div style={{ backgroundColor: "#F1F2F4" }}>
-          <PrimelaseBenefits cms={benefitsBlock?.content as Record<string, unknown>} />
+          <PrimelaseBenefits />
         </div>
 
         <PrimelaseTechnology />

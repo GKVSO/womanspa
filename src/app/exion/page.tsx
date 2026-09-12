@@ -11,20 +11,13 @@ import ExionReviewsSlider from "@/components/ExionReviewsSlider";
 import ExionFAQ from "@/components/ExionFAQ";
 import Consultation from "@/components/Consultation";
 
-import { getBlocks } from '@/lib/db';
-
-export default async function ExionPage() {
-  const page = await getPageBySlug('exion');
-  const blocks = page ? await getBlocks(page.id) : [];
-  const heroBlock = blocks.find((b) => b.type === 'hero');
-  const benefitsBlock = blocks.find((b) => b.type === 'benefits');
-
+export default function ExionPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1">
         <div style={{ backgroundColor: "#F1F2F4" }}>
-          <ExionHero cms={heroBlock?.content as Record<string, unknown>} />
+          <ExionHero />
         </div>
 
         <div style={{ backgroundColor: "#CBA07D" }}>
@@ -32,7 +25,7 @@ export default async function ExionPage() {
         </div>
 
         <div style={{ backgroundColor: "#F1F2F4" }}>
-          <ExionBenefits cms={benefitsBlock?.content as Record<string, unknown>} />
+          <ExionBenefits />
         </div>
 
         <ExionTechnology />

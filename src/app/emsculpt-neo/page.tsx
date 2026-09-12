@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getPageBySlug, getBlocks } from '@/lib/db';
+import { getPageBySlug } from '@/lib/db';
 import Header from "@/components/Header";
 import EmsculptHero from "@/components/EmsculptHero";
 import EmsculptConsultation from "@/components/EmsculptConsultation";
@@ -11,18 +11,13 @@ import EmsculptReviewsSlider from "@/components/EmsculptReviewsSlider";
 import EmsculptFAQ from "@/components/EmsculptFAQ";
 import Consultation from "@/components/Consultation";
 
-export default async function EmsculptPage() {
-  const page = await getPageBySlug('emsculpt-neo');
-  const blocks = page ? await getBlocks(page.id) : [];
-  const heroBlock = blocks.find((b: any) => b.type === 'hero');
-  const benefitsBlock = blocks.find((b: any) => b.type === 'benefits');
-
+export default function EmsculptPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1">
         <div style={{ backgroundColor: "#F1F2F4" }}>
-          <EmsculptHero cms={heroBlock?.content as Record<string, unknown>} />
+          <EmsculptHero />
         </div>
 
         <div style={{ backgroundColor: "#CBA07D" }}>
@@ -30,7 +25,7 @@ export default async function EmsculptPage() {
         </div>
 
         <div style={{ backgroundColor: "#F1F2F4" }}>
-          <EmsculptBenefits cms={benefitsBlock?.content as Record<string, unknown>} />
+          <EmsculptBenefits />
         </div>
 
         <EmsculptTechnology />

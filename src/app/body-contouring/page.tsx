@@ -1,23 +1,18 @@
 import type { Metadata } from 'next';
-import { getPageBySlug, getBlocks } from '@/lib/db';
+import { getPageBySlug } from '@/lib/db';
 import Header from "@/components/Header";
 import BodyContouringHero from "@/components/BodyContouringHero";
 import TechnologiesSection from "@/components/TechnologiesSection";
-import Consultation from "@/components/Consultation";
+import BodyContouringConsultation from "@/components/BodyContouringConsultation";
 
-export default async function BodyContouringPage() {
-  const page = await getPageBySlug('body-contouring');
-  const blocks = page ? await getBlocks(page.id) : [];
-  const heroBlock = blocks.find((b: any) => b.type === 'hero');
-  const benefitsBlock = blocks.find((b: any) => b.type === 'benefits');
-
+export default function BodyContouringPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1">
-        <BodyContouringHero cms={heroBlock?.content as Record<string, unknown>} />
+        <BodyContouringHero />
         <TechnologiesSection />
-        <Consultation formType="body_contouring_consultation" />
+        <BodyContouringConsultation />
       </main>
     </div>
   );

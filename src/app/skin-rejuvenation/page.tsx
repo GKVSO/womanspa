@@ -1,21 +1,16 @@
 import type { Metadata } from 'next';
-import { getPageBySlug, getBlocks } from '@/lib/db';
+import { getPageBySlug } from '@/lib/db';
 import Header from "@/components/Header";
 import SkinRejuvenationHero from "@/components/SkinRejuvenationHero";
 import SkinTechnologiesSection from "@/components/SkinTechnologiesSection";
 import Consultation from "@/components/Consultation";
 
-export default async function SkinRejuvenationPage() {
-  const page = await getPageBySlug('skin-rejuvenation');
-  const blocks = page ? await getBlocks(page.id) : [];
-  const heroBlock = blocks.find((b: any) => b.type === 'hero');
-  const benefitsBlock = blocks.find((b: any) => b.type === 'benefits');
-
+export default function SkinRejuvenationPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1">
-        <SkinRejuvenationHero cms={heroBlock?.content as Record<string, unknown>} />
+        <SkinRejuvenationHero />
         <SkinTechnologiesSection />
         <Consultation />
       </main>

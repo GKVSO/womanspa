@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getPageBySlug, getBlocks } from '@/lib/db';
+import { getPageBySlug } from '@/lib/db';
 import CandelaBenefits from "@/components/CandelaBenefits";
 import CandelaCandidate from "@/components/CandelaCandidate";
 import CandelaConsultation from "@/components/CandelaConsultation";
@@ -12,18 +12,13 @@ import CandelaTechnology from "@/components/CandelaTechnology";
 import Consultation from "@/components/Consultation";
 import Header from "@/components/Header";
 
-export default async function CandelaxPage() {
-  const page = await getPageBySlug('candela-matrix');
-  const blocks = page ? await getBlocks(page.id) : [];
-  const heroBlock = blocks.find((b: any) => b.type === 'hero');
-  const benefitsBlock = blocks.find((b: any) => b.type === 'benefits');
-
+export default function CandelaxPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1 test">
         <div style={{ backgroundColor: "#F1F2F4" }}>
-          <CandelaHero cms={heroBlock?.content as Record<string, unknown>} />
+          <CandelaHero />
         </div>
 
         <div style={{ backgroundColor: "#CBA07D" }}>
@@ -31,7 +26,7 @@ export default async function CandelaxPage() {
         </div>
 
         <div style={{ backgroundColor: "#F1F2F4" }}>
-          <CandelaBenefits cms={benefitsBlock?.content as Record<string, unknown>} />
+          <CandelaBenefits />
         </div>
 
         <CandelaTechnology />

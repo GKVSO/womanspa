@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getPageBySlug, getBlocks } from '@/lib/db';
+import { getPageBySlug } from '@/lib/db';
 import Header from "@/components/Header";
 import HydrafacialHero from "@/components/HydrafacialHero";
 import HydrafacialConsultation from "@/components/HydrafacialConsultation";
@@ -11,18 +11,13 @@ import HydrafacialReviewsSlider from "@/components/HydrafacialReviewsSlider";
 import HydrafacialFAQ from "@/components/HydrafacialFAQ";
 import Consultation from "@/components/Consultation";
 
-export default async function HydrafacialPage() {
-  const page = await getPageBySlug('hydrafacial');
-  const blocks = page ? await getBlocks(page.id) : [];
-  const heroBlock = blocks.find((b: any) => b.type === 'hero');
-  const benefitsBlock = blocks.find((b: any) => b.type === 'benefits');
-
+export default function HydrafacialPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1">
         <div style={{ backgroundColor: "#F1F2F4" }}>
-          <HydrafacialHero cms={heroBlock?.content as Record<string, unknown>} />
+          <HydrafacialHero />
         </div>
 
         <div style={{ backgroundColor: "#CBA07D" }}>
@@ -30,7 +25,7 @@ export default async function HydrafacialPage() {
         </div>
 
         <div style={{ backgroundColor: "#F1F2F4" }}>
-          <HydrafacialBenefits cms={benefitsBlock?.content as Record<string, unknown>} />
+          <HydrafacialBenefits />
         </div>
 
         <HydrafacialTechnology />
