@@ -168,10 +168,10 @@ function ReviewCard({ review }: { review: Review }) {
       </p>
       <div className="flex flex-wrap items-center gap-4 mt-6">
         <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center flex-shrink-0">
-          <span className="text-[#CBA07D] font-bold text-[16px]">{review.initials}</span>
+          <span className="text-[#CBA07D] font-bold text-[16px]">{t(review.initials)}</span>
         </div>
         <div>
-          <p className="text-white font-bold text-[16px]">{review.name}</p>
+          <p className="text-white font-bold text-[16px]">{t(review.name)}</p>
           <div className="flex gap-1 mt-1">
             {[...Array(review.stars)].map((_, i) => (
               <svg key={i} width="16" height="16" viewBox="0 0 24 24">

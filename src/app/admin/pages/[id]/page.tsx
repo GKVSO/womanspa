@@ -30,51 +30,10 @@ interface BlockItem {
 }
 
 /** Text fields editable per block type (flat, not list) */
-const BLOCK_TEXT_FIELDS: Record<string, { key: string; labelKey: string }[]> = {
-  hero: [
-    { key: "title", labelKey: "fieldTitle" },
-    { key: "subtitle", labelKey: "fieldSubtitle" },
-    { key: "primaryBtn", labelKey: "primaryBtn" },
-    { key: "secondaryBtn", labelKey: "secondaryBtn" },
-    { key: "starsText", labelKey: "starsText" },
-  ],
-  text_block: [
-    { key: "title", labelKey: "fieldTitle" },
-    { key: "body", labelKey: "fieldBody" },
-  ],
-  cards: [
-    { key: "title", labelKey: "fieldTitle" },
-    { key: "buttonText", labelKey: "primaryBtn" },
-  ],
-  benefits: [
-    { key: "title", labelKey: "fieldTitle" },
-  ],
-  gallery: [
-    { key: "title", labelKey: "fieldTitle" },
-  ],
-  reviews: [
-    { key: "title", labelKey: "fieldTitle" },
-  ],
-  faq: [
-    { key: "title", labelKey: "fieldTitle" },
-  ],
-};
+const BLOCK_TEXT_FIELDS: Record<string, { key: string; labelKey: string }[]> = {};
 
 /** List fields with text content per block type */
-const BLOCK_LIST_FIELDS: Record<string, { key: string; labelKey: string; itemTextKeys: string[] }[]> = {
-  hero: [
-    { key: "cardsMini", labelKey: "cardsMini", itemTextKeys: ["title", "subtitle"] },
-  ],
-  cards: [
-    { key: "cards", labelKey: "fieldCards", itemTextKeys: ["title", "text"] },
-  ],
-  benefits: [
-    { key: "items", labelKey: "fieldItems", itemTextKeys: ["title", "text"] },
-  ],
-  faq: [
-    { key: "items", labelKey: "fieldItems2", itemTextKeys: ["question", "answer"] },
-  ],
-};
+const BLOCK_LIST_FIELDS: Record<string, { key: string; labelKey: string; itemTextKeys: string[] }[]> = {};
 
 /** Human labels for item keys */
 const ITEM_KEY_LABELS: Record<string, { ru: string; en: string; es: string }> = {
@@ -265,106 +224,6 @@ export default function AdminPageEditor({ params }: { params: Promise<{ id: stri
           </div>
         </div>
 
-        {blocks.map((block, bi) => {
-          const def = BLOCK_DEFS.find((b) => b.type === block.type);
-          const blockName = def ? tr(lang, def.labelKey as Parameters<typeof tr>[1]) : block.type;
-          const textFields = BLOCK_TEXT_FIELDS[block.type] || [];
-          const listFields = BLOCK_LIST_FIELDS[block.type] || [];
-
-          return (
-            <div
-              key={bi}
-              className="rounded-[16px] p-5"
-              style={{ background: "var(--admin-panel)", border: "1px solid var(--admin-border)" }}
-            >
-              <p className="text-[13px] font-semibold mb-4" style={{ color: "var(--admin-text)" }}>
-                {blockName}
-              </p>
-
-              {/* Flat text fields */}
-              {textFields.map(({ key, labelKey }) => {
-                const val = block.content[key];
-                // If RU/ES and not translated yet → show empty
-                const missing = contentLang !== "en" && !isML(val) && typeof val === "string" && val !== "";
-                const display = missing ? "" : ml(val, contentLang);
-                const isLong = display.length > 80 || key === "body" || key === "subtitle";
-                return (
-                  <div key={key} className="mb-3">
-                    <label className="text-[11px] mb-1 block" style={{ color: "var(--admin-muted)" }}>
-                      {tr(lang, labelKey as Parameters<typeof tr>[1])}
-                    </label>
-                    {isLong ? (
-                      <textarea
-                        value={display}
-                        onChange={(e) => setText(bi, key, e.target.value)}
-                        rows={3}
-                        className="w-full px-3 py-2 rounded-[8px] text-[13px] outline-none resize-y"
-                        style={inputStyle}
-                      />
-                    ) : (
-                      <input
-                        value={display}
-                        onChange={(e) => setText(bi, key, e.target.value)}
-                        className="w-full px-3 py-2 rounded-[8px] text-[13px] outline-none"
-                        style={inputStyle}
-                      />
-                    )}
-                  </div>
-                );
-              })}
-
-              {/* List fields with text */}
-              {listFields.map(({ key, labelKey, itemTextKeys }) => {
-                const arr = Array.isArray(block.content[key]) ? block.content[key] as Record<string, unknown>[] : [];
-                if (arr.length === 0) return null;
-                return (
-                  <div key={key} className="mb-3">
-                    <label className="text-[11px] mb-1 block" style={{ color: "var(--admin-muted)" }}>
-                      {tr(lang, labelKey as Parameters<typeof tr>[1])}
-                    </label>
-                    <div className="space-y-2">
-                      {arr.map((item, ii) => (
-                        <div key={ii} className="rounded-[10px] p-3" style={{ background: "var(--admin-card)", border: "1px solid var(--admin-border)" }}>
-                          {itemTextKeys.map((ik) => {
-                            const v = item[ik];
-                            if (v == null && !ML_ITEM_KEYS.has(ik)) return null;
-                            const missing = contentLang !== "en" && !isML(v) && typeof v === "string" && v !== "";
-                            const display = missing ? "" : ml(v, contentLang);
-                            if (!ML_ITEM_KEYS.has(ik) && v == null) return null;
-                            const isLong = display.length > 80 || ik === "text" || ik === "answer";
-                            return (
-                              <div key={ik} className="mb-2 last:mb-0">
-                                <label className="text-[10px] mb-0.5 block" style={{ color: "var(--admin-muted)" }}>
-                                  {ITEM_KEY_LABELS[ik]?.[lang] || ik}
-                                </label>
-                                {isLong ? (
-                                  <textarea
-                                    value={display}
-                                    onChange={(e) => setItemText(bi, key, ii, ik, e.target.value)}
-                                    rows={2}
-                                    className="w-full px-2.5 py-1.5 rounded-[6px] text-[12px] outline-none resize-y"
-                                    style={inputStyle}
-                                  />
-                                ) : (
-                                  <input
-                                    value={display}
-                                    onChange={(e) => setItemText(bi, key, ii, ik, e.target.value)}
-                                    className="w-full px-2.5 py-1.5 rounded-[6px] text-[12px] outline-none"
-                                    style={inputStyle}
-                                  />
-                                )}
-                              </div>
-                            );
-                          })}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          );
-        })}
       </div>
 
       {/* Settings modal */}
