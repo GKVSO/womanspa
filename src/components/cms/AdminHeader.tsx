@@ -21,15 +21,24 @@ export default function AdminHeader({ title, extraButtons }: { title?: string, e
       className="sticky top-0 z-30 px-5 py-3 flex items-center justify-between"
       style={{ background: "var(--admin-panel)", borderBottom: "1px solid var(--admin-border)" }}
     >
-      <div className="flex items-center gap-4">
-        <Link href="/admin" className="text-[20px] font-berlingske" style={{ color: "var(--admin-text)" }}>
-          WO/MAN
-        </Link>
-        {title && (
+      <div className="flex items-center gap-3 min-w-0">
+        {title ? (
           <>
-            <span className="text-gray-400">/</span>
-            <span className="text-[16px] font-semibold" style={{ color: "var(--admin-text)" }}>{title}</span>
+            <button
+              onClick={() => router.push("/admin")}
+              className="text-[13px] px-2.5 py-1.5 rounded-[8px] cursor-pointer flex-shrink-0"
+              style={{ color: "var(--admin-muted)", border: "1px solid var(--admin-border)" }}
+            >
+              ← {tr(lang, "back")}
+            </button>
+            <span className="text-[16px] font-berlingske truncate" style={{ color: "var(--admin-text)" }}>
+              {title}
+            </span>
           </>
+        ) : (
+          <Link href="/admin" className="text-[20px] font-berlingske" style={{ color: "var(--admin-text)" }}>
+            WO/MAN
+          </Link>
         )}
       </div>
 
