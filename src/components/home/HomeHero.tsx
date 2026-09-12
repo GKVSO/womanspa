@@ -1,17 +1,32 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { smoothScrollToTarget } from "@/lib/scroll";
-import { StaggerContainer, StaggerItem, btnHover } from "../Animations";
 import { useT } from "@/i18n/LanguageProvider";
+import { smoothScrollToTarget } from "@/lib/scroll";
+import { motion } from "framer-motion";
+import { StaggerContainer, StaggerItem, btnHover } from "../Animations";
 import BookButton from "../BookButton";
 
 export default function HomeHero() {
   const t = useT();
   return (
-    <section className="bg-cover bg-center bg-no-repeat rounded-b-[60px] px-5 sm:px-10 pt-20 sm:pt-24 pb-10 sm:pb-16 min-h-[100vh] flex flex-col justify-between overflow-hidden bg-[url(/home-hero.webp)]"
+    <section className="relative rounded-b-[60px] px-5 sm:px-10 pt-20 sm:pt-24 pb-10 sm:pb-16 min-h-[100vh] flex flex-col justify-between overflow-hidden">
+      
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        poster="/home-hero.webp"
+        className="absolute inset-0 w-full h-full object-cover -z-20"
       >
-      <StaggerContainer staggerDelay={0.15} className="w-full flex-1 flex flex-col justify-end">
+        <source src="/hero-video.mp4" type="video/mp4" />
+      </video>
+
+      {/* Overlay for text contrast */}
+      <div className="absolute inset-0 bg-black/30 -z-10" />
+
+      <StaggerContainer staggerDelay={0.15} className="relative z-10 w-full flex-1 flex flex-col justify-end">
         <StaggerItem>
           <div className="group flex flex-col items-start gap-2 mb-4 sm:mb-6 sm:flex-row sm:items-center sm:flex-wrap">
             <div className="flex items-center gap-2">
