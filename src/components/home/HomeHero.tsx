@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { useT } from "@/i18n/LanguageProvider";
 import { smoothScrollToTarget } from "@/lib/scroll";
 import { motion } from "framer-motion";
@@ -8,20 +9,28 @@ import BookButton from "../BookButton";
 
 export default function HomeHero() {
   const t = useT();
+  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+
   return (
     <section className="relative rounded-b-[60px] px-5 sm:px-10 pt-20 sm:pt-24 pb-10 sm:pb-16 min-h-[100vh] flex flex-col justify-between overflow-hidden">
       
+      {/* Background Poster (Fallback & Base layer) */}
+      <div className="absolute inset-0 w-full h-full bg-[url(/home-hero.webp)] bg-cover bg-center bg-no-repeat -z-30" />
+
       {/* Video Background */}
-      <video
+      <motion.video
         autoPlay
         loop
         muted
         playsInline
-        poster="/home-hero.webp"
+        onLoadedData={() => setIsVideoLoaded(true)}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: isVideoLoaded ? 1 : 0 }}
+        transition={{ duration: 1.5, ease: "easeInOut" }}
         className="absolute inset-0 w-full h-full object-cover -z-20"
       >
         <source src="/hero-video.mp4" type="video/mp4" />
-      </video>
+      </motion.video>
 
       {/* Overlay for text contrast */}
       <div className="absolute inset-0 bg-black/30 -z-10" />
