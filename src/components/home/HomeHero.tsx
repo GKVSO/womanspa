@@ -26,7 +26,7 @@ export default function HomeHero() {
         onLoadedData={() => setIsVideoLoaded(true)}
         initial={{ opacity: 0 }}
         animate={{ opacity: isVideoLoaded ? 1 : 0 }}
-        transition={{ duration: 1.5, ease: "easeInOut" }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
         className="absolute inset-0 w-full h-full object-cover -z-20"
       >
         <source src="/hero-video.mp4" type="video/mp4" />
