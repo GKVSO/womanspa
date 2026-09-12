@@ -26,11 +26,14 @@ export default async function RootLayout({
 }>) {
   let initialReviews = [];
   let initialGallery = [];
+  let initialConsultation = {};
   try {
     const revStr = await getSetting("global_reviews");
     if (revStr) initialReviews = JSON.parse(revStr);
     const galStr = await getSetting("global_gallery");
     if (galStr) initialGallery = JSON.parse(galStr);
+    const consStr = await getSetting("global_consultation");
+    if (consStr) initialConsultation = JSON.parse(consStr);
   } catch (e) {
     console.error("Failed to fetch global data:", e);
   }
@@ -42,7 +45,7 @@ export default async function RootLayout({
     >
       <body className="min-h-full flex flex-col font-manrope">
         <EnvLogger />
-        <GlobalDataProvider initialReviews={initialReviews} initialGallery={initialGallery}>
+        <GlobalDataProvider initialReviews={initialReviews} initialGallery={initialGallery} initialConsultation={initialConsultation}>
           <LanguageProvider>
             <BookingModalProvider>{children}</BookingModalProvider>
           </LanguageProvider>

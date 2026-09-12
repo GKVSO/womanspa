@@ -58,15 +58,6 @@ const BLOCK_TEXT_FIELDS: Record<string, { key: string; labelKey: string }[]> = {
   faq: [
     { key: "title", labelKey: "fieldTitle" },
   ],
-  consultation: [
-    { key: "title", labelKey: "fieldTitle" },
-    { key: "subtitle", labelKey: "fieldSubtitle" },
-    { key: "primaryBtn", labelKey: "primaryBtn" },
-    { key: "phone", labelKey: "fieldPhone" },
-    { key: "email", labelKey: "fieldEmail" },
-    { key: "address", labelKey: "address" },
-    { key: "workHours", labelKey: "workHours" },
-  ],
 };
 
 /** List fields with text content per block type */

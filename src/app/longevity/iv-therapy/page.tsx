@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getPageBySlug } from '@/lib/db';
 import Header from "@/components/Header";
-import HomeFooter from "@/components/home/HomeFooter";
+import Consultation from "@/components/Consultation";
 import IvTherapyHero from "@/components/IvTherapyHero";
 import IvTherapyInfoBlocks from "@/components/IvTherapyInfoBlocks";
 import IvTherapyBenefitsGrid from "@/components/IvTherapyBenefitsGrid";
@@ -23,7 +23,7 @@ export default function IvTherapyPage() {
         <IvTherapyReviewsSlider />
         <IvTherapyFAQ />
       </main>
-      <HomeFooter />
+      <Consultation formType="home_footer_consultation" />
     </div>
   );
 }

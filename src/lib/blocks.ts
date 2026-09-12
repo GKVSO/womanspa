@@ -248,33 +248,6 @@ export const BLOCK_DEFS: BlockDef[] = [
     ],
   },
 
-  {
-    type: "consultation",
-    labelKey: "blockConsultation",
-    fields: [
-      { key: "title", labelKey: "fieldTitle", type: "textarea", defaultValue: "Book a Consultation" },
-      { key: "subtitle", labelKey: "fieldSubtitle", type: "textarea", defaultValue: "Leave a request" },
-      { key: "titleFont", labelKey: "titleFont", type: "select", defaultValue: "font-berlingske", options: FONT_OPTIONS },
-      { key: "titleSize", labelKey: "titleSize", type: "number", defaultValue: 48 },
-      { key: "titleLineHeight", labelKey: "titleLineHeight", type: "number", defaultValue: 1.1 },
-      { key: "subtitleFont", labelKey: "subtitleFont", type: "select", defaultValue: "font-manrope", options: FONT_OPTIONS },
-      { key: "subtitleSize", labelKey: "subtitleSize", type: "number", defaultValue: 16 },
-      { key: "backgroundColor", labelKey: "backgroundColor", type: "color", defaultValue: "#FFFFFF" },
-      { key: "titleColor", labelKey: "titleColor", type: "color", defaultValue: TEXT_DARK },
-      { key: "subtitleColor", labelKey: "subtitleColor", type: "color", defaultValue: TEXT_MUTED },
-      { key: "buttonColor", labelKey: "fieldButtonColor", type: "color", defaultValue: GOLD },
-      { key: "buttonTextColor", labelKey: "buttonTextColor", type: "color", defaultValue: "#FFFFFF" },
-      { key: "primaryBtn", labelKey: "primaryBtn", type: "text", defaultValue: "Book Consultation" },
-      { key: "primaryBtnSize", labelKey: "primaryBtnSize", type: "number", defaultValue: 14 },
-      { key: "primaryBtnRadius", labelKey: "primaryBtnRadius", type: "number", defaultValue: 10 },
-      { key: "phone", labelKey: "fieldPhone", type: "text", defaultValue: "+1 (305) 336-9373" },
-      { key: "email", labelKey: "fieldEmail", type: "text", defaultValue: "info@womanmedspa.com" },
-      { key: "address", labelKey: "address", type: "text", defaultValue: "1006 E Hallandale Beach Blvd Suite 204 Hallandale Beach FL 33009" },
-      { key: "workHours", labelKey: "workHours", type: "text", defaultValue: "Mon-Fri 9-7, Sat 10-5" },
-      { key: "paddingTop", labelKey: "paddingTop", type: "number", defaultValue: 96 },
-      { key: "paddingBottom", labelKey: "paddingBottom", type: "number", defaultValue: 96 },
-    ],
-  },
 ];
 
 export function getBlockDef(type: string): BlockDef | undefined {

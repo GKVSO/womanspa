@@ -5,14 +5,17 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { FadeIn, StaggerContainer, StaggerItem, btnHover } from "./Animations";
 import { useT } from "@/i18n/LanguageProvider";
+import { useGlobalData } from "@/components/GlobalDataProvider";
 
-export default function Consultation({ showOnMobile = true, hideAt1200 = false, showOnlyDesktop = false, title1, title2, bullets }: { showOnMobile?: boolean; hideAt1200?: boolean; showOnlyDesktop?: boolean; title1?: string; title2?: string; bullets?: string[] }) {
+export default function Consultation({ showOnMobile = true, hideAt1200 = false, showOnlyDesktop = false, formType = "consultation" }: { showOnMobile?: boolean; hideAt1200?: boolean; showOnlyDesktop?: boolean; formType?: string; }) {
   const [agreed, setAgreed] = useState(false);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [concern, setConcern] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const t = useT();
+  const { consultation } = useGlobalData();
+  const cData = consultation || {};
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -22,7 +25,7 @@ export default function Consultation({ showOnMobile = true, hideAt1200 = false, 
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ formType: "consultation", name, phone, concern }),
+        body: JSON.stringify({ formType, name, phone, concern }),
       });
       if (res.ok) {
         setStatus("success");
@@ -49,9 +52,9 @@ export default function Consultation({ showOnMobile = true, hideAt1200 = false, 
           <StaggerContainer staggerDelay={0.1}>
             <StaggerItem>
               <h2 className="text-black text-[32px] sm:text-[48px] font-berlingske leading-tight mb-8">
-                {t(title1 || "Begin With A")}
+                {t(cData.title1 || "Begin With A")}
                 <br />
-                {t(title2 || "Personalized Consultation")}
+                {t(cData.title2 || "Personalized Consultation")}
               </h2>
             </StaggerItem>
 
@@ -72,11 +75,11 @@ export default function Consultation({ showOnMobile = true, hideAt1200 = false, 
                   <Image src="/gift-icon.svg" alt="" width={24} height={24} />
                 </div>
                 <p className="text-black text-[16px] font-semibold leading-relaxed">
-                  {t("Book a complimentary consultation")}
+                  {t(cData.giftText1 || "Book a complimentary consultation")}
                   <br />
-                  {t("and get a")}&nbsp;<strong>{t("$100 Welcome Gift")}</strong>&nbsp;{t("toward")}
+                  {t(cData.giftText2 || "and get a")}&nbsp;<strong>{t(cData.giftAmount || "$100 Welcome Gift")}</strong>&nbsp;{t("toward")}
                   <br />
-                  {t("your first treatment")}
+                  {t(cData.giftText3 || "your first treatment")}
                 </p>
               </motion.div>
             </StaggerItem>
@@ -95,14 +98,14 @@ export default function Consultation({ showOnMobile = true, hideAt1200 = false, 
             <StaggerItem>
               <p className="text-black font-semibold text-[16px] mb-4">{t("Consultation Includes:")}</p>
               <ul className="space-y-2 mb-8">
-                {(bullets || [
+                {(cData.bullets || [
                   "Personalized recommendations",
                   "Skin/body/wellness evaluation",
                   "Personalized treatment recommendations",
                   "Questions answered privately",
-                ]).map((item, i) => (
+                ]).map((item: any, i: number) => (
                   <motion.li
-                    key={item}
+                    key={i}
                     className="flex items-start gap-3 text-black font-semibold text-[16px]"
                     style={{ opacity: 0.9 }}
                     initial={{ opacity: 0, x: -15 }}
@@ -131,9 +134,9 @@ export default function Consultation({ showOnMobile = true, hideAt1200 = false, 
             <StaggerItem>
               <motion.div className="space-y-6">
                 {[
-                  { icon: "/phone-icon.svg", href: "tel:+13053369373", lines: ["+1 (305) 336-9373", "Monday - Friday: 9:00 AM - 7:00 PM", "Saturday: 10:00 AM - 5:00 PM"] },
-                  { icon: "/email-icon.svg", href: "mailto:info@womanmedspa.com", lines: ["info@womanmedspa.com", "Send us a message"] },
-                  { icon: "/location-icon.svg", href: "https://maps.google.com/?q=1006+E+Hallandale+Beach+Blvd+Suite+204+Hallandale+Beach+FL+33009", lines: ["1006 E Hallandale Beach Blvd Suite", "204 Hallandale Beach, FL 33009", "Wo/Man Luxe Med Spa"] },
+                  { icon: "/phone-icon.svg", href: `tel:${cData.phone || "+13053369373"}`, lines: [cData.phone || "+1 (305) 336-9373", cData.phoneHours1 || "Monday - Friday: 9:00 AM - 7:00 PM", cData.phoneHours2 || "Saturday: 10:00 AM - 5:00 PM"] },
+                  { icon: "/email-icon.svg", href: `mailto:${cData.email || "info@womanmedspa.com"}`, lines: [cData.email || "info@womanmedspa.com", cData.emailSubtitle || "Send us a message"] },
+                  { icon: "/location-icon.svg", href: cData.addressLink || "https://maps.google.com/?q=1006+E+Hallandale+Beach+Blvd+Suite+204+Hallandale+Beach+FL+33009", lines: [cData.address1 || "1006 E Hallandale Beach Blvd Suite", cData.address2 || "204 Hallandale Beach, FL 33009", cData.address3 || "Wo/Man Luxe Med Spa"] },
                   ].map((block) => (
                   <motion.div
                     key={block.icon}
@@ -181,9 +184,9 @@ export default function Consultation({ showOnMobile = true, hideAt1200 = false, 
             <StaggerContainer staggerDelay={0.08}>
               <StaggerItem>
                 <h3 className="text-black text-[32px] font-berlingske leading-tight mb-8">
-                  {t("Begin With")}
+                  {t(cData.formTitle1 || "Begin With")}
                   <br />
-                  {t("A Private Conversation")}
+                  {t(cData.formTitle2 || "A Private Conversation")}
                 </h3>
               </StaggerItem>
 
@@ -270,7 +273,7 @@ export default function Consultation({ showOnMobile = true, hideAt1200 = false, 
                       agreed && status !== "loading" ? "bg-[#CBA07D] shadow-sm hover:shadow-lg" : "bg-[#CBA07D]/40 cursor-not-allowed"
                     }`}
                   >
-                    {status === "loading" ? t("Sending...") : t("Book Private Consultation")}
+                    {status === "loading" ? t("Sending...") : t(cData.buttonText || "Book Private Consultation")}
                   </motion.button>
                 </StaggerItem>
               </form>

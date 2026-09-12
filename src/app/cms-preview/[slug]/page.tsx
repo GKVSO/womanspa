@@ -1,5 +1,6 @@
 import { getPageBySlug, getBlocks } from "@/lib/db";
 import BlockRenderer from "@/components/cms/BlockRenderer";
+import Consultation from "@/components/Consultation";
 
 export const dynamic = "force-dynamic";
 
@@ -26,6 +27,7 @@ export default async function CmsPreviewPage({
           content={typeof block.content === "string" ? JSON.parse(block.content as string) : block.content as Record<string, unknown>}
         />
       ))}
+      <Consultation formType="cms_footer_consultation" />
     </div>
   );
 }

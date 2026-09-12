@@ -20,7 +20,7 @@ import HomeSmoothTexture from "@/components/home/HomeSmoothTexture";
 import HomeGallery from "@/components/home/HomeGallery";
 import HomeTeam from "@/components/home/HomeTeam";
 import HomeReviews from "@/components/home/HomeReviews";
-import HomeFooter from "@/components/home/HomeFooter";
+import Consultation from "@/components/Consultation";
 import { getPageBySlug, getBlocks } from "@/lib/db";
 import BlockRenderer from "@/components/cms/BlockRenderer";
 
@@ -36,7 +36,7 @@ function StaticHome() {
         <HomeGallery />
         <HomeTeam />
         <HomeReviews />
-        <HomeFooter />
+        <Consultation formType="home_footer_consultation" />
       </main>
     </div>
   );
@@ -58,6 +58,7 @@ export default async function Home() {
                 content={typeof block.content === "string" ? JSON.parse(block.content as string) : block.content as Record<string, unknown>}
               />
             ))}
+            <Consultation formType="home_footer_consultation" />
           </main>
         </div>
       );

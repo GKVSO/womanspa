@@ -76,13 +76,17 @@ export default function AdminDashboard() {
       <div className="max-w-[900px] mx-auto px-5 py-8">
         
         {/* Global Settings Links */}
-        <div className="flex gap-4 mb-10">
-          <Link href="/admin/reviews" className="flex-1 rounded-[14px] p-5 flex items-center justify-between transition-colors hover:border-[#CBA07D]" style={{ background: "var(--admin-panel)", border: "1px solid var(--admin-border)" }}>
-            <span className="font-semibold text-[16px]" style={{ color: "var(--admin-text)" }}>{lang === 'ru' ? 'Отзывы (Глобальные)' : 'Global Reviews'}</span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
+          <Link href="/admin/reviews" className="rounded-[14px] p-5 flex items-center justify-between transition-colors hover:border-[#CBA07D]" style={{ background: "var(--admin-panel)", border: "1px solid var(--admin-border)" }}>
+            <span className="font-semibold text-[15px]" style={{ color: "var(--admin-text)" }}>{tr(lang, "globalReviews")}</span>
             <span style={{ color: "var(--admin-muted)" }}>→</span>
           </Link>
-          <Link href="/admin/gallery" className="flex-1 rounded-[14px] p-5 flex items-center justify-between transition-colors hover:border-[#CBA07D]" style={{ background: "var(--admin-panel)", border: "1px solid var(--admin-border)" }}>
-            <span className="font-semibold text-[16px]" style={{ color: "var(--admin-text)" }}>{lang === 'ru' ? 'До/После (Глобальные)' : 'Global Gallery'}</span>
+          <Link href="/admin/gallery" className="rounded-[14px] p-5 flex items-center justify-between transition-colors hover:border-[#CBA07D]" style={{ background: "var(--admin-panel)", border: "1px solid var(--admin-border)" }}>
+            <span className="font-semibold text-[15px]" style={{ color: "var(--admin-text)" }}>{tr(lang, "globalGallery")}</span>
+            <span style={{ color: "var(--admin-muted)" }}>→</span>
+          </Link>
+          <Link href="/admin/consultation" className="rounded-[14px] p-5 flex items-center justify-between transition-colors hover:border-[#CBA07D]" style={{ background: "var(--admin-panel)", border: "1px solid var(--admin-border)" }}>
+            <span className="font-semibold text-[15px]" style={{ color: "var(--admin-text)" }}>{tr(lang, "globalConsultation")}</span>
             <span style={{ color: "var(--admin-muted)" }}>→</span>
           </Link>
         </div>

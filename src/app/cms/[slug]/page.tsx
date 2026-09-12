@@ -17,6 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 import { getPageBySlug, getBlocks } from "@/lib/db";
 import BlockRenderer from "@/components/cms/BlockRenderer";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
+import Consultation from "@/components/Consultation";
 import "@/app/globals.css";
 
 export const dynamic = "force-dynamic";
@@ -65,6 +66,7 @@ export default async function CmsPage({ params }: { params: Promise<{ slug: stri
             content={typeof block.content === "string" ? JSON.parse(block.content as string) : block.content as Record<string, unknown>}
           />
         ))}
+        <Consultation formType="cms_footer_consultation" />
       </main>
     </LanguageProvider>
   );

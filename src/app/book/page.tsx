@@ -1,5 +1,5 @@
 import Header from "@/components/Header";
-import HomeFooter from "@/components/home/HomeFooter";
+import Consultation from "@/components/Consultation";
 import Hero from "@/components/Hero";
 import { getSetting, getPageBySlug } from "@/lib/db";
 import { LanguageProvider } from "@/i18n/LanguageProvider";
@@ -76,7 +76,7 @@ export default async function BookPage() {
             </div>
           </section>
         </main>
-        <HomeFooter />
+        <Consultation formType="home_footer_consultation" />
       </div>
     </LanguageProvider>
   );

@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { getPageBySlug } from '@/lib/db';
 import Header from "@/components/Header";
-import HomeFooter from "@/components/home/HomeFooter";
+import Consultation from "@/components/Consultation";
 import NadTherapyBenefitsGrid from "@/components/NadTherapyBenefitsGrid";
 import NadTherapyCandidates from "@/components/NadTherapyCandidates";
 import NadTherapyFAQ from "@/components/NadTherapyFAQ";
@@ -23,7 +23,7 @@ export default function NadTherapyPage() {
         <NadTherapyReviewsSlider />
         <NadTherapyFAQ />
       </main>
-      <HomeFooter />
+      <Consultation formType="home_footer_consultation" />
     </div>
   );
 }
