@@ -13,6 +13,7 @@ export default function AdminConsultation() {
   const [data, setData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
+  const [saved, setSaved] = useState(false);
 
   const createMl = (text: string) => ({ en: text, ru: text, es: text });
 
@@ -20,7 +21,7 @@ export default function AdminConsultation() {
     fetch("/api/admin/global-data?key=global_consultation")
       .then(res => res.json())
       .then(res => {
-        setData(res.data || {
+        const fallback = {
           title1: createMl("Begin With A"),
           title2: createMl("Personalized Consultation"),
           giftText1: createMl("Book a complimentary consultation"),
@@ -45,7 +46,8 @@ export default function AdminConsultation() {
           formTitle1: createMl("Begin With"),
           formTitle2: createMl("A Private Conversation"),
           buttonText: createMl("Book Private Consultation"),
-        });
+        };
+        setData((res.data && !Array.isArray(res.data) && Object.keys(res.data).length > 0) ? res.data : fallback);
         setLoading(false);
       });
   }, []);
@@ -58,7 +60,8 @@ export default function AdminConsultation() {
       body: JSON.stringify({ key: "global_consultation", data })
     });
     setSaving(false);
-    alert(lang === "ru" ? "Сохранено" : "Saved");
+    setSaved(true);
+    setTimeout(() => setSaved(false), 2000);
   };
 
   const addBullet = () => {
@@ -179,7 +182,7 @@ export default function AdminConsultation() {
           className="px-6 py-3 rounded-[12px] font-bold text-white text-[14px] disabled:opacity-50"
           style={{ backgroundColor: "#B07E3F" }}
         >
-          {saving ? tr(lang, "saving") : tr(lang, "save")}
+          {saving ? tr(lang, "saving") : saved ? "✓ " + tr(lang, "saved") : tr(lang, "save")}
         </button>
       </div>
     </div>
