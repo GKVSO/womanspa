@@ -1,4 +1,5 @@
 "use client";
+import { useGlobalData } from "@/components/GlobalDataProvider";
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
@@ -18,64 +19,10 @@ interface Review {
   stars: number;
 }
 
-const reviews: Review[] = [
-  {
-    id: 1,
-    category: "Wellness",
-    title: "Feeling More Comfortable",
-    text: "I started noticing dryness and discomfort that I hadn’t really talked about before. After my FemTouch treatments, I feel much more comfortable and confident in everyday life.",
-    name: "Sarah Mitchell",
-    initials: "SM",
-    stars: 5,
-  },
-  {
-    id: 2,
-    category: "Wellness",
-    title: "Quick & Comfortable",
-    text: "I was a little nervous before my first appointment, but the treatment was much easier than I expected. It was quick, comfortable, and I was able to continue my day afterward.",
-    name: "Jennifer Collins",
-    initials: "JC",
-    stars: 5,
-  },
-  {
-    id: 3,
-    category: "Wellness",
-    title: "A Subtle Difference",
-    text: "I wasn’t looking for anything dramatic. I just wanted to feel more comfortable and like myself again. The changes have been subtle but genuinely meaningful for me.",
-    name: "Amanda Reynolds",
-    initials: "AR",
-    stars: 5,
-  },
-  {
-    id: 4,
-    category: "Wellness",
-    title: "After Having Kids",
-    text: "After having two children, I noticed changes that made me feel less comfortable than before. FemTouch has helped me feel more confident and comfortable with my body again.",
-    name: "Melissa Parker",
-    initials: "MP",
-    stars: 5,
-  },
-  {
-    id: 5,
-    category: "Wellness",
-    title: "Worth It For Me",
-    text: "The whole experience was professional and reassuring from the consultation to the treatment. I really appreciated how comfortable and private everything felt.",
-    name: "Nicole Turner",
-    initials: "NT",
-    stars: 5,
-  },
-  {
-    id: 6,
-    category: "Wellness",
-    title: "I’m Glad I Did It",
-    text: "I had been putting off doing something about the changes I was experiencing. FemTouch was a simple option for me, and I’m really glad I finally decided to try it.",
-    name: "Laura Bennett",
-    initials: "LB",
-    stars: 5,
-  },
-];
+// Hardcoded reviews removed
 
 export default function FemTouchReviewsSlider() {
+  const { reviews } = useGlobalData();
   const t = useT();
   const [activeFilter, setActiveFilter] = useState("All Reviews");
   const trackRef = useRef<HTMLDivElement>(null);

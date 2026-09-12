@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useAdminUI } from "@/components/cms/AdminUIProvider";
+import AdminHeader from "@/components/cms/AdminHeader";
 import { t as tr, type AdminLang } from "@/components/cms/i18n";
 
 interface PageItem {
@@ -69,48 +70,23 @@ export default function AdminDashboard() {
   return (
     <div className="min-h-screen" style={{ background: "var(--admin-bg)" }}>
       {/* Top bar */}
-      <div
-        className="sticky top-0 z-30 px-5 py-3 flex items-center justify-between"
-        style={{ background: "var(--admin-panel)", borderBottom: "1px solid var(--admin-border)" }}
-      >
-        <Link href="/admin" className="text-[20px] font-berlingske" style={{ color: "var(--admin-text)" }}>
-          WO/MAN
-        </Link>
-        <div className="flex items-center gap-2">
-          {(["ru", "en", "es"] as AdminLang[]).map((l) => (
-            <button
-              key={l}
-              onClick={() => setLang(l)}
-              className="w-8 h-8 rounded-full text-[11px] font-bold cursor-pointer transition-all"
-              style={{
-                background: lang === l ? "#CBA07D" : "transparent",
-                color: lang === l ? "#fff" : "var(--admin-muted)",
-                border: `1px solid ${lang === l ? "#CBA07D" : "var(--admin-border)"}`,
-              }}
-            >
-              {LANG_LABELS[l]}
-            </button>
-          ))}
-          <button
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="w-8 h-8 rounded-full flex items-center justify-center text-[14px] cursor-pointer"
-            style={{ border: "1px solid var(--admin-border)" }}
-          >
-            {theme === "dark" ? "\u2600" : "\u263E"}
-          </button>
-          <div className="w-px h-5 mx-1" style={{ background: "var(--admin-border)" }} />
-          <button
-            onClick={logout}
-            className="text-[13px] px-3 py-1.5 rounded-[8px] cursor-pointer"
-            style={{ color: "var(--admin-muted)", border: "1px solid var(--admin-border)" }}
-          >
-            {tr(lang, "logout")}
-          </button>
-        </div>
-      </div>
+      <AdminHeader />
 
       {/* Content */}
       <div className="max-w-[900px] mx-auto px-5 py-8">
+        
+        {/* Global Settings Links */}
+        <div className="flex gap-4 mb-10">
+          <Link href="/admin/reviews" className="flex-1 rounded-[14px] p-5 flex items-center justify-between transition-colors hover:border-[#CBA07D]" style={{ background: "var(--admin-panel)", border: "1px solid var(--admin-border)" }}>
+            <span className="font-semibold text-[16px]" style={{ color: "var(--admin-text)" }}>{lang === 'ru' ? 'Отзывы (Глобальные)' : 'Global Reviews'}</span>
+            <span style={{ color: "var(--admin-muted)" }}>→</span>
+          </Link>
+          <Link href="/admin/gallery" className="flex-1 rounded-[14px] p-5 flex items-center justify-between transition-colors hover:border-[#CBA07D]" style={{ background: "var(--admin-panel)", border: "1px solid var(--admin-border)" }}>
+            <span className="font-semibold text-[16px]" style={{ color: "var(--admin-text)" }}>{lang === 'ru' ? 'До/После (Глобальные)' : 'Global Gallery'}</span>
+            <span style={{ color: "var(--admin-muted)" }}>→</span>
+          </Link>
+        </div>
+
         {/* Title + create */}
         <div className="flex items-center justify-between mb-6">
           <h1 className="text-[28px] font-berlingske" style={{ color: "var(--admin-text)" }}>

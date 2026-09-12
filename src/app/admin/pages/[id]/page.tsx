@@ -80,12 +80,6 @@ const BLOCK_LIST_FIELDS: Record<string, { key: string; labelKey: string; itemTex
   benefits: [
     { key: "items", labelKey: "fieldItems", itemTextKeys: ["title", "text"] },
   ],
-  gallery: [
-    { key: "images", labelKey: "fieldImages", itemTextKeys: ["beforeLabel", "afterLabel"] },
-  ],
-  reviews: [
-    { key: "reviews", labelKey: "fieldReviews", itemTextKeys: ["text", "name"] },
-  ],
   faq: [
     { key: "items", labelKey: "fieldItems2", itemTextKeys: ["question", "answer"] },
   ],

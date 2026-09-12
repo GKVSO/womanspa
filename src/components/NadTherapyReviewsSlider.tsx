@@ -1,4 +1,5 @@
 "use client";
+import { useGlobalData } from "@/components/GlobalDataProvider";
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
@@ -16,64 +17,10 @@ interface Review {
   stars: number;
 }
 
-const reviews: Review[] = [
-  {
-    id: 1,
-    category: "Wellness",
-    title: "More Energy Throughout the Day",
-    text: "I came in feeling run down and wanted something that would help me feel more energized. After my NAD+ session, I noticed a clear difference in my energy and felt more refreshed throughout the day.",
-    name: "Emma R.",
-    initials: "ER",
-    stars: 5,
-  },
-  {
-    id: 2,
-    category: "Wellness",
-    title: "I Felt More Clear-Headed",
-    text: "The biggest difference for me was the mental clarity. I usually hit a wall in the afternoon, but after trying NAD+, I felt much more focused and ready to tackle my tasks. It was exactly what I needed.",
-    name: "Sarah M.",
-    initials: "SM",
-    stars: 5,
-  },
-  {
-    id: 3,
-    category: "Recovery",
-    title: "Great For My Recovery",
-    text: "I booked NAD+ after a particularly long work week, hoping it would help me bounce back. The experience was comfortable, and I left feeling surprisingly rested. I definitely plan to make this a regular part of my wellness routine.",
-    name: "Jessica L.",
-    initials: "JL",
-    stars: 5,
-  },
-  {
-    id: 4,
-    category: "Wellness",
-    title: "A Relaxing Wellness Experience",
-    text: "I expected the treatment to feel clinical, but the environment was so calming. The staff made sure I was comfortable, and the drip itself was very relaxing. I walked out feeling better than when I walked in.",
-    name: "Olivia T.",
-    initials: "OT",
-    stars: 5,
-  },
-  {
-    id: 5,
-    category: "Wellness",
-    title: "I Noticed The Difference",
-    text: "I wasn’t expecting an overnight change, but over the next few days, I just felt better—more resilient and less tired. It’s hard to explain, but my overall well-being definitely felt supported.",
-    name: "Daniel P.",
-    initials: "DP",
-    stars: 5,
-  },
-  {
-    id: 6,
-    category: "Wellness",
-    title: "Perfect After A Busy Week",
-    text: "After a week of travel, long workdays, and lack of sleep, I decided to try NAD+. It was incredibly restorative. It didn’t feel like a quick fix, but rather a deep refresh for my body.",
-    name: "Michael B.",
-    initials: "MB",
-    stars: 5,
-  },
-];
+// Hardcoded reviews removed
 
 export default function NadTherapyReviewsSlider() {
+  const { reviews } = useGlobalData();
   const t = useT();
   const trackRef = useRef<HTMLDivElement>(null);
   useDraggableScroll(trackRef);

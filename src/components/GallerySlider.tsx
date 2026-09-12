@@ -1,4 +1,5 @@
 "use client";
+import { useGlobalData } from "@/components/GlobalDataProvider";
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
@@ -9,15 +10,10 @@ import { useDraggableScroll } from "./useDraggableScroll";
 
 const filters = ["All", "Body Contouring", "Skin Rejuvenation", "Laser Hair Removal", "Wellness"];
 
-const slides = [
-  { id: 1, category: "Body Contouring", before: "/before-image.webp", after: "/after-image.webp" },
-  { id: 2, category: "Skin Rejuvenation", before: "/before-image-2.webp", after: "/after-image-2.webp" },
-  { id: 3, category: "Laser Hair Removal", before: "/before-image.webp", after: "/after-image.webp" },
-  { id: 4, category: "Body Contouring", before: "/before-image-2.webp", after: "/after-image-2.webp" },
-  { id: 5, category: "Wellness", before: "/before-image.webp", after: "/after-image.webp" },
-];
+// Hardcoded slides removed
 
 export default function GallerySlider() {
+  const { gallery: slides } = useGlobalData();
   const t = useT();
   const [activeFilter, setActiveFilter] = useState("All");
   const trackRef = useRef<HTMLDivElement>(null);

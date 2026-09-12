@@ -1,4 +1,5 @@
 "use client";
+import { useGlobalData } from "@/components/GlobalDataProvider";
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
@@ -9,15 +10,10 @@ import { useDraggableScroll } from "../useDraggableScroll";
 
 const filters = ["All Results", "Body", "Face"];
 
-const slides = [
-  { id: 1, category: "Body", before: "/before-image.webp", after: "/after-image.webp" },
-  { id: 2, category: "Face", before: "/before-image-2.webp", after: "/after-image-2.webp" },
-  { id: 3, category: "Body", before: "/before-image.webp", after: "/after-image.webp" },
-  { id: 4, category: "Body", before: "/before-image-2.webp", after: "/after-image-2.webp" },
-  { id: 5, category: "Face", before: "/before-image.webp", after: "/after-image.webp" },
-];
+// Hardcoded slides removed
 
 export default function HomeGallery() {
+  const { gallery: slides } = useGlobalData();
   const t = useT();
   const [activeFilter, setActiveFilter] = useState("All Results");
   const trackRef = useRef<HTMLDivElement>(null);

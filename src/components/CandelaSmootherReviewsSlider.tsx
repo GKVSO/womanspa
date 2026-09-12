@@ -1,4 +1,5 @@
 "use client";
+import { useGlobalData } from "@/components/GlobalDataProvider";
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
@@ -16,55 +17,10 @@ interface Review {
   stars: number;
 }
 
-const reviews: Review[] = [
-  {
-    id: 1,
-    category: "Wellness",
-    title: "Feel Like Myself Again",
-    text: "After menopause I started noticing changes no one really talks about. EMFEMME really helped me regain my comfort and confidence. Honestly, I wish I had done it sooner.",
-    name: "Karen Mitchell",
-    initials: "KM",
-    stars: 5,
-  },
-  {
-    id: 2,
-    category: "Wellness",
-    title: "So Comfortable",
-    text: "I was nervous before my first appointment, but the treatment was quick and surprisingly comfortable. I’ve noticed a big improvement and feel much more confident now.",
-    name: "Jennifer Collins",
-    initials: "JC",
-    stars: 5,
-  },
-  {
-    id: 3,
-    category: "Wellness",
-    title: "Worth It",
-    text: "After having kids, things definitely changed. EMFEMME made a noticeable difference for me. I feel more comfortable and much better overall.",
-    name: "Lisa Parker",
-    initials: "LP",
-    stars: 5,
-  },
-  {
-    id: 4,
-    category: "Wellness",
-    title: "Highly Recommend",
-    text: "This is one of those treatments you don’t realize you need until you try it. The results have been amazing and the whole experience felt very professional.",
-    name: "Melissa Turner",
-    initials: "MT",
-    stars: 5,
-  },
-  {
-    id: 5,
-    category: "Wellness",
-    title: "Amazing Results",
-    text: "I wasn't expecting dramatic results, just some improvement. Honestly, it exceeded my expectations. I feel more confident and comfortable than I have in years.",
-    name: "Nicole Gutierrez",
-    initials: "NG",
-    stars: 5,
-  }
-];
+// Hardcoded reviews removed
 
 export default function CandelaSmootherReviewsSlider() {
+  const { reviews } = useGlobalData();
   const t = useT();
   const trackRef = useRef<HTMLDivElement>(null);
   useDraggableScroll(trackRef);

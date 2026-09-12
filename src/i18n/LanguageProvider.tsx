@@ -48,7 +48,7 @@ function decodeEntities(str: string): string {
 type LanguageContextValue = {
   lang: Lang;
   setLang: (l: Lang) => void;
-  t: (key: string, vars?: Record<string, string | number>) => string;
+  t: (key: any, vars?: Record<string, string | number>) => string;
 };
 
 const LanguageContext = createContext<LanguageContextValue | null>(null);
@@ -78,11 +78,22 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, [lang]);
 
   const t = useCallback(
-    (key: string, vars?: Record<string, string | number>) => {
-      const dict = dictionaries[lang];
-      const enDict = dictionaries.En;
-      const normalized = key.trim();
-      let out = dict[normalized] ?? enDict[normalized] ?? key;
+    (key: any, vars?: Record<string, string | number>) => {
+      if (!key) return "";
+      let out = "";
+      
+      // If it's a multi-language object from DB: { en: "...", ru: "..." }
+      if (typeof key === "object" && key !== null && ("en" in key || "ru" in key || "es" in key)) {
+        const code = lang === "Es" ? "es" : lang === "Ru" ? "ru" : "en";
+        out = key[code] ?? key.en ?? "";
+      } else {
+        // Standard string translation key
+        const strKey = String(key).trim();
+        const dict = dictionaries[lang];
+        const enDict = dictionaries.En;
+        out = dict[strKey] ?? enDict[strKey] ?? strKey;
+      }
+
       if (vars) {
         for (const [k, v] of Object.entries(vars)) {
           out = out.replace(new RegExp(`\\{${k}\\}`, "g"), String(v));
@@ -104,6 +115,6 @@ export function useLanguage() {
   return ctx;
 }
 
-export function useT(): (key: string, vars?: Record<string, string | number>) => string {
+export function useT(): (key: any, vars?: Record<string, string | number>) => string {
   return useLanguage().t;
 }

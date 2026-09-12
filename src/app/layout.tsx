@@ -16,12 +16,25 @@ export const metadata: Metadata = {
 };
 
 import EnvLogger from "@/components/EnvLogger";
+import { getSetting } from "@/lib/db";
+import { GlobalDataProvider } from "@/components/GlobalDataProvider";
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  let initialReviews = [];
+  let initialGallery = [];
+  try {
+    const revStr = await getSetting("global_reviews");
+    if (revStr) initialReviews = JSON.parse(revStr);
+    const galStr = await getSetting("global_gallery");
+    if (galStr) initialGallery = JSON.parse(galStr);
+  } catch (e) {
+    console.error("Failed to fetch global data:", e);
+  }
+
   return (
     <html
       lang="en"
@@ -29,9 +42,11 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col font-manrope">
         <EnvLogger />
-        <LanguageProvider>
-          <BookingModalProvider>{children}</BookingModalProvider>
-        </LanguageProvider>
+        <GlobalDataProvider initialReviews={initialReviews} initialGallery={initialGallery}>
+          <LanguageProvider>
+            <BookingModalProvider>{children}</BookingModalProvider>
+          </LanguageProvider>
+        </GlobalDataProvider>
       </body>
     </html>
   );

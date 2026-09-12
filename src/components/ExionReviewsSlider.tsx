@@ -1,4 +1,5 @@
 "use client";
+import { useGlobalData } from "@/components/GlobalDataProvider";
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
@@ -16,64 +17,10 @@ interface Review {
   stars: number;
 }
 
-const reviews: Review[] = [
-  {
-    id: 1,
-    category: "Skin Rejuvenation",
-    title: "Skin Feels Much Smoother!",
-    text: "I mainly wanted to improve my acne scars and uneven texture. After two EXION treatments, my skin already felt smoother and the scars looked less noticeable. I'm continuing the recommended course to see the full result.",
-    name: "Jennifer Morales",
-    initials: "JM",
-    stars: 5,
-  },
-  {
-    id: 2,
-    category: "Skin Rejuvenation",
-    title: "I Loved How Natural The Result Looks",
-    text: "I wanted some tightening without looking like I had done something drastic. The changes have been gradual, but my skin looks firmer and more refreshed. That natural-looking result is exactly what I was hoping for.",
-    name: "Sarah Johnson",
-    initials: "SJ",
-    stars: 5,
-  },
-  {
-    id: 3,
-    category: "Skin Rejuvenation",
-    title: "Much More Comfortable Than I Expected",
-    text: "I was nervous because I had heard different things about RF treatments. EXION was much more comfortable than I expected, and I didn't have to take time off from my normal routine afterward. So far, I'm really happy with how my skin is responding.",
-    name: "Maria Rodriguez",
-    initials: "MR",
-    stars: 5,
-  },
-  {
-    id: 4,
-    category: "Skin Rejuvenation",
-    title: "My Skin Looks Firmer",
-    text: "My main concern was early skin laxity and a tired-looking complexion. After completing my sessions, I noticed that my skin looked firmer and the overall texture was more refined. It's not an overnight transformation, but I really like the gradual improvement.",
-    name: "Amanda Wilson",
-    initials: "AW",
-    stars: 5,
-  },
-  {
-    id: 5,
-    category: "Skin Rejuvenation",
-    title: "I Didn't Have To Change My Schedule",
-    text: "One of the biggest reasons I chose EXION was because I didn't want a treatment that would keep me at home for days. I was able to get back to my normal routine quickly, and over time my skin started looking smoother and healthier.",
-    name: "Jessica Brown",
-    initials: "JB",
-    stars: 5,
-  },
-  {
-    id: 6,
-    category: "Skin Rejuvenation",
-    title: "Worth It For My Skin",
-    text: "EXION is definitely an investment, but I'm happy with the improvement in my skin. My texture looks better, my scars are less noticeable, and my skin has a healthier overall appearance. I'm glad I decided to complete the treatment.",
-    name: "Elizabeth Garcia",
-    initials: "EG",
-    stars: 5,
-  },
-];
+// Hardcoded reviews removed
 
 export default function ExionReviewsSlider() {
+  const { reviews } = useGlobalData();
   const t = useT();
   const trackRef = useRef<HTMLDivElement>(null);
   useDraggableScroll(trackRef);

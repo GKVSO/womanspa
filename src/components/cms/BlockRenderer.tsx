@@ -3,6 +3,7 @@
 import React from "react";
 import { useLanguage } from "@/i18n/LanguageProvider";
 import { ml, sv, nv, px, yesNo, toLang, type Lang, ML_KEYS, ML_ITEM_KEYS, type BlockContent } from "@/lib/i18n-helpers";
+import { useGlobalData } from "@/components/GlobalDataProvider";
 
 export type { BlockContent };
 
@@ -355,7 +356,7 @@ export default function BlockRenderer({ type, content, editing = false, lang: la
 
     // ==================== GALLERY ====================
     case "gallery": {
-      const rawImages = (Array.isArray(content.images) ? content.images : []) as Array<string | Record<string, unknown>>;
+      const { gallery } = useGlobalData();
       return (
         <section
           {...e("section", "gallery")}
@@ -377,21 +378,18 @@ export default function BlockRenderer({ type, content, editing = false, lang: la
             {t(tVal(content, "title", lang))}
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 sm:mt-12">
-            {rawImages.map((raw, i) => {
-              const img = normalizeItem(raw, { before: "before", after: "after", beforeLabel: "beforeLabel", afterLabel: "afterLabel", category: "category" });
-              return (
-                <div key={i} className="relative" style={{ borderRadius: `${nv(content.imageBorderRadius, 40)}px`, overflow: "hidden", height: `${nv(content.imageHeight, 35)}vh` }}>
-                  <img src={sv(img.before)} alt="" className="absolute inset-0 w-full h-full object-cover" />
-                  <img src={sv(img.after)} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ clipPath: "inset(0 0 0 50%)" }} />
-                  <div className="absolute left-3 top-1/2 -translate-y-1/2 px-3 py-1 rounded-full text-[11px] font-bold text-white bg-black/40 backdrop-blur-sm">
-                    {sv(img.beforeLabel) || "Before"}
-                  </div>
-                  <div className="absolute right-3 top-1/2 -translate-y-1/2 px-3 py-1 rounded-full text-[11px] font-bold text-white bg-black/40 backdrop-blur-sm">
-                    {sv(img.afterLabel) || "After"}
-                  </div>
+            {gallery.map((img, i) => (
+              <div key={i} className="relative" style={{ borderRadius: `${nv(content.imageBorderRadius, 40)}px`, overflow: "hidden", height: `${nv(content.imageHeight, 35)}vh` }}>
+                <img src={img.before} alt="" className="absolute inset-0 w-full h-full object-cover" />
+                <img src={img.after} alt="" className="absolute inset-0 w-full h-full object-cover" style={{ clipPath: "inset(0 0 0 50%)" }} />
+                <div className="absolute left-3 top-1/2 -translate-y-1/2 px-3 py-1 rounded-full text-[11px] font-bold text-white bg-black/40 backdrop-blur-sm">
+                  {img.beforeLabel || "Before"}
                 </div>
-              );
-            })}
+                <div className="absolute right-3 top-1/2 -translate-y-1/2 px-3 py-1 rounded-full text-[11px] font-bold text-white bg-black/40 backdrop-blur-sm">
+                  {img.afterLabel || "After"}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
       );
@@ -399,7 +397,7 @@ export default function BlockRenderer({ type, content, editing = false, lang: la
 
     // ==================== REVIEWS ====================
     case "reviews": {
-      const rawReviews = (Array.isArray(content.reviews) ? content.reviews : []) as Array<string | Record<string, unknown>>;
+      const { reviews } = useGlobalData();
       const cols = sv(content.reviewColumns) || "3";
       const gridCols = cols === "1" ? "grid-cols-1" : cols === "2" ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3";
       return (
@@ -423,51 +421,48 @@ export default function BlockRenderer({ type, content, editing = false, lang: la
             {t(tVal(content, "title", lang))}
           </h2>
           <div className={`grid ${gridCols} mt-10 sm:mt-12`} style={{ gap: "20px" }}>
-            {rawReviews.map((raw, i) => {
-              const rev = normalizeItem(raw, { text: "text", name: "name" });
-              return (
-                <div
-                  key={i}
-                  {...e("card", "review")}
-                  className={`flex flex-col ${editing ? EDIT_HOVER : ""}`}
+            {reviews.map((rev, i) => (
+              <div
+                key={i}
+                {...e("card", "review")}
+                className={`flex flex-col ${editing ? EDIT_HOVER : ""}`}
+                style={{
+                  backgroundColor: sv(content.cardColor) || "#CBA07D",
+                  borderRadius: `${nv(content.reviewBorderRadius, 30)}px`,
+                  padding: `${nv(content.reviewPadding, 40)}px`,
+                }}
+              >
+                {content.showStars !== "no" && (
+                  <div className="flex gap-0.5 mb-3">
+                    {[...Array(Number(rev.stars) || 5)].map((_, j) => (
+                      <svg key={j} width="18" height="18" viewBox="0 0 24 24" style={{ color: sv(content.starColor) || "#FFD700" }}>
+                        <path d="M12.0026 18.26L4.9491 22.2082L6.52443 14.2799L0.589844 8.7918L8.61688 7.84006L12.0026 0.5L15.3882 7.84006L23.4152 8.7918L17.4807 14.2799L19.056 22.2082L12.0026 18.26Z" fill="currentColor" />
+                      </svg>
+                    ))}
+                  </div>
+                )}
+                <p
+                  {...e("text", "review_text")}
+                  className={`flex-1 ${sv(content.reviewTextFont) || "font-manrope"} ${editing ? EDIT_HOVER : ""}`}
                   style={{
-                    backgroundColor: sv(content.cardColor) || "#CBA07D",
-                    borderRadius: `${nv(content.reviewBorderRadius, 30)}px`,
-                    padding: `${nv(content.reviewPadding, 40)}px`,
+                    fontSize: px(content.reviewTextSize) || "16px",
+                    color: sv(content.reviewTextColor) || "#FFFFFF",
                   }}
                 >
-                  {content.showStars !== "no" && (
-                    <div className="flex gap-0.5 mb-3">
-                      {[...Array(5)].map((_, j) => (
-                        <svg key={j} width="18" height="18" viewBox="0 0 24 24" style={{ color: sv(content.starColor) || "#FFD700" }}>
-                          <path d="M12.0026 18.26L4.9491 22.2082L6.52443 14.2799L0.589844 8.7918L8.61688 7.84006L12.0026 0.5L15.3882 7.84006L23.4152 8.7918L17.4807 14.2799L19.056 22.2082L12.0026 18.26Z" fill="currentColor" />
-                        </svg>
-                      ))}
-                    </div>
-                  )}
-                  <p
-                    {...e("text", "review_text")}
-                    className={`flex-1 ${sv(content.reviewTextFont) || "font-manrope"} ${editing ? EDIT_HOVER : ""}`}
-                    style={{
-                      fontSize: px(content.reviewTextSize) || "16px",
-                      color: sv(content.reviewTextColor) || "#FFFFFF",
-                    }}
-                  >
-                    &ldquo;{t(tItem(rev, "text", lang))}&rdquo;
-                  </p>
-                  <p
-                    {...e("text", "review_name")}
-                    className={`mt-4 font-semibold ${sv(content.reviewNameFont) || "font-manrope"} ${editing ? EDIT_HOVER : ""}`}
-                    style={{
-                      fontSize: px(content.reviewNameSize) || "14px",
-                      color: sv(content.reviewNameColor) || "#FFFFFF",
-                    }}
-                  >
-                    — {t(tItem(rev, "name", lang))}
-                  </p>
-                </div>
-              );
-            })}
+                  &ldquo;{t(rev.text)}&rdquo;
+                </p>
+                <p
+                  {...e("text", "review_name")}
+                  className={`mt-4 font-semibold ${sv(content.reviewNameFont) || "font-manrope"} ${editing ? EDIT_HOVER : ""}`}
+                  style={{
+                    fontSize: px(content.reviewNameSize) || "14px",
+                    color: sv(content.reviewNameColor) || "#FFFFFF",
+                  }}
+                >
+                  — {t(rev.name)}
+                </p>
+              </div>
+            ))}
           </div>
         </section>
       );

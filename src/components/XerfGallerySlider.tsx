@@ -1,4 +1,5 @@
 "use client";
+import { useGlobalData } from "@/components/GlobalDataProvider";
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { motion } from "framer-motion";
@@ -7,15 +8,10 @@ import { FadeIn, StaggerContainer, StaggerItem } from "./Animations";
 import { useT } from "@/i18n/LanguageProvider";
 import { useDraggableScroll } from "./useDraggableScroll";
 
-const slides = [
-  { id: 1, before: "/before-image.webp", after: "/after-image.webp" },
-  { id: 2, before: "/before-image-2.webp", after: "/after-image-2.webp" },
-  { id: 3, before: "/before-image.webp", after: "/after-image.webp" },
-  { id: 4, before: "/before-image-2.webp", after: "/after-image-2.webp" },
-  { id: 5, before: "/before-image.webp", after: "/after-image.webp" },
-];
+// Hardcoded slides removed
 
 export default function XerfGallerySlider() {
+  const { gallery: slides } = useGlobalData();
   const t = useT();
   const trackRef = useRef<HTMLDivElement>(null);
   useDraggableScroll(trackRef);
