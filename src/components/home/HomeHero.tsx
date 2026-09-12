@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useT } from "@/i18n/LanguageProvider";
 import { smoothScrollToTarget } from "@/lib/scroll";
 import { motion } from "framer-motion";
@@ -10,6 +10,14 @@ import BookButton from "../BookButton";
 export default function HomeHero() {
   const t = useT();
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    // If the video is already cached or loaded before React attaches the event listener
+    if (videoRef.current && videoRef.current.readyState >= 2) {
+      setIsVideoLoaded(true);
+    }
+  }, []);
 
   return (
     <section className="relative rounded-b-[60px] px-5 sm:px-10 pt-20 sm:pt-24 pb-10 sm:pb-16 min-h-[100vh] flex flex-col justify-between overflow-hidden">
@@ -19,11 +27,12 @@ export default function HomeHero() {
 
       {/* Video Background */}
       <motion.video
+        ref={videoRef}
         autoPlay
         loop
         muted
         playsInline
-        onLoadedData={() => setIsVideoLoaded(true)}
+        onCanPlay={() => setIsVideoLoaded(true)}
         initial={{ opacity: 0 }}
         animate={{ opacity: isVideoLoaded ? 1 : 0 }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
