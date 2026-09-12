@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 import { getPageById, getBlocks, upsertBlocks, updatePage } from "@/lib/db";
 
 export const dynamic = "force-dynamic";
@@ -50,6 +51,8 @@ export async function PUT(req: Request, { params }: { params: Promise<{ id: stri
       }))
     );
   }
+
+  revalidatePath("/", "layout");
 
   return NextResponse.json({ ok: true });
 }

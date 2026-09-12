@@ -26,7 +26,7 @@ export async function GET(req: NextRequest) {
   return NextResponse.json({ data: data ? JSON.parse(data) : [] });
 }
 
-import { revalidatePath } from "next/cache";
+import { revalidatePath, revalidateTag } from "next/cache";
 
 // POST /api/admin/global-data
 export async function POST(req: NextRequest) {

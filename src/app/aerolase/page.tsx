@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getPageBySlug } from '@/lib/db';
+import { getPageBySlug, getBlocks } from '@/lib/db';
 import Header from "@/components/Header";
 import AerolaseHero from "@/components/AerolaseHero";
 import AerolaseConsultation from "@/components/AerolaseConsultation";
@@ -11,13 +11,18 @@ import AerolaseReviewsSlider from "@/components/AerolaseReviewsSlider";
 import AerolaseFAQ from "@/components/AerolaseFAQ";
 import Consultation from "@/components/Consultation";
 
-export default function AerolasePage() {
+export default async function AerolasePage() {
+  const page = await getPageBySlug('aerolase');
+  const blocks = page ? await getBlocks(page.id) : [];
+  const heroBlock = blocks.find((b: any) => b.type === 'hero');
+  const benefitsBlock = blocks.find((b: any) => b.type === 'benefits');
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1">
         <div style={{ backgroundColor: "#F1F2F4" }}>
-          <AerolaseHero />
+          <AerolaseHero cms={heroBlock?.content as Record<string, unknown>} />
         </div>
 
         <div style={{ backgroundColor: "#CBA07D" }}>
@@ -25,7 +30,7 @@ export default function AerolasePage() {
         </div>
 
         <div style={{ backgroundColor: "#FFFFFF" }}>
-          <AerolaseBenefits />
+          <AerolaseBenefits cms={benefitsBlock?.content as Record<string, unknown>} />
         </div>
 
         <div style={{ backgroundColor: "#F1F2F4" }}>

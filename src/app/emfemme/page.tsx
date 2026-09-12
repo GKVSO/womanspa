@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getPageBySlug } from '@/lib/db';
+import { getPageBySlug, getBlocks } from '@/lib/db';
 import Header from "@/components/Header";
 import CandelaSmootherHero from "@/components/CandelaSmootherHero";
 import CandelaSmootherConsultation from "@/components/CandelaSmootherConsultation";
@@ -11,13 +11,18 @@ import CandelaSmootherReviewsSlider from "@/components/CandelaSmootherReviewsSli
 import CandelaSmootherFAQ from "@/components/CandelaSmootherFAQ";
 import Consultation from "@/components/Consultation";
 
-export default function CandelaSmootherPage() {
+export default async function CandelaSmootherPage() {
+  const page = await getPageBySlug('emfemme');
+  const blocks = page ? await getBlocks(page.id) : [];
+  const heroBlock = blocks.find((b: any) => b.type === 'hero');
+  const benefitsBlock = blocks.find((b: any) => b.type === 'benefits');
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1">
         <div style={{ backgroundColor: "#F1F2F4" }}>
-          <CandelaSmootherHero />
+          <CandelaSmootherHero cms={heroBlock?.content as Record<string, unknown>} />
         </div>
 
         <div style={{ backgroundColor: "#CBA07D" }}>
@@ -25,7 +30,7 @@ export default function CandelaSmootherPage() {
         </div>
 
         <div style={{ backgroundColor: "#F1F2F4" }}>
-          <CandelaSmootherBenefits />
+          <CandelaSmootherBenefits cms={benefitsBlock?.content as Record<string, unknown>} />
         </div>
 
         <CandelaSmootherTechnology />

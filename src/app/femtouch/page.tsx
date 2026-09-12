@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getPageBySlug } from '@/lib/db';
+import { getPageBySlug, getBlocks } from '@/lib/db';
 import Header from "@/components/Header";
 import FemTouchHero from "@/components/FemTouchHero";
 import FemTouchConsultation from "@/components/FemTouchConsultation";
@@ -10,14 +10,19 @@ import FemTouchReviewsSlider from "@/components/FemTouchReviewsSlider";
 import FemTouchFAQ from "@/components/FemTouchFAQ";
 import Consultation from "@/components/Consultation";
 
-export default function FemTouchPage() {
+export default async function FemTouchPage() {
+  const page = await getPageBySlug('femtouch');
+  const blocks = page ? await getBlocks(page.id) : [];
+  const heroBlock = blocks.find((b: any) => b.type === 'hero');
+  const benefitsBlock = blocks.find((b: any) => b.type === 'benefits');
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1">
-        <FemTouchHero />
+        <FemTouchHero cms={heroBlock?.content as Record<string, unknown>} />
         <FemTouchConsultation />
-        <FemTouchBenefits />
+        <FemTouchBenefits cms={benefitsBlock?.content as Record<string, unknown>} />
         <FemTouchTechnology />
         <FemTouchCandidate />
         <FemTouchReviewsSlider />

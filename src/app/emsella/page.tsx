@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { getPageBySlug } from '@/lib/db';
+import { getPageBySlug, getBlocks } from '@/lib/db';
 ﻿import Header from "@/components/Header";
 import EmsellaHero from "@/components/EmsellaHero";
 import EmsellaConsultation from "@/components/EmsellaConsultation";
@@ -11,13 +11,18 @@ import EmsellaReviewsSlider from "@/components/EmsellaReviewsSlider";
 import EmsellaFAQ from "@/components/EmsellaFAQ";
 import Consultation from "@/components/Consultation";
 
-export default function EmsellaPage() {
+export default async function EmsellaPage() {
+  const page = await getPageBySlug('emsella');
+  const blocks = page ? await getBlocks(page.id) : [];
+  const heroBlock = blocks.find((b: any) => b.type === 'hero');
+  const benefitsBlock = blocks.find((b: any) => b.type === 'benefits');
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-1">
         <div style={{ backgroundColor: "#F1F2F4" }}>
-          <EmsellaHero />
+          <EmsellaHero cms={heroBlock?.content as Record<string, unknown>} />
         </div>
 
         <div style={{ backgroundColor: "#CBA07D" }}>
@@ -25,7 +30,7 @@ export default function EmsellaPage() {
         </div>
 
         <div style={{ backgroundColor: "#F1F2F4" }}>
-          <EmsellaBenefits />
+          <EmsellaBenefits cms={benefitsBlock?.content as Record<string, unknown>} />
         </div>
 
         <EmsellaTechnology />
