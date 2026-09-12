@@ -61,12 +61,12 @@ export default function AdminReviews() {
     <div className="min-h-screen pb-20" style={{ background: "var(--admin-bg)" }}>
       {/* Top bar */}
       <AdminHeader 
-        title="Global Reviews" 
+        title={tr(lang, "globalReviews")} 
         extraButtons={
           <>
-            <button onClick={addReview} className="px-4 py-1.5 rounded-[8px] bg-gray-200 text-black text-sm font-bold">+ Add</button>
+            <button onClick={addReview} className="px-4 py-1.5 rounded-[8px] bg-gray-200 text-black text-sm font-bold">+ {tr(lang, "add")}</button>
             <button onClick={save} disabled={saving} className="px-4 py-1.5 rounded-[8px] text-white text-sm font-bold" style={{ backgroundColor: "#B07E3F" }}>
-              {saving ? "Saving..." : "Save"}
+              {saving ? tr(lang, "saving") : tr(lang, "save")}
             </button>
           </>
         }
@@ -77,35 +77,35 @@ export default function AdminReviews() {
           <div key={r.id || i} className="p-5 rounded-[14px]" style={{ background: "var(--admin-panel)", border: "1px solid var(--admin-border)" }}>
             <div className="flex justify-between mb-4">
               <span className="font-bold text-gray-500">#{r.id}</span>
-              <button onClick={() => removeReview(i)} className="text-red-500 text-sm">Delete</button>
+              <button onClick={() => removeReview(i)} className="text-red-500 text-sm font-bold">{tr(lang, "deleteItem")}</button>
             </div>
             
             <div className="grid grid-cols-2 gap-4 mb-4">
               <div>
-                <label className="block text-[12px] mb-1 font-bold text-gray-400">Category ({lang.toUpperCase()})</label>
+                <label className="block text-[12px] mb-1 font-bold text-gray-400">{tr(lang, "category")} ({lang.toUpperCase()})</label>
                 <input type="text" value={ml(r.category, lang)} onChange={e => updateReview(i, "category", mlSet(r.category, lang, e.target.value))} className="w-full px-3 py-2 rounded-[8px]" style={inputStyle} />
               </div>
               <div>
-                <label className="block text-[12px] mb-1 font-bold text-gray-400">Name ({lang.toUpperCase()})</label>
+                <label className="block text-[12px] mb-1 font-bold text-gray-400">{tr(lang, "name")} ({lang.toUpperCase()})</label>
                 <input type="text" value={ml(r.name, lang)} onChange={e => updateReview(i, "name", mlSet(r.name, lang, e.target.value))} className="w-full px-3 py-2 rounded-[8px]" style={inputStyle} />
               </div>
               <div>
-                <label className="block text-[12px] mb-1 font-bold text-gray-400">Initials ({lang.toUpperCase()})</label>
+                <label className="block text-[12px] mb-1 font-bold text-gray-400">{tr(lang, "initials")} ({lang.toUpperCase()})</label>
                 <input type="text" value={ml(r.initials, lang)} onChange={e => updateReview(i, "initials", mlSet(r.initials, lang, e.target.value))} className="w-full px-3 py-2 rounded-[8px]" style={inputStyle} />
               </div>
               <div>
-                <label className="block text-[12px] mb-1 font-bold text-gray-400">Stars (1-5)</label>
+                <label className="block text-[12px] mb-1 font-bold text-gray-400">{tr(lang, "starsCount")}</label>
                 <input type="number" min="1" max="5" value={r.stars || 5} onChange={e => updateReview(i, "stars", Number(e.target.value))} className="w-full px-3 py-2 rounded-[8px]" style={inputStyle} />
               </div>
             </div>
 
             <div className="mb-4">
-              <label className="block text-[12px] mb-1 font-bold text-gray-400">Title ({lang.toUpperCase()})</label>
+              <label className="block text-[12px] mb-1 font-bold text-gray-400">{tr(lang, "fieldTitle")} ({lang.toUpperCase()})</label>
               <input type="text" value={ml(r.title, lang)} onChange={e => updateReview(i, "title", mlSet(r.title, lang, e.target.value))} className="w-full px-3 py-2 rounded-[8px]" style={inputStyle} />
             </div>
 
             <div>
-              <label className="block text-[12px] mb-1 font-bold text-gray-400">Text ({lang.toUpperCase()})</label>
+              <label className="block text-[12px] mb-1 font-bold text-gray-400">{tr(lang, "fieldText")} ({lang.toUpperCase()})</label>
               <textarea value={ml(r.text, lang)} onChange={e => updateReview(i, "text", mlSet(r.text, lang, e.target.value))} className="w-full px-3 py-2 rounded-[8px] h-24" style={inputStyle} />
             </div>
           </div>
